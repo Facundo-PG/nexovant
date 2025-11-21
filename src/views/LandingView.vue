@@ -1,11 +1,12 @@
 <script setup>
-// Imagen desde carpeta public con BASE_URL dinámico
+// Imagen desde public usando BASE_URL dinámico
 const coverImage = import.meta.env.BASE_URL + 'images/cover.png';
 </script>
 
 <template>
   <div class="landing-container">
-    <img :src="coverImage" alt="Portada de Nexovant" class="background-image">
+    <div class="background-image"></div>
+
     <div class="content">
       <router-link to="/home" class="enter-button">ENTRAR</router-link>
     </div>
@@ -13,49 +14,50 @@ const coverImage = import.meta.env.BASE_URL + 'images/cover.png';
 </template>
 
 <!-- ======================================================= -->
-<!-- ========= NUEVO BLOQUE DE ESTILOS (SIN scoped) ========= -->
-<!-- Estos estilos son globales y solo se aplican cuando este componente está activo -->
+<!-- Estilo global para ocultar scroll solo en esta vista -->
 <style>
 html {
-  /* Anula la regla de App.vue y oculta el scroll */
   overflow-y: hidden !important;
 }
 </style>
 <!-- ======================================================= -->
 
 <style scoped>
-/* Estilos encapsulados para este componente */
+
+/* CONTENEDOR PRINCIPAL */
 .landing-container {
   position: relative;
   width: 100vw;
   height: 100vh;
-  overflow: hidden; /* Esto también ayuda a asegurar que no haya scroll DENTRO del componente */
+  overflow: hidden;
 }
-@media (max-width: 480px) {
-  .landing-container {
-    width: 90vw; /* Un poco más angosta en móviles */
-    margin: 0 auto;
-  }
-}
+
+/* BACKGROUND COMO DIV (ya no se usa <img>) */
 .background-image {
-  width: 80%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 100%;
-  object-fit: cover;
+  background-image: url(../public/images/cover.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
 }
-@media (max-width: 480px) {
-  .background-image {
-    object-fit: cover; /* Mantener cover para imagen de tamaño normal */
-    object-position: center;
-  }
-}
+
+/* CONTENIDO SUPERIOR */
 .content {
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
+  inset: 0;
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  padding-bottom: 8%; /* Mantenemos el ajuste final que te gustó */
+  padding-bottom: 8%;
+  z-index: 2;
 }
+
+/* BOTÓN */
 .enter-button {
   background-color: #ffffff;
   color: #8A2BE2;
@@ -69,19 +71,17 @@ html {
   transition: all 0.3s ease;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
 }
+
 .enter-button:hover {
   background-color: #f0f0f0;
   transform: scale(1.05);
 }
 
-/* Responsive Design */
+/* ========================= */
+/* ====== RESPONSIVE ======= */
+/* ========================= */
+
 @media (max-width: 1024px) {
-  .landing-container {
-    height: 90vh; /* Reducir altura en tablets */
-  }
-  .content {
-    padding-bottom: 8%;
-  }
   .enter-button {
     font-size: 1.1rem;
     padding: 14px 35px;
@@ -89,43 +89,24 @@ html {
 }
 
 @media (max-width: 768px) {
-  .landing-container {
-    height: 85vh; /* Más pequeño en tablets */
-  }
   .content {
-    padding-bottom: 10%;
-  }
-  .enter-button {
-    font-size: 1rem;
-    padding: 12px 30px;
+    padding-bottom: 12%;
   }
 }
 
 @media (max-width: 480px) {
-  .landing-container {
-    height: 100vh; /* Ocupar toda la pantalla */
-    min-height: 100vh;
-  }
   .content {
-    padding-bottom: 25%; /* Mucho más abajo */
-    padding-left: 20px;
-    padding-right: 20px;
-    align-items: flex-end;
+    padding-bottom: 25%;
   }
   .enter-button {
     font-size: 1rem;
     padding: 12px 30px;
-    max-width: 180px;
   }
 }
 
 @media (max-width: 390px) {
-  .landing-container {
-    height: 100vh; /* Ocupar toda la pantalla */
-    min-height: 100vh;
-  }
   .content {
-    padding-bottom: 30%; /* Aún más abajo */
+    padding-bottom: 30%;
   }
   .enter-button {
     font-size: 0.9rem;
@@ -134,16 +115,13 @@ html {
 }
 
 @media (max-width: 320px) {
-  .landing-container {
-    height: 100vh; /* Ocupar toda la pantalla */
-    min-height: 100vh;
-  }
   .content {
-    padding-bottom: 35%; /* Máxima separación del fondo */
+    padding-bottom: 35%;
   }
   .enter-button {
     font-size: 0.8rem;
     padding: 8px 20px;
   }
 }
+
 </style>
