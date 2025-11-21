@@ -172,17 +172,110 @@
   box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
 }
 .whatsapp-btn svg { width: 28px; height: 28px; }
-@media (max-width: 900px) {
-  .contact-wrapper { flex-direction: column; border: none; }
-  .info-side, .action-side { width: 100%; border: none; }
-  .info-side { border-bottom: 1px solid rgba(255, 255, 255, 0.2); }
-  .action-side { padding: 50px 20px; }
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .section-container {
+    padding: 60px 30px;
+  }
+  .contact-wrapper {
+    max-width: 900px;
+  }
 }
-/* Estilos adicionales para los botones en móvil */
+
+@media (max-width: 900px) {
+  .contact-wrapper { 
+    flex-direction: column; 
+    border: none;
+    max-width: 600px;
+  }
+  .info-side, .action-side { 
+    width: 100%; 
+    border: none; 
+  }
+  .info-side { 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 30px;
+  }
+  .action-side { 
+    padding: 40px 30px;
+  }
+  .info-title {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-container {
+    padding: 50px 20px;
+  }
+  .info-side, .action-side {
+    padding: 25px 20px;
+  }
+  .info-title {
+    font-size: 2rem;
+  }
+  .whatsapp-box h3 {
+    font-size: 1.6rem;
+  }
+  .whatsapp-btn {
+    font-size: 1.1rem;
+    padding: 12px 25px;
+  }
+}
+
 @media (max-width: 480px) {
+  .section-container {
+    padding: 40px 15px;
+  }
+  .info-side, .action-side {
+    padding: 20px 15px;
+  }
+  .info-title {
+    font-size: 1.8rem;
+    line-height: 1.3;
+  }
+  .info-text {
+    font-size: 1rem;
+  }
+  .contact-link-static {
+    font-size: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
   .webmail-buttons {
-    flex-direction: column; /* Apila los botones verticalmente */
-    align-items: flex-start; /* Los alinea a la izquierda */
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .webmail-btn {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+  .whatsapp-box h3 {
+    font-size: 1.4rem;
+  }
+  .whatsapp-box p {
+    font-size: 1rem;
+  }
+  .whatsapp-btn {
+    font-size: 1rem;
+    padding: 10px 20px;
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 320px) {
+  .info-title {
+    font-size: 1.6rem;
+  }
+  .whatsapp-box h3 {
+    font-size: 1.2rem;
+  }
+  .whatsapp-btn {
+    font-size: 0.9rem;
+    padding: 8px 15px;
   }
 }
 </style>

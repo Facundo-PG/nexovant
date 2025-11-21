@@ -62,11 +62,45 @@ html {
   transform: scale(1.05);
 }
 
-/* Ajuste para pantallas móviles */
-@media (max-width: 480px) {
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .content {
+    padding-bottom: 10%;
+  }
+  .enter-button {
+    font-size: 1.1rem;
+    padding: 14px 35px;
+  }
+}
+
+@media (max-width: 768px) {
+  .content {
+    padding-bottom: 12%;
+  }
   .enter-button {
     font-size: 1rem;
     padding: 12px 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .content {
+    padding-bottom: 15%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .enter-button {
+    font-size: 0.9rem;
+    padding: 10px 25px;
+    width: 100%;
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 320px) {
+  .enter-button {
+    font-size: 0.8rem;
+    padding: 8px 20px;
   }
 }
 </style>

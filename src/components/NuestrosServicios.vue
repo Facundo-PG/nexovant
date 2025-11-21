@@ -175,4 +175,87 @@
   font-size: 1rem; color: rgba(255, 255, 255, 0.8);
   text-align: center;
 }
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .section-container {
+    padding: 60px 30px;
+  }
+  .servicios-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+}
+
+@media (max-width: 900px) {
+  .section-title {
+    font-size: 2.8rem;
+  }
+  .section-description {
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-container {
+    padding: 50px 20px;
+  }
+  .section-title {
+    font-size: 2.5rem;
+  }
+  .section-description {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+  .servicios-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 400px;
+  }
+  .service-card {
+    height: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-container {
+    padding: 40px 15px;
+  }
+  .section-title {
+    font-size: 2rem;
+  }
+  .section-subtitle {
+    font-size: 1.3rem;
+  }
+  .service-card {
+    height: 250px;
+  }
+  .card-front h3 {
+    font-size: 1.2rem;
+  }
+  .servicio-icon {
+    width: 70px;
+    height: 70px;
+  }
+  .servicio-icon svg {
+    width: 40px;
+    height: 40px;
+  }
+  .stat-number {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .section-title {
+    font-size: 1.8rem;
+  }
+  .service-card {
+    height: 220px;
+  }
+  .card-front h3 {
+    font-size: 1.1rem;
+  }
+}
 </style>
