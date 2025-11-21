@@ -42,6 +42,11 @@
   font-size: 1.1rem;
   color: #f0f0f0;
   line-height: 1.6;
+  transition: color 0.3s ease;
+}
+
+.content-wrapper-valores p:hover {
+  color: #fff;
 }
 ul {
   list-style: none;
@@ -56,6 +61,42 @@ li {
   border-radius: 5px;
   font-size: 1.1rem;
   color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efectos hover para los valores */
+li:hover {
+  transform: scale(1.05); /* Agrandar un poquito */
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: rgba(138, 43, 226, 0.5); /* Borde morado sutil */
+  box-shadow: 0 8px 25px rgba(138, 43, 226, 0.3); /* Sombra morada */
+}
+
+/* Efecto de brillo sutil al hover */
+li::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s ease;
+  z-index: 1;
+}
+
+li:hover::before {
+  left: 100%; /* Efecto de brillo que pasa por encima */
+}
+
+/* Asegurar que el texto esté por encima del efecto */
+li strong, li:not(strong) {
+  position: relative;
+  z-index: 2;
 }
 
 /* Responsive Design */
