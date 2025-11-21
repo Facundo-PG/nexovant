@@ -1,48 +1,42 @@
-# Nombre del Workflow
-name: Deploy Vue site to Pages
-# ... [otras secciones] ...
+# Nombre del workflow
+name: Build and Deploy Vue App to GitHub Pages
+
+# Define el evento que dispara el workflow
+on:
+  # Se ejecuta en cada push a la rama 'main'
+  push:
+    branches:
+      - main
+
+# Define los trabajos que se ejecutarán
 jobs:
-  build:
+  build-and-deploy:
+    # El tipo de máquina virtual en la que se ejecutará el trabajo
     runs-on: ubuntu-latest
-    
-    defaults:
-      run:
-        working-directory: NexoVant
-    
+
+    # Los pasos que componen el trabajo
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
-      
-    - name: Set up Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: 20
-        cache: 'npm'
-        # === CORRECCIÓN: La ruta es ahora relativa a 'NexoVant' ===
-        cache-dependency-path: package-lock.json 
-      
-    - name: Install dependencies
-      run: npm install
-      
-    - name: Build project
-      run: npm run build
-      
-    - name: Upload production artifact
-      uses: actions/upload-pages-artifact@v3
-      with:
-        # CORRECCIÓN: La ruta es ahora relativa a la raíz del repositorio
-        # donde se ejecutó el build (NexoVant/dist). 
-        # Pero si el working-directory está seteado, la ruta del artefacto 
-        # debe ser absoluta o ajustarse, por seguridad volvemos a la ruta completa:
-        path: NexoVant/dist 
-        
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-    - name: Deploy to GitHub Pages
-      id: deployment
-      uses: actions/deploy-pages@v4
+      # 1. Clona tu repositorio en la máquina virtual
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      # 2. Configura el entorno de Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18' # Puedes ajustar la versión de Node.js según tu proyecto
+
+      # 3. Instala las dependencias del proyecto
+      - name: Install Dependencies
+        run: npm install
+
+      # 4. Construye la aplicación para producción
+      - name: Build
+        run: npm run build
+
+      # 5. Despliega la aplicación en GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist # El directorio que contiene los archivos de producción
