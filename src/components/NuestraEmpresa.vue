@@ -116,24 +116,129 @@ onUnmounted(() => { clearInterval(intervalId); });
   /* ELIMINADO: El margin-top negativo que causaba la superposición */
 }
 
-/* MODIFICADO: El ancho ahora es 100% para que se ajuste al padding del wrapper */
+/* Card blanca con efectos elegantes */
 .text-content {
   background-color: rgba(255, 255, 255, 0.98);
   color: #333;
   padding: 40px;
-  border-radius: 10px;
+  border-radius: 15px;
   box-shadow: 0 15px 40px rgba(0,0,0,0.25);
   width: 100%; 
   margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  border: 2px solid transparent;
 }
 
-.section-subtitle { font-size: 1.5rem; font-weight: 300; color: #555; }
-.section-title { font-size: 3.5rem; font-weight: 700; margin-bottom: 20px; }
-.intro-text { font-size: 1.1rem; line-height: 1.6; border-bottom: 1px solid #e0e0e0; padding-bottom: 20px; margin-bottom: 20px; }
-.mision-vision-container { display: flex; gap: 30px; }
-.mision-vision-item { flex: 1; }
-.mision-vision-item h3 { font-size: 1.6rem; color: #8A2BE2; margin-bottom: 10px; }
-.mision-vision-item p { font-size: 1rem; line-height: 1.6; color: #444; }
+/* Efecto hover principal */
+.text-content:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 25px 60px rgba(138, 43, 226, 0.3);
+  border-color: rgba(138, 43, 226, 0.2);
+  background-color: rgba(255, 255, 255, 1);
+}
+
+/* Efecto de brillo diagonal que se mueve al hover */
+.text-content::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(138, 43, 226, 0.1), transparent);
+  transform: rotate(45deg);
+  transition: transform 0.6s ease;
+  z-index: 1;
+  opacity: 0;
+}
+
+.text-content:hover::before {
+  transform: rotate(45deg) translate(50%, 50%);
+  opacity: 1;
+}
+
+/* Asegurar que el contenido esté por encima del efecto */
+.text-content > * {
+  position: relative;
+  z-index: 2;
+}
+
+.section-subtitle { 
+  font-size: 1.5rem; 
+  font-weight: 300; 
+  color: #555; 
+  transition: color 0.3s ease;
+}
+
+.section-title { 
+  font-size: 3.5rem; 
+  font-weight: 700; 
+  margin-bottom: 20px;
+  transition: color 0.3s ease;
+}
+
+/* Efecto hover en títulos */
+.text-content:hover .section-subtitle {
+  color: #8A2BE2;
+}
+
+.text-content:hover .section-title {
+  color: #6A1B9A;
+}
+
+.intro-text { 
+  font-size: 1.1rem; 
+  line-height: 1.6; 
+  border-bottom: 1px solid #e0e0e0; 
+  padding-bottom: 20px; 
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.text-content:hover .intro-text {
+  border-bottom-color: rgba(138, 43, 226, 0.3);
+  color: #222;
+}
+
+.mision-vision-container { 
+  display: flex; 
+  gap: 30px; 
+}
+
+.mision-vision-item { 
+  flex: 1;
+  transition: transform 0.3s ease;
+}
+
+.mision-vision-item:hover {
+  transform: translateY(-3px);
+}
+
+.mision-vision-item h3 { 
+  font-size: 1.6rem; 
+  color: #8A2BE2; 
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
+}
+
+.mision-vision-item:hover h3 {
+  color: #6A1B9A;
+  text-shadow: 0 2px 4px rgba(138, 43, 226, 0.2);
+}
+
+.mision-vision-item p { 
+  font-size: 1rem; 
+  line-height: 1.6; 
+  color: #444;
+  transition: color 0.3s ease;
+}
+
+.mision-vision-item:hover p {
+  color: #222;
+}
 
 .section-container::-webkit-scrollbar { width: 10px; }
 .section-container::-webkit-scrollbar-track { background: rgba(0, 0, 0, 0.1); }
