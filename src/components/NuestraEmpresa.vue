@@ -1,13 +1,13 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue';
 
-// --- Rutas de imágenes desde /public/images (NO se importan) ---
+// Rutas correctas para GitHub Pages
+// import.meta.env.BASE_URL = "/nexovant/"
 const carouselImages = ref([
   import.meta.env.BASE_URL + "images/carousel-1.jpg",
   import.meta.env.BASE_URL + "images/carousel-2.webp",
   import.meta.env.BASE_URL + "images/carousel-3.png",
 ]);
-// ---------------------------------------------------------------
 
 const currentIndex = ref(0);
 let intervalId = null;
@@ -87,6 +87,7 @@ onUnmounted(() => {
               con la confiabilidad y la excelencia.
             </p>
           </div>
+
           <div class="mision-vision-item">
             <h3>Visión</h3>
             <p>
@@ -104,5 +105,5 @@ onUnmounted(() => {
 </template>
 
 <style scoped>
-/* (tu CSS permanece sin cambios) */
+/* Tu CSS original va aquí! No lo alteré para no romper estilos */
 </style>
