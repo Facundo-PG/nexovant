@@ -83,7 +83,7 @@
   display: flex;
   max-width: 1000px;
   width: 100%;
-  background: rgba(138, 43, 226, 0.5);
+  background: #4a47a3;
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 15px;
   box-shadow: 0 15px 40px rgba(0,0,0,0.1);
