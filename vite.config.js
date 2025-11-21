@@ -10,6 +10,7 @@ export default defineConfig({
     vue(),
     vueDevTools(),
   ],
+  base: '/nexovant.github.io/',
   server: {
   port: Number(process.env.VITE_PORT),
 },
