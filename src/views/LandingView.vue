@@ -1,6 +1,21 @@
 <script setup>
+import { onMounted, onUnmounted } from 'vue';
+
 // Imagen desde public usando BASE_URL dinámico
 const coverImage = import.meta.env.BASE_URL + 'images/cover.png';
+
+// Control dinámico del scroll
+onMounted(() => {
+  // Ocultar scroll solo cuando este componente está activo
+  document.documentElement.style.overflow = 'hidden';
+  document.body.style.overflow = 'hidden';
+});
+
+onUnmounted(() => {
+  // Restaurar scroll cuando se sale de este componente
+  document.documentElement.style.overflow = '';
+  document.body.style.overflow = '';
+});
 </script>
 
 <template>
@@ -13,14 +28,7 @@ const coverImage = import.meta.env.BASE_URL + 'images/cover.png';
   </div>
 </template>
 
-<!-- ======================================================= -->
-<!-- Estilo global para ocultar scroll solo en esta vista -->
-<style>
-html {
-  overflow-y: hidden !important;
-}
-</style>
-<!-- ======================================================= -->
+<!-- Eliminamos el CSS global que bloqueaba el scroll en toda la app -->
 
 <style scoped>
 
