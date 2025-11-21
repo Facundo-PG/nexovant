@@ -34,9 +34,8 @@
         <div class="card-inner">
           <div class="card-front">
             <div class="servicio-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9 9 0 100-18 9 9 0 000 18z" />
-  <path stroke-linecap="round" stroke-linejoin="round" d="M12 3.75c-3.443 0-6.386 2.012-7.5 4.875m15 0c-1.114-2.863-4.057-4.875-7.5-4.875M2.25 12h19.5" />
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M22 12h-4l-3 9L9 3l-3 9H2" />
 </svg>
             </div>
             <h3>FIBRA ÓPTICA</h3>
