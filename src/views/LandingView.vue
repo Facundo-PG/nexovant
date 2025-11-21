@@ -4,7 +4,7 @@ const coverImage = import.meta.env.BASE_URL + 'images/cover.png';
 </script>
 
 <template>
-  <div class="landing-container">
+  <div class="landing-container" :style="{ '--cover-image': `url(${coverImage})` }">
     <div class="background-image"></div>
 
     <div class="content">
@@ -27,8 +27,9 @@ html {
 /* CONTENEDOR PRINCIPAL */
 .landing-container {
   position: relative;
-  width: 100vw;
+  width: 95vw; /* Más angosto para que el título no se corte */
   height: 100vh;
+  margin: 0 auto; /* Centrar */
   overflow: hidden;
 }
 
@@ -39,7 +40,7 @@ html {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url(../public/images/cover.png);
+  background-image: var(--cover-image);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
