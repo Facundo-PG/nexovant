@@ -114,15 +114,6 @@ html {
     padding: 10px 25px;
   }
 }
-
-@media (max-width: 320px) {
-  .content {
-    padding-bottom: 35%;
-  }
-  .enter-button {
-    font-size: 0.8rem;
-    padding: 8px 20px;
-  }
   /* Ajustar ancho del background en celulares para evitar recortes */
 @media (max-width: 480px) {
   .landing-container {
