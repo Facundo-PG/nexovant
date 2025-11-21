@@ -18,6 +18,7 @@ onUnmounted(() => { clearInterval(intervalId); });
 <template>
   <section id="empresa" class="section-container">
     
+    
     <!-- El carrusel se mantiene como el primer elemento para ser el banner superior -->
     <div class="carousel-container">
       <transition-group name="fade" tag="div" class="carousel-slides">
