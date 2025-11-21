@@ -179,21 +179,79 @@
 /* Responsive Design */
 @media (max-width: 1200px) {
   .section-container {
-    padding: 60px 30px;
+    padding: 70px 40px;
   }
   .servicios-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
+    gap: 30px;
+    max-width: 1000px;
+  }
+  .service-card {
+    height: 300px;
   }
 }
 
+/* Tablets en landscape (1024px) */
+@media (max-width: 1024px) {
+  .section-container {
+    padding: 60px 35px;
+  }
+  .section-title {
+    font-size: 3.2rem;
+  }
+  .section-description {
+    font-size: 1.15rem;
+    max-width: 700px;
+  }
+  .servicios-grid {
+    gap: 25px;
+    max-width: 900px;
+  }
+  .service-card {
+    height: 280px;
+  }
+  .card-front h3 {
+    font-size: 1.3rem;
+  }
+  .servicio-icon {
+    width: 80px;
+    height: 80px;
+  }
+  .servicio-icon svg {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+/* Tablets en portrait (768px) */
 @media (max-width: 900px) {
+  .section-container {
+    padding: 50px 30px;
+  }
   .section-title {
     font-size: 2.8rem;
   }
   .section-description {
     font-size: 1.1rem;
     margin-bottom: 40px;
+    max-width: 600px;
+  }
+  .servicios-grid {
+    gap: 20px;
+  }
+  .service-card {
+    height: 260px;
+  }
+  .card-front h3 {
+    font-size: 1.2rem;
+  }
+  .servicio-icon {
+    width: 75px;
+    height: 75px;
+  }
+  .servicio-icon svg {
+    width: 40px;
+    height: 40px;
   }
 }
 

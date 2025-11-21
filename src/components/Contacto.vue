@@ -175,20 +175,62 @@
 /* Responsive Design */
 @media (max-width: 1200px) {
   .section-container {
-    padding: 60px 30px;
+    padding: 70px 40px;
+  }
+  .contact-wrapper {
+    max-width: 1000px;
+  }
+  .info-side, .action-side {
+    padding: 45px;
+  }
+}
+
+/* Tablets en landscape (1024px) */
+@media (max-width: 1024px) {
+  .section-container {
+    padding: 60px 35px;
   }
   .contact-wrapper {
     max-width: 900px;
   }
+  .info-side, .action-side {
+    padding: 40px;
+  }
+  .info-title {
+    font-size: 2.3rem;
+  }
+  .info-text {
+    font-size: 1.05rem;
+  }
+  .whatsapp-box h3 {
+    font-size: 1.7rem;
+  }
+  .whatsapp-box p {
+    font-size: 1.05rem;
+  }
+  .whatsapp-btn {
+    font-size: 1.1rem;
+    padding: 14px 28px;
+  }
 }
 
-.section-container {
-  padding: 80px 40px;
-  min-height: auto; /* Cambiar de calc(100vh - 70px - 160px) a auto */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #2c2c54;
+/* Tablets en portrait y pantallas medianas */
+@media (max-width: 900px) and (min-width: 769px) {
+  .section-container {
+    padding: 50px 30px;
+  }
+  .contact-wrapper {
+    max-width: 700px;
+  }
+  .info-side, .action-side {
+    padding: 35px;
+  }
+  .info-title {
+    font-size: 2.1rem;
+  }
+  .whatsapp-box h3 {
+    font-size: 1.6rem;
+  }
 }
 
 @media (max-width: 900px) {
