@@ -1,25 +1,32 @@
 <script setup>
-import { onMounted, onUnmounted } from 'vue';
+import { onMounted, onUnmounted, ref } from 'vue';
 import { useRouter } from 'vue-router';
 
 // Imagen desde public usando BASE_URL dinámico
 const coverImage = import.meta.env.BASE_URL + 'images/cover.png';
 const router = useRouter();
+const imageOpacity = ref(0); // Iniciar con opacidad 0
 
-// Duración del splash screen en milisegundos
-const SPLASH_DURATION = 3500; // 3.5 segundos
-
-// Control dinámico del scroll y redirect automático
+// Control dinámico del scroll y efectos de animación
 onMounted(() => {
   // Ocultar scroll solo cuando este componente está activo
   document.documentElement.style.overflow = 'hidden';
   document.body.style.overflow = 'hidden';
   
-  // Redireccionar automáticamente después del tiempo definido
+  // Fade-in: Encender la imagen gradualmente (0 a 1 en 1 segundo)
   setTimeout(() => {
-    // Te llevo a la ruta que mencionaste: '/nuestra-empresa'
-    router.push('/nuestra-empresa');
-  }, SPLASH_DURATION);
+    imageOpacity.value = 1;
+  }, 100); // Pequeño delay para que se vea el efecto
+  
+  // Fade-out: Apagar la imagen gradualmente después de 2.5 segundos
+  setTimeout(() => {
+    imageOpacity.value = 0;
+  }, 2500);
+  
+  // Redireccionar después de que termine el fade-out (3.5 segundos total)
+  setTimeout(() => {
+    router.push('/home');
+  }, 3500);
 });
 
 onUnmounted(() => {
@@ -31,32 +38,16 @@ onUnmounted(() => {
 
 <template>
   <div class="landing-container" :style="{ '--cover-image': `url(${coverImage})` }">
-    <!-- Aplicamos la animación directamente a este div -->
-    <div class="background-image"></div>
+    <div 
+      class="background-image" 
+      :style="{ opacity: imageOpacity }"
+    ></div>
+    <!-- Splash screen con efectos de fade-in y fade-out -->
   </div>
 </template>
 
+<!-- Eliminamos el CSS global que bloqueaba el scroll en toda la app -->
 <style scoped>
-/* DEFINIMOS LA ANIMACIÓN DE ENTRADA Y SALIDA */
-@keyframes fadeInAndOut {
-  /* --- FASE 1: ENCENDIDO (Fade In) --- */
-  0% {
-    opacity: 0; /* Inicia completamente transparente */
-  }
-  25% {
-    opacity: 1; /* Llega a ser totalmente visible */
-  }
-
-  /* --- FASE 2: MANTENER VISIBLE --- */
-  75% {
-    opacity: 1; /* Se mantiene visible hasta el 75% del tiempo */
-  }
-
-  /* --- FASE 3: APAGADO (Fade Out) --- */
-  100% {
-    opacity: 0; /* Se desvanece por completo al final */
-  }
-}
 
 /* CONTENEDOR PRINCIPAL */
 .landing-container {
@@ -65,26 +56,25 @@ onUnmounted(() => {
   width: 100vw;
   margin: 0;
   overflow: hidden;
-  background-color: #0b2545; /* Color de fondo base */
 }
 
-/* BACKGROUND COMO DIV */
+/* BACKGROUND COMO DIV CON ANIMACIÓN */
 .background-image {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100dvh;
   background-image: var(--cover-image);
   background-position: 48% center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-color: #0b2545;
   z-index: -1;
-  opacity: 0; /* Estado inicial para que la animación funcione correctamente */
-
-  /* --- AQUÍ APLICAMOS LA ANIMACIÓN --- */
-  /* Nombre | Duración | Curva de tiempo | Modo de relleno */
-  animation: fadeInAndOut 3.5s ease-in-out forwards;
+  
+  /* Animación suave de opacity */
+  transition: opacity 1s ease-in-out;
+  opacity: 0; /* Iniciar invisible, se controla desde Vue */
 }
 
 /* Asegúrate de que el body y html no tengan márgenes */
@@ -94,4 +84,14 @@ onUnmounted(() => {
   width: 100%;
   height: 100%;
 }
+
+/* Splash screen con efectos de fade-in y fade-out automáticos */
+/* Timeline:
+   0s - 0.1s: Imagen invisible
+   0.1s - 1.1s: Fade-in (encendido gradual)
+   1.1s - 2.5s: Imagen visible completa
+   2.5s - 3.5s: Fade-out (apagado gradual)
+   3.5s: Redirección a Nuestra Empresa
+*/
+
 </style>
