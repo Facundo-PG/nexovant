@@ -13,6 +13,8 @@ jobs:
   build-and-deploy:
     # El tipo de máquina virtual en la que se ejecutará el trabajo
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # Permisos para escribir en el repositorio
 
     # Los pasos que componen el trabajo
     steps:
