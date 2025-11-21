@@ -199,63 +199,98 @@
 
 @media (max-width: 768px) {
   .section-container {
-    padding: 50px 20px;
+    padding: 40px 15px;
+    min-height: auto;
   }
   .section-title {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
   }
   .section-description {
     font-size: 1rem;
-    padding: 0 10px;
+    padding: 0 5px;
+    margin-bottom: 30px;
   }
   .servicios-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
-    max-width: 400px;
+    gap: 15px;
+    max-width: 100%;
+    width: 100%;
   }
   .service-card {
-    height: 280px;
+    height: 260px;
+    max-width: 350px;
+    margin: 0 auto;
   }
 }
 
 @media (max-width: 480px) {
   .section-container {
-    padding: 40px 15px;
+    padding: 30px 10px;
   }
   .section-title {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
   .section-subtitle {
-    font-size: 1.3rem;
-  }
-  .service-card {
-    height: 250px;
-  }
-  .card-front h3 {
     font-size: 1.2rem;
   }
+  .section-description {
+    font-size: 0.9rem;
+  }
+  .service-card {
+    height: 240px;
+    max-width: 300px;
+  }
+  .card-front, .card-back {
+    padding: 15px;
+  }
+  .card-front h3 {
+    font-size: 1.1rem;
+    min-height: 2.5rem;
+  }
   .servicio-icon {
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
   }
   .servicio-icon svg {
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
   }
   .stat-number {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
+  }
+  .card-back h3 {
+    font-size: 1rem;
+  }
+  .card-back p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: 390px) {
+  .service-card {
+    height: 220px;
+    max-width: 280px;
+  }
+  .section-title {
+    font-size: 1.6rem;
   }
 }
 
 @media (max-width: 320px) {
   .section-title {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
   .service-card {
-    height: 220px;
+    height: 200px;
+    max-width: 260px;
   }
   .card-front h3 {
-    font-size: 1.1rem;
+    font-size: 1rem;
+  }
+  .stat-number {
+    font-size: 2rem;
   }
 }
 </style>

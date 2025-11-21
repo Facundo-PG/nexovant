@@ -64,8 +64,11 @@ html {
 
 /* Responsive Design */
 @media (max-width: 1024px) {
+  .landing-container {
+    height: 90vh; /* Reducir altura en tablets */
+  }
   .content {
-    padding-bottom: 10%;
+    padding-bottom: 8%;
   }
   .enter-button {
     font-size: 1.1rem;
@@ -74,8 +77,11 @@ html {
 }
 
 @media (max-width: 768px) {
+  .landing-container {
+    height: 85vh; /* Más pequeño en tablets */
+  }
   .content {
-    padding-bottom: 12%;
+    padding-bottom: 10%;
   }
   .enter-button {
     font-size: 1rem;
@@ -84,20 +90,39 @@ html {
 }
 
 @media (max-width: 480px) {
+  .landing-container {
+    height: 70vh; /* Mucho más pequeño en móviles */
+    min-height: 500px;
+  }
   .content {
-    padding-bottom: 15%;
+    padding-bottom: 8%;
     padding-left: 20px;
     padding-right: 20px;
+    align-items: center; /* Centrar verticalmente */
+  }
+  .enter-button {
+    font-size: 1rem;
+    padding: 12px 30px;
+    max-width: 180px;
+  }
+}
+
+@media (max-width: 390px) {
+  .landing-container {
+    height: 60vh;
+    min-height: 450px;
   }
   .enter-button {
     font-size: 0.9rem;
     padding: 10px 25px;
-    width: 100%;
-    max-width: 200px;
   }
 }
 
 @media (max-width: 320px) {
+  .landing-container {
+    height: 55vh;
+    min-height: 400px;
+  }
   .enter-button {
     font-size: 0.8rem;
     padding: 8px 20px;
