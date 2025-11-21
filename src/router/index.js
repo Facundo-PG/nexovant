@@ -3,11 +3,11 @@ import { createRouter, createWebHistory } from 'vue-router';
 import LandingView from '@/views/LandingView.vue'; 
 import HomeView from '@/views/HomeView.vue'; // Ejemplo
 
-// 🛑 SOLUCIÓN CONDICIONAL: Forzamos la base del repositorio si estamos en el entorno de producción (npm run build).
-// Esto soluciona el error malformado de URL que persiste en GitHub Pages.
+// 🛑 CORRECCIÓN FINAL: Forzamos el uso de la ruta /nexovant/ en producción.
+// Si el entorno de producción está activo, usamos la ruta estricta.
 const VUE_ROUTER_BASE = import.meta.env.PROD 
-  ? '/nexovant/' // Si es producción (build), usa la base explícita del repositorio.
-  : import.meta.env.BASE_URL; // Si es desarrollo, usa la base de Vite por defecto.
+  ? '/nexovant/' // Usar la base explícita del repositorio en el build.
+  : import.meta.env.BASE_URL; // Usar la base de Vite en desarrollo.
 
 const router = createRouter({
   // Usamos la base condicional para el historial.
