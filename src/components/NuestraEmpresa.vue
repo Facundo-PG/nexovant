@@ -1,11 +1,6 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue';
 
-// --- Tus imágenes ---
-import carouselImg1 from '@/assets/images/carousel-1.jpg';
-import carouselImg2 from '@/assets/images/carousel-2.webp';
-import carouselImg3 from '@/assets/images/carousel-3.png';
-// --------------------
 
 
 const carouselImages = ref([carouselImg1, carouselImg2, carouselImg3]);
