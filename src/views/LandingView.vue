@@ -31,10 +31,22 @@ html {
   height: 100vh;
   overflow: hidden; /* Esto también ayuda a asegurar que no haya scroll DENTRO del componente */
 }
+@media (max-width: 480px) {
+  .landing-container {
+    width: 95vw; /* Un poco más angosta en móviles */
+    margin: 0 auto;
+  }
+}
 .background-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+@media (max-width: 480px) {
+  .background-image {
+    object-fit: contain; /* Cambiar a contain para que se vea completa */
+    object-position: center;
+  }
 }
 .content {
   position: absolute;
