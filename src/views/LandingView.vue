@@ -1,6 +1,6 @@
 <script setup>
-// Imagen desde carpeta public
-const coverImage = '/nexovant/images/cover.png';
+// Imagen desde carpeta public con BASE_URL dinámico
+const coverImage = import.meta.env.BASE_URL + 'images/cover.png';
 </script>
 
 <template>

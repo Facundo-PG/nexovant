@@ -1,11 +1,11 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue';
 
-// Rutas directas para GitHub Pages
+// Rutas dinámicas para GitHub Pages
 const carouselImages = ref([
-  "/nexovant/images/carousel-1.jpg",
-  "/nexovant/images/carousel-2.webp",
-  "/nexovant/images/carousel-3.png",
+  import.meta.env.BASE_URL + "images/carousel-1.jpg",
+  import.meta.env.BASE_URL + "images/carousel-2.webp",
+  import.meta.env.BASE_URL + "images/carousel-3.png",
 ]);
 
 const currentIndex = ref(0);

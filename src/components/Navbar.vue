@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue';
 
+const logoImage = import.meta.env.BASE_URL + 'images/logo.jpg';
 const isMenuOpen = ref(false);
 
 const toggleMenu = () => {
@@ -19,7 +20,7 @@ const closeMenuAndSelectSection = (section) => {
     <div class="nav-content">
       <router-link to="/" class="logo-link">
         <!-- Imagen desde /public/images (funciona en GitHub Pages) -->
-        <img src="/nexovant/images/logo.jpg" alt="Logo Nexovant" class="logo-image" />
+        <img :src="logoImage" alt="Logo Nexovant" class="logo-image" />
         <span>Nexovant</span>
       </router-link>
 
