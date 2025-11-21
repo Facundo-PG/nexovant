@@ -51,3 +51,14 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        [Immersive content redacted for brevity.]
+      - name: Build
+        run: npm run build
+        
+      # 🚨 Paso CRÍTICO FINAL: Crea un 404.html que es idéntico a index.html.
+      # Esto permite que Vue Router maneje las rutas secundarias sin un error 404 del servidor.
+      - name: Create 404.html redirect
+        run: cp dist/index.html dist/404.html # ⬅️ ESTE PASO HACE LA COPIA
+      # 🚨 Paso clave: Configuramos GitHub Pages para que sepa dónde buscar el build
+      - name: Setup Pages
+[Immersive content redacted for brevity.]
