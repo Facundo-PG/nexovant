@@ -1,13 +1,11 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue';
 
-// --- Rutas de imágenes desde /public/images (NO se importan) ---
 const carouselImages = ref([
   import.meta.env.BASE_URL + "images/carousel-1.jpg",
   import.meta.env.BASE_URL + "images/carousel-2.webp",
   import.meta.env.BASE_URL + "images/carousel-3.png",
 ]);
-// ---------------------------------------------------------------
 
 const currentIndex = ref(0);
 let intervalId = null;
@@ -43,21 +41,21 @@ onUnmounted(() => {
           :key="image"
           :src="image"
           v-show="index === currentIndex"
-          alt="Imagen de la empresa"
           class="carousel-image"
+          alt="Imagen de la empresa"
         />
       </transition-group>
 
-      <button @click="prevSlide" class="carousel-control prev">&lt;</button>
-      <button @click="nextSlide" class="carousel-control next">&gt;</button>
+      <button @click="prevSlide" class="carousel-control prev">‹</button>
+      <button @click="nextSlide" class="carousel-control next">›</button>
 
       <div class="carousel-dots">
         <span
           v-for="(image, index) in carouselImages"
           :key="'dot-' + index"
+          class="dot"
           :class="{ active: index === currentIndex }"
           @click="goToSlide(index)"
-          class="dot"
         ></span>
       </div>
     </div>
@@ -104,5 +102,135 @@ onUnmounted(() => {
 </template>
 
 <style scoped>
-/* (tu CSS permanece sin cambios) */
+/* --- CARRUSEL --- */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  max-height: 450px;
+  overflow: hidden;
+}
+
+.carousel-slides {
+  position: relative;
+  width: 100%;
+  height: 450px;
+}
+
+.carousel-image {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Botones izquierda/derecha */
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2.5rem;
+  color: white;
+  background: rgba(0,0,0,0.4);
+  border: none;
+  padding: 8px 14px;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 8px;
+}
+
+.carousel-control.prev {
+  left: 10px;
+}
+
+.carousel-control.next {
+  right: 10px;
+}
+
+/* Puntos inferiores */
+.carousel-dots {
+  position: absolute;
+  bottom: 12px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  margin: 0 5px;
+  background: #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.dot.active {
+  background: #007bff;
+  transform: scale(1.2);
+}
+
+/* --- TEXTO --- */
+.content-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.text-content {
+  max-width: 900px;
+}
+
+.section-subtitle {
+  font-size: 22px;
+  color: #007bff;
+}
+
+.section-title {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.intro-text {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+/* Misión / Visión */
+.mision-vision-container {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.mision-vision-item {
+  flex: 1 1 45%;
+  background: #f7f7f7;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.mision-vision-item h3 {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .carousel-slides,
+  .carousel-image {
+    height: 280px;
+  }
+
+  .carousel-control {
+    font-size: 2rem;
+  }
+
+  .mision-vision-item {
+    flex: 1 1 100%;
+  }
+}
 </style>

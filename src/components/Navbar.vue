@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from 'vue';
 
-const logoImage = import.meta.env.BASE_URL + 'images/logo.jpg';
+const logoImage = import.meta.env.BASE_URL + 'images/cover.jpg';
 const isMenuOpen = ref(false);
 
 const toggleMenu = () => {
