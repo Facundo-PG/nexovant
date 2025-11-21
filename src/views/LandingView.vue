@@ -46,25 +46,30 @@ onUnmounted(() => {
   position: absolute;
   top: 0;
   left: 0;
-    width: 100vw;
-  height: 100vh;
+  width: 100vw; /* Ocupa el 100% del ancho de la pantalla */
+  height: 100vh; /* Ocupa el 100% de la altura de la pantalla */
   background-image: var(--cover-image);
   background-position: center;
   background-repeat: no-repeat;
-  background-color: #0b2545; /* Color de fondo por si acaso */
-  z-index: 1;
+  background-size: cover; /* Escala la imagen para cubrir todo el espacio sin deformarla */
+  background-color: #0b2545;
+  z-index: -1; /* Coloca el fondo detrás de otros contenidos */
+}
 
+/* Opcional: Asegúrate de que el body no tenga márgenes */
 
-
-  /* 1. Por defecto, para pantallas anchas (PC), usamos 'cover' */
-  background-size: cover;
 
   /* 2. Para pantallas verticales (celulares), aplicamos un 'zoom' manual */
   @media (orientation: portrait) {
     background-size: 180% auto; /* Juega con este valor */
   }
-}
 
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
 /* CONTENIDO SUPERIOR */
 .content {
   position: absolute;
