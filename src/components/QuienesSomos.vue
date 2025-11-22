@@ -76,7 +76,7 @@ onUnmounted(() => {
             <div class="info-item">
               <div class="info-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 1H5C3.89 1 3 1.89 3 3V19C3 20.11 3.89 21 5 21H11V19H5V3H13V9H21Z"/>
+                  <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM13 17L11 15.4V7H13V17Z"/>
                 </svg>
               </div>
               <div class="info-content">
@@ -88,7 +88,7 @@ onUnmounted(() => {
             <div class="info-item">
               <div class="info-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M16 4C18.2 4 20 5.8 20 8C20 10.2 18.2 12 16 12C13.8 12 12 10.2 12 8C12 5.8 13.8 4 16 4ZM16 6C14.9 6 14 6.9 14 8S14.9 10 16 10 18 9.1 18 8 17.1 6 16 6ZM8 4C10.2 4 12 5.8 12 8C12 10.2 10.2 12 8 12C5.8 12 4 10.2 4 8C4 5.8 5.8 4 8 4ZM8 6C6.9 6 6 6.9 6 8S6.9 10 8 10 10 9.1 10 8 9.1 6 8 6ZM16 13C18.7 13 22 14.3 22 17V20H10V17C10 14.3 13.3 13 16 13ZM8 13C10.7 13 14 14.3 14 17V20H2V17C2 14.3 5.3 13 8 13Z"/>
+                  <path d="M16 4C17.11 4 18 4.89 18 6C18 7.11 17.11 8 16 8C14.89 8 14 7.11 14 6C14 4.89 14.89 4 16 4ZM8 4C9.11 4 10 4.89 10 6C10 7.11 9.11 8 8 8C6.89 8 6 7.11 6 6C6 4.89 6.89 4 8 4ZM8 13C10.67 13 16 14.34 16 17V20H0V17C0 14.34 5.33 13 8 13ZM16 13C18.67 13 24 14.34 24 17V20H18V17C18 15.36 16.43 14.14 14.5 13.4C15.61 13.14 15.8 13 16 13Z"/>
                 </svg>
               </div>
               <div class="info-content">
@@ -100,7 +100,7 @@ onUnmounted(() => {
             <div class="info-item">
               <div class="info-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M9 12L11 14L15 10M21 12C21 16.97 16.97 21 12 21C7.03 21 3 16.97 3 12C3 7.03 7.03 3 12 3C16.97 3 21 7.03 21 12Z"/>
+                  <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z"/>
                 </svg>
               </div>
               <div class="info-content">
