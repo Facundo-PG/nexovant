@@ -1,17 +1,51 @@
 <script setup>
 import { ref } from 'vue';
+import { useRouter, useRoute } from 'vue-router';
 
 const logoImage = import.meta.env.BASE_URL + 'images/cover.png';
 const isMenuOpen = ref(false);
+const router = useRouter();
+const route = useRoute();
 
 const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value;
 };
 
-const emit = defineEmits(['change-section']);
-const closeMenuAndSelectSection = (section) => {
-  emit('change-section', section);
+const scrollToSection = (sectionId) => {
   isMenuOpen.value = false;
+  
+  // Si no estamos en /home, navegar primero
+  if (route.path !== '/home') {
+    router.push('/home').then(() => {
+      // Esperar un momento para que el DOM se actualice
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const navHeight = 70; // Altura del navbar
+          const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+          const offsetPosition = elementPosition - navHeight;
+          
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      }, 100);
+    });
+  } else {
+    // Ya estamos en /home, solo hacer scroll
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const navHeight = 70; // Altura del navbar
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - navHeight;
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  }
 };
 </script>
 
@@ -25,11 +59,11 @@ const closeMenuAndSelectSection = (section) => {
       </router-link>
 
       <ul class="desktop-nav-links">
-        <li><a href="#" @click.prevent="closeMenuAndSelectSection('empresa')">Nuestra Empresa</a></li>
+        <li><a href="#empresa" @click.prevent="scrollToSection('empresa')">Nuestra Empresa</a></li>
         <li><router-link to="/quienes-somos" @click="isMenuOpen = false">Quiénes Somos</router-link></li>
-        <li><a href="#" @click.prevent="closeMenuAndSelectSection('valores')">Valores</a></li>
-        <li><a href="#" @click.prevent="closeMenuAndSelectSection('servicios')">Servicios</a></li>
-        <li><a href="#" @click.prevent="closeMenuAndSelectSection('contacto')">Contacto</a></li>
+        <li><a href="#valores" @click.prevent="scrollToSection('valores')">Valores</a></li>
+        <li><a href="#servicios" @click.prevent="scrollToSection('servicios')">Servicios</a></li>
+        <li><a href="#contacto" @click.prevent="scrollToSection('contacto')">Contacto</a></li>
       </ul>
 
       <button 
@@ -45,11 +79,11 @@ const closeMenuAndSelectSection = (section) => {
     </div>
 
     <div class="mobile-nav-links-container" :class="{ 'is-open': isMenuOpen }">
-      <a href="#" @click.prevent="closeMenuAndSelectSection('empresa')">Nuestra Empresa</a>
+      <a href="#empresa" @click.prevent="scrollToSection('empresa')">Nuestra Empresa</a>
       <router-link to="/quienes-somos" @click="isMenuOpen = false">Quiénes Somos</router-link>
-      <a href="#" @click.prevent="closeMenuAndSelectSection('valores')">Valores</a>
-      <a href="#" @click.prevent="closeMenuAndSelectSection('servicios')">Servicios</a>
-      <a href="#" @click.prevent="closeMenuAndSelectSection('contacto')">Contacto</a>
+      <a href="#valores" @click.prevent="scrollToSection('valores')">Valores</a>
+      <a href="#servicios" @click.prevent="scrollToSection('servicios')">Servicios</a>
+      <a href="#contacto" @click.prevent="scrollToSection('contacto')">Contacto</a>
     </div>
   </nav>
 </template>
