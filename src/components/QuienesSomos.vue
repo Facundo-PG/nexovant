@@ -133,7 +133,6 @@ onUnmounted(() => {
                     class="trabajo-image"
                   />
                   <div class="image-overlay">
-                    <span class="image-counter">{{ index + 1 }} / {{ trabajoImages.length }}</span>
                   </div>
                 </div>
               </transition-group>
