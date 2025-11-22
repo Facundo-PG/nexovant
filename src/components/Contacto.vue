@@ -77,13 +77,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #4a47a3;
+  background-color: #6A1B9A;
 }
 .contact-wrapper {
   display: flex;
   max-width: 1000px;
   width: 100%;
-  background: #4a47a3;
+  background: #6A1B9A;
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 15px;
   box-shadow: 0 15px 40px rgba(0,0,0,0.1);
