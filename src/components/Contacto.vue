@@ -154,12 +154,7 @@ const sendEmail = async () => {
             </div>
           </form>
         </div>
-        <!-- ========= FIN DE LA MODIFICACIÓN ========= -->
 
-        <div class="contact-person">
-          <h4>ABRAHAM PATTI</h4>
-          <span>Gerente de servicios</span>
-        </div>
       </div>
 
       <!-- Columna Derecha: Botón de WhatsApp -->
