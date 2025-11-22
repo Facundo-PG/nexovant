@@ -128,7 +128,7 @@ onUnmounted(() => { clearInterval(intervalId); });
 .carousel-image-1,
 .carousel-image-2,
 .carousel-image-3 {
-  object-position: center center; /* Todas las imágenes centradas */
+  object-position: center top; /* Todas las imágenes: mostrar parte superior */
 }
 
 .fade-enter-active, .fade-leave-active { transition: opacity 0.8s ease; }
