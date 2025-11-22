@@ -126,9 +126,12 @@ onUnmounted(() => { clearInterval(intervalId); });
 
 /* Posicionamiento específico para cada imagen del carousel */
 .carousel-image-1,
-.carousel-image-2,
+.carousel-image-2 {
+  object-position: center top; /* Imágenes 1 y 2: mostrar parte superior */
+}
+
 .carousel-image-3 {
-  object-position: center center; /* Todas las imágenes centradas */
+  object-position: center center; /* Imagen 3: centrada */
 }
 
 .fade-enter-active, .fade-leave-active { transition: opacity 0.8s ease; }
