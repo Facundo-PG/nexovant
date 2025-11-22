@@ -1,5 +1,78 @@
 <script setup>
-// No hay cambios en el script
+import { ref } from 'vue';
+import emailjs from 'emailjs-com';
+
+// Estado del formulario
+const formData = ref({
+  name: '',
+  email: '',
+  phone: '',
+  message: ''
+});
+
+const isSubmitting = ref(false);
+const submitStatus = ref(''); // 'success', 'error', o ''
+
+// Función para enviar el formulario
+const sendEmail = async () => {
+  if (isSubmitting.value) return;
+  
+  // Validación básica
+  if (!formData.value.name || !formData.value.email || !formData.value.message) {
+    submitStatus.value = 'error';
+    setTimeout(() => submitStatus.value = '', 3000);
+    return;
+  }
+  
+  isSubmitting.value = true;
+  
+  try {
+    // Configuración de EmailJS
+    // IMPORTANTE: Sigue estos pasos para configurar EmailJS:
+    // 1. Ve a https://www.emailjs.com/ y crea una cuenta gratuita
+    // 2. En el dashboard, ve a "Email Services" y conecta tu cuenta de Gmail
+    // 3. Ve a "Email Templates" y crea un nuevo template con estas variables:
+    //    - {{from_name}} - Nombre del remitente
+    //    - {{from_email}} - Email del remitente
+    //    - {{phone}} - Teléfono (opcional)
+    //    - {{message}} - Mensaje
+    //    - {{to_email}} - Destinatario (ramirez.facundo1993@gmail.com)
+    // 4. Copia tu Service ID, Template ID y User ID (Public Key)
+    // 5. Reemplaza los valores a continuación:
+    
+    const serviceID = 'service_f2o5cxk'; // Ej: 'service_abc1234'
+    const templateID = 'template_87yyiah'; // Ej: 'template_xyz5678'
+    const userID = 'me9yHmC12iQjONrjG'; // Ej: 'user_ABC123XYZ' (también llamado Public Key)
+    
+    const templateParams = {
+      from_name: formData.value.name,
+      from_email: formData.value.email,
+      phone: formData.value.phone,
+      message: formData.value.message,
+      to_email: 'ramirez.facundo1993@gmail.com'
+    };
+    
+    await emailjs.send(serviceID, templateID, templateParams, userID);
+    
+    submitStatus.value = 'success';
+    
+    // Limpiar formulario
+    formData.value = {
+      name: '',
+      email: '',
+      phone: '',
+      message: ''
+    };
+    
+    setTimeout(() => submitStatus.value = '', 5000);
+  } catch (error) {
+    console.error('Error al enviar email:', error);
+    submitStatus.value = 'error';
+    setTimeout(() => submitStatus.value = '', 3000);
+  } finally {
+    isSubmitting.value = false;
+  }
+};
 </script>
 
 <template>
@@ -14,31 +87,72 @@
         
         <!-- ========= INICIO DE LA MODIFICACIÓN ========= -->
         <div class="contact-details">
-          <!-- Mantenemos el texto y el ícono visibles -->
-          <div class="contact-link-static">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z"/><path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z"/></svg>
-            <span>administracion@nexovant.net</span>
-          </div>
-          
-          <!-- Nuevos botones para webmail -->
-          <div class="webmail-buttons">
-            <a 
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=administracion@nexovant.net" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              class="webmail-btn gmail"
+          <!-- Formulario de contacto -->
+          <form @submit.prevent="sendEmail" class="contact-form">
+            <div class="form-group">
+              <label for="name">Nombre completo *</label>
+              <input 
+                type="text" 
+                id="name" 
+                v-model="formData.name" 
+                placeholder="Juan Pérez"
+                required
+              />
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input 
+                type="email" 
+                id="email" 
+                v-model="formData.email" 
+                placeholder="ejemplo@correo.com"
+                required
+              />
+            </div>
+            
+            <div class="form-group">
+              <label for="phone">Teléfono</label>
+              <input 
+                type="tel" 
+                id="phone" 
+                v-model="formData.phone" 
+                placeholder="+54 9 11 1234-5678"
+              />
+            </div>
+            
+            <div class="form-group">
+              <label for="message">Mensaje *</label>
+              <textarea 
+                id="message" 
+                v-model="formData.message" 
+                placeholder="Cuéntenos sobre su proyecto..."
+                rows="4"
+                required
+              ></textarea>
+            </div>
+            
+            <button 
+              type="submit" 
+              class="submit-btn"
+              :disabled="isSubmitting"
             >
-              Abrir en Gmail
-            </a>
-            <a 
-              href="https://outlook.live.com/owa/?path=/mail/action/compose&to=administracion@nexovant.net" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              class="webmail-btn outlook"
-            >
-              Abrir en Outlook
-            </a>
-          </div>
+              <svg v-if="!isSubmitting" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z"/>
+                <path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z"/>
+              </svg>
+              <span v-if="isSubmitting">Enviando...</span>
+              <span v-else>Enviar Mensaje</span>
+            </button>
+            
+            <!-- Mensajes de estado -->
+            <div v-if="submitStatus === 'success'" class="status-message success">
+              ✓ ¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.
+            </div>
+            <div v-if="submitStatus === 'error'" class="status-message error">
+              ✗ Error al enviar el mensaje. Por favor, intente nuevamente.
+            </div>
+          </form>
         </div>
         <!-- ========= FIN DE LA MODIFICACIÓN ========= -->
 
@@ -125,57 +239,137 @@
 .info-text { font-size: 1.1rem; color: #f0f0f0; opacity: 0.9; margin-bottom: 30px; }
 .contact-details { margin-bottom: 40px; }
 
-/* === INICIO DE ESTILOS NUEVOS === */
-.contact-link-static {
-  display: flex; 
-  align-items: center; 
-  gap: 15px;
-  color: #fff; 
-  font-size: 1.1rem;
-  opacity: 0.9;
-}
-.contact-link-static svg { 
-  width: 24px; height: 24px; 
-}
-.webmail-buttons {
+/* === INICIO DE ESTILOS DEL FORMULARIO === */
+.contact-form {
   display: flex;
-  gap: 10px;
-  margin-top: 15px;
+  flex-direction: column;
+  gap: 20px;
 }
-.webmail-btn {
-  padding: 8px 15px;
-  border-radius: 5px;
-  text-decoration: none;
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
   color: #fff;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 500;
-  transition: opacity 0.3s ease;
-}
-.webmail-btn:hover {
-  opacity: 0.85;
-}
-.webmail-btn.gmail {
-  background: linear-gradient(45deg, #D44638, #E57373);
-  box-shadow: 0 4px 15px rgba(212, 70, 56, 0.3);
 }
 
-.webmail-btn.gmail:hover {
-  background: linear-gradient(45deg, #C62828, #D44638);
-  box-shadow: 0 6px 20px rgba(212, 70, 56, 0.4);
-  transform: translateY(-2px);
+.form-group input,
+.form-group textarea {
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
 }
 
-.webmail-btn.outlook {
-  background: linear-gradient(45deg, #0072C6, #42A5F5);
-  box-shadow: 0 4px 15px rgba(0, 114, 198, 0.3);
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5);
 }
 
-.webmail-btn.outlook:hover {
-  background: linear-gradient(45deg, #0056A1, #0072C6);
-  box-shadow: 0 6px 20px rgba(0, 114, 198, 0.4);
-  transform: translateY(-2px);
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #bb86fc;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 0 3px rgba(187, 134, 252, 0.2);
 }
-/* === FIN DE ESTILOS NUEVOS === */
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+  font-family: inherit;
+}
+
+.submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 28px;
+  background: linear-gradient(45deg, #bb86fc, #8e24aa);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(187, 134, 252, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.submit-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.submit-btn:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(187, 134, 252, 0.6);
+  background: linear-gradient(45deg, #8e24aa, #bb86fc);
+}
+
+.submit-btn:hover::before {
+  left: 100%;
+}
+
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.submit-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.status-message {
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  text-align: center;
+  animation: slideIn 0.3s ease;
+}
+
+.status-message.success {
+  background: rgba(76, 175, 80, 0.2);
+  border: 1px solid rgba(76, 175, 80, 0.5);
+  color: #a5d6a7;
+}
+
+.status-message.error {
+  background: rgba(244, 67, 54, 0.2);
+  border: 1px solid rgba(244, 67, 54, 0.5);
+  color: #ef9a9a;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* === FIN DE ESTILOS DEL FORMULARIO === */
 
 .contact-person {
   padding: 20px;
@@ -372,22 +566,23 @@
   .contact-details {
     margin-bottom: 25px;
   }
-  .contact-link-static {
+  
+  /* Estilos responsive para el formulario */
+  .form-group label {
+    font-size: 0.85rem;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    padding: 10px 12px;
     font-size: 0.9rem;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
   }
-  .webmail-buttons {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 6px;
-    margin-top: 10px;
+  
+  .submit-btn {
+    font-size: 0.95rem;
+    padding: 12px 24px;
   }
-  .webmail-btn {
-    font-size: 0.75rem;
-    padding: 5px 10px;
-  }
+  
   .contact-person h4 {
     font-size: 1rem;
   }
