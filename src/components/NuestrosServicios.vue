@@ -105,8 +105,23 @@
   background-color: #2c2c54;
 }
 .text-center { text-align: center; }
-.section-subtitle { font-size: 1.5rem; font-weight: 300; color: #f0f0f0; }
-.section-title { font-size: 3.5rem; font-weight: 700; margin-bottom: 20px; color: #fff; }
+.section-subtitle { 
+  font-size: 1.5rem; 
+  font-weight: 300; 
+  color: #f0f0f0;
+  margin-bottom: 10px;
+}
+
+.section-title { 
+  font-size: 3.5rem; 
+  font-weight: 700; 
+  margin-bottom: 20px;
+  background: linear-gradient(45deg, #fff, #bb86fc, #e1bee7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 2px 10px rgba(255,255,255,0.1);
+}
 .section-description {
   max-width: 800px;
   margin: 0 auto 50px auto;
@@ -133,89 +148,223 @@
 .service-card {
   background-color: transparent;
   width: 100%;
-  height: 320px;
-  border-radius: 10px;
-  cursor: default;
+  height: 350px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
 }
 .card-inner {
   position: relative;
   width: 100%;
   height: 100%;
-  transition: transform 0.7s;
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transform-style: preserve-3d;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
 }
+
 .service-card:hover .card-inner {
   transform: rotateY(180deg);
+  box-shadow: 0 25px 50px rgba(138, 43, 226, 0.3);
 }
 .card-front, .card-back {
   position: absolute;
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  overflow: hidden;
 }
+
 .card-front {
-  background-color: #f0f0f0;
-  color: #333;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
+
+.card-front::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.service-card:hover .card-front::before {
+  left: 100%;
+}
+
 .card-back {
-  background-color: #8A2BE2;
+  background: linear-gradient(135deg, #8A2BE2, #6a1b9a, #bb86fc);
   color: white;
   transform: rotateY(180deg);
+  position: relative;
+}
+
+.card-back::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.service-card:hover .card-back::before {
+  opacity: 1;
 }
 
 /* CONTENIDO INTERNO DE LAS TARJETAS */
 .servicio-icon {
-  background-color: #8A2BE2;
-  width: 90px;
-  height: 90px;
+  background: linear-gradient(45deg, #bb86fc, #8A2BE2, #6a1b9a);
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all 0.4s ease;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(138, 43, 226, 0.3);
+  z-index: 2;
 }
+
+.service-card:hover .servicio-icon {
+  transform: scale(1.1) rotate(10deg);
+  box-shadow: 0 15px 40px rgba(138, 43, 226, 0.5);
+}
+
+.servicio-icon::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #fff, #bb86fc, #8A2BE2);
+  border-radius: 50%;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.service-card:hover .servicio-icon::before {
+  opacity: 1;
+}
+
 .servicio-icon svg {
-  width: 50px;
-  height: 50px;
+  width: 55px;
+  height: 55px;
+  color: #fff;
+  transition: all 0.3s ease;
+  z-index: 2;
+  position: relative;
+}
+
+.service-card:hover .servicio-icon svg {
+  transform: scale(1.1);
   color: #fff;
 }
 .card-front h3 {
-  color: #8A2BE2;
-  font-size: 1.4rem;
+  background: linear-gradient(45deg, #fff, #bb86fc, #e1bee7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 1.5rem;
+  font-weight: 600;
   text-align: center;
   min-height: 3.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 2;
+  position: relative;
 }
+
+.service-card:hover .card-front h3 {
+  background: linear-gradient(45deg, #bb86fc, #fff, #e1bee7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transform: translateY(-5px);
+}
+
 .card-back h3 {
-  font-size: 1.1rem;
+  font-size: 1.3rem;
+  font-weight: 600;
   text-transform: uppercase;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   text-align: center;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  z-index: 2;
+  position: relative;
 }
+
 .card-back p {
-  font-size: 1rem;
-  line-height: 1.6;
-  padding: 0 10px;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  padding: 0 15px;
   text-align: center;
+  font-style: italic;
+  text-shadow: 0 1px 5px rgba(0,0,0,0.2);
+  z-index: 2;
+  position: relative;
 }
 .stat-number {
-  font-size: 3rem;
-  font-weight: 700;
+  font-size: 3.5rem;
+  font-weight: 800;
   line-height: 1;
+  background: linear-gradient(45deg, #fff, #bb86fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 5px 15px rgba(255,255,255,0.2);
+  margin-bottom: 15px;
+  z-index: 2;
+  position: relative;
+  transition: all 0.3s ease;
 }
+
+.service-card:hover .stat-number {
+  transform: scale(1.1);
+  text-shadow: 0 8px 25px rgba(255,255,255,0.3);
+}
+
 .stat-label {
-  font-size: 1rem;
-  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
   text-align: center;
+  font-weight: 500;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  z-index: 2;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.service-card:hover .stat-label {
+  color: #fff;
+  transform: translateY(-3px);
 }
 
 /* ======================================= */
