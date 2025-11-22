@@ -3,7 +3,7 @@ import { ref, onMounted, onUnmounted } from 'vue';
 
 // Rutas dinámicas para las imágenes del carrusel
 const carouselImages = ref([
-  import.meta.env.BASE_URL + "images/carousel-1.jpeg",
+  import.meta.env.BASE_URL + "images/carousel-1.jpg",
   import.meta.env.BASE_URL + "images/carousel-2.jpg",
   import.meta.env.BASE_URL + "images/carousel-3.jpg",
 ]);
@@ -126,12 +126,9 @@ onUnmounted(() => { clearInterval(intervalId); });
 
 /* Posicionamiento específico para cada imagen del carousel */
 .carousel-image-1,
-.carousel-image-2 {
-  object-position: center top; /* Imágenes 1 y 2: mostrar parte superior */
-}
-
+.carousel-image-2,
 .carousel-image-3 {
-  object-position: center center; /* Imagen 3: centrada */
+  object-position: center center; /* Todas las imágenes centradas */
 }
 
 .fade-enter-active, .fade-leave-active { transition: opacity 0.8s ease; }
