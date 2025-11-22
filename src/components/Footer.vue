@@ -31,19 +31,19 @@
       <div class="footer-section">
         <h4>Servicios</h4>
         <ul class="footer-links">
-          <li><a href="#servicios" @click="scrollToSection('servicios')">Obra Civil</a></li>
-          <li><a href="#servicios" @click="scrollToSection('servicios')">Fibra Óptica</a></li>
-          <li><a href="#servicios" @click="scrollToSection('servicios')">Instalaciones</a></li>
-          <li><a href="#servicios" @click="scrollToSection('servicios')">Gestión y Soporte</a></li>
+          <li><a href="#servicios" @click.prevent="scrollToSection('servicios')">Obra Civil</a></li>
+          <li><a href="#servicios" @click.prevent="scrollToSection('servicios')">Fibra Óptica</a></li>
+          <li><a href="#servicios" @click.prevent="scrollToSection('servicios')">Instalaciones</a></li>
+          <li><a href="#servicios" @click.prevent="scrollToSection('servicios')">Gestión y Soporte</a></li>
         </ul>
       </div>
 
       <div class="footer-section">
         <h4>Empresa</h4>
         <ul class="footer-links">
-          <li><a href="#empresa" @click="scrollToSection('empresa')">Nuestra Historia</a></li>
-          <li><a href="#valores" @click="scrollToSection('valores')">Valores</a></li>
-          <li><a href="#empresa" @click="scrollToSection('empresa')">Misión y Visión</a></li>
+          <li><a href="#empresa" @click.prevent="scrollToSection('empresa')">Nuestra Historia</a></li>
+          <li><a href="#valores" @click.prevent="scrollToSection('valores')">Valores</a></li>
+          <li><a href="#empresa" @click.prevent="scrollToSection('empresa')">Misión y Visión</a></li>
           <li><router-link to="/quienes-somos">Quiénes Somos</router-link></li>
         </ul>
       </div>
