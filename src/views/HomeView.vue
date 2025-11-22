@@ -1,5 +1,6 @@
 <script setup>
-import { ref } from 'vue'; // 1. Importamos 'ref' para crear estado reactivo
+import { ref, onMounted } from 'vue';
+import { useRoute } from 'vue-router';
 
 // Importamos todos los componentes que podríamos mostrar
 import Navbar from '../components/Navbar.vue';
@@ -8,6 +9,8 @@ import NuestrosServicios from '../components/NuestrosServicios.vue';
 import NuestraEmpresa from '../components/NuestraEmpresa.vue';
 import NuestrosValores from '../components/NuestrosValores.vue';
 
+const route = useRoute();
+
 // 2. Creamos una variable de estado. 'empresa' será el valor por defecto.
 const activeSection = ref('empresa');
 
@@ -15,6 +18,13 @@ const activeSection = ref('empresa');
 const setActiveSection = (section) => {
   activeSection.value = section;
 };
+
+// Verificar si hay una sección en los query parameters al montar
+onMounted(() => {
+  if (route.query.section) {
+    activeSection.value = route.query.section;
+  }
+});
 </script>
 
 <template>
