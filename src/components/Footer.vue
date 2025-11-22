@@ -31,20 +31,20 @@
       <div class="footer-section">
         <h4>Servicios</h4>
         <ul class="footer-links">
-          <li>Obra Civil</li>
-          <li>Fibra Óptica</li>
-          <li>Instalaciones</li>
-          <li>Gestión y Soporte</li>
+          <li><a href="#servicios" @click="scrollToSection('servicios')">Obra Civil</a></li>
+          <li><a href="#servicios" @click="scrollToSection('servicios')">Fibra Óptica</a></li>
+          <li><a href="#servicios" @click="scrollToSection('servicios')">Instalaciones</a></li>
+          <li><a href="#servicios" @click="scrollToSection('servicios')">Gestión y Soporte</a></li>
         </ul>
       </div>
 
       <div class="footer-section">
         <h4>Empresa</h4>
         <ul class="footer-links">
-          <li>Nuestra Historia</li>
-          <li>Valores</li>
-          <li>Misión y Visión</li>
-          <li>Quiénes Somos</li>
+          <li><a href="#empresa" @click="scrollToSection('empresa')">Nuestra Historia</a></li>
+          <li><a href="#valores" @click="scrollToSection('valores')">Valores</a></li>
+          <li><a href="#empresa" @click="scrollToSection('empresa')">Misión y Visión</a></li>
+          <li><router-link to="/quienes-somos">Quiénes Somos</router-link></li>
         </ul>
       </div>
     </div>
@@ -59,6 +59,20 @@
 import { computed } from 'vue';
 
 const currentYear = computed(() => new Date().getFullYear());
+
+const scrollToSection = (sectionId) => {
+  const element = document.getElementById(sectionId);
+  if (element) {
+    const navHeight = 70; // Altura del navbar
+    const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+    const offsetPosition = elementPosition - navHeight;
+    
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth'
+    });
+  }
+};
 </script>
 
 <style scoped>
@@ -118,10 +132,21 @@ const currentYear = computed(() => new Date().getFullYear());
   gap: 10px;
 }
 
-.footer-links li:hover {
+.footer-links a {
+  color: inherit;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.footer-links li:hover,
+.footer-links a:hover {
   opacity: 1;
   color: #bb86fc;
   transform: translateX(5px);
+  cursor: pointer;
 }
 
 .footer-links svg {
