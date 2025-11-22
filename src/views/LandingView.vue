@@ -49,7 +49,6 @@ onUnmounted(() => {
 <!-- Eliminamos el CSS global que bloqueaba el scroll en toda la app -->
 <style scoped>
 
-/* CONTENEDOR PRINCIPAL */
 .landing-container {
   position: relative;
   height: 100dvh;
@@ -58,7 +57,7 @@ onUnmounted(() => {
   overflow: hidden;
 }
 
-/* BACKGROUND COMO DIV CON ANIMACIÓN */
+/* BACKGROUND COMO DIV */
 .background-image {
   position: absolute;
   top: 0;
@@ -66,15 +65,12 @@ onUnmounted(() => {
   width: 100%;
   height: 100dvh;
   background-image: var(--cover-image);
-  background-position: 48% center;
+  /* --- AJUSTE AQUÍ --- */
+  background-position: 48% center; /* Juega con el valor 60% para un ajuste fino */
   background-repeat: no-repeat;
   background-size: cover;
   background-color: #0b2545;
   z-index: -1;
-  
-  /* Animación suave de opacity */
-  transition: opacity 1s ease-in-out;
-  opacity: 0; /* Iniciar invisible, se controla desde Vue */
 }
 
 /* Asegúrate de que el body y html no tengan márgenes */
@@ -84,7 +80,6 @@ onUnmounted(() => {
   width: 100%;
   height: 100%;
 }
-
 /* Splash screen con efectos de fade-in y fade-out automáticos */
 /* Timeline:
    0s - 0.1s: Imagen invisible
@@ -95,3 +90,4 @@ onUnmounted(() => {
 */
 
 </style>
+
