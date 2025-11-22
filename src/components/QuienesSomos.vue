@@ -300,13 +300,13 @@ onUnmounted(() => {
 
 .gallery-header h3 {
   font-size: 2rem;
-  color: #2c3e50;
+  color: #fff;
   margin-bottom: 10px;
   font-weight: 600;
 }
 
 .gallery-header p {
-  color: #666;
+  color: #fff;
   font-size: 1rem;
 }
 
