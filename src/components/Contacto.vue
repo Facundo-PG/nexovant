@@ -77,25 +77,51 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #6A1B9A;
+  background: linear-gradient(135deg, #1a1a2e 0%, #2c2c54 50%, #3a3a6b 100%);
 }
 .contact-wrapper {
   display: flex;
   max-width: 1000px;
   width: 100%;
-  background: #6A1B9A;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 15px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+  border-radius: 20px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.3), 0 0 0 1px rgba(255,255,255,0.1);
   overflow: hidden;
+  transition: all 0.3s ease;
 }
+.contact-wrapper:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 35px 80px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.2);
+}
+
 .info-side {
   color: #fff;
   padding: 40px;
   width: 50%;
   border-right: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
 }
-.info-title { font-size: 2.5rem; line-height: 1.2; margin-bottom: 20px; color: #fff; }
+.info-title { 
+  font-size: 2.5rem; 
+  line-height: 1.2; 
+  margin-bottom: 20px; 
+  background: linear-gradient(45deg, #fff, #e1bee7, #bb86fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 2px 10px rgba(255,255,255,0.1);
+  transition: all 0.3s ease;
+}
+
+.info-title:hover {
+  background: linear-gradient(45deg, #bb86fc, #e1bee7, #fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transform: translateY(-2px);
+}
 .info-text { font-size: 1.1rem; color: #f0f0f0; opacity: 0.9; margin-bottom: 30px; }
 .contact-details { margin-bottom: 40px; }
 
@@ -129,27 +155,94 @@
   opacity: 0.85;
 }
 .webmail-btn.gmail {
-  background-color: #D44638; /* Color de Gmail */
+  background: linear-gradient(45deg, #D44638, #E57373);
+  box-shadow: 0 4px 15px rgba(212, 70, 56, 0.3);
 }
+
+.webmail-btn.gmail:hover {
+  background: linear-gradient(45deg, #C62828, #D44638);
+  box-shadow: 0 6px 20px rgba(212, 70, 56, 0.4);
+  transform: translateY(-2px);
+}
+
 .webmail-btn.outlook {
-  background-color: #0072C6; /* Color de Outlook */
+  background: linear-gradient(45deg, #0072C6, #42A5F5);
+  box-shadow: 0 4px 15px rgba(0, 114, 198, 0.3);
+}
+
+.webmail-btn.outlook:hover {
+  background: linear-gradient(45deg, #0056A1, #0072C6);
+  box-shadow: 0 6px 20px rgba(0, 114, 198, 0.4);
+  transform: translateY(-2px);
 }
 /* === FIN DE ESTILOS NUEVOS === */
 
-.contact-person h4 { margin: 0; }
-.contact-person span { opacity: 0.8; }
+.contact-person {
+  padding: 20px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 20px;
+  transition: all 0.3s ease;
+}
+
+.contact-person:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(138, 43, 226, 0.3);
+  transform: translateY(-2px);
+}
+
+.contact-person h4 { 
+  margin: 0; 
+  color: #bb86fc;
+  font-weight: 600;
+}
+
+.contact-person span { 
+  opacity: 0.9;
+  color: #e1bee7;
+}
 .action-side {
   padding: 40px;
   width: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+}
+
+.action-side::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, rgba(138, 43, 226, 0.1) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.contact-wrapper:hover .action-side::before {
+  opacity: 1;
 }
 .whatsapp-box { text-align: center; }
 .whatsapp-box h3 {
   font-size: 1.8rem;
   margin-bottom: 15px;
-  color: #fff;
+  background: linear-gradient(45deg, #fff, #bb86fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: all 0.3s ease;
+}
+
+.whatsapp-box:hover h3 {
+  background: linear-gradient(45deg, #bb86fc, #fff, #e1bee7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transform: translateY(-2px);
 }
 .whatsapp-box p {
   font-size: 1.1rem;
@@ -158,18 +251,37 @@
 }
 .whatsapp-btn {
   display: inline-flex; align-items: center; gap: 15px;
-  padding: 15px 30px;
-  background-color: #25D366;
+  padding: 18px 35px;
+  background: linear-gradient(45deg, #25D366, #40E67B);
   color: #fff;
   border-radius: 50px;
   font-size: 1.2rem; font-weight: bold;
   text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+  transition: all 0.4s ease;
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4), 0 0 0 1px rgba(255,255,255,0.1);
+  position: relative;
+  overflow: hidden;
 }
+
+.whatsapp-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s ease;
+}
+
 .whatsapp-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 15px 40px rgba(37, 211, 102, 0.6), 0 0 0 1px rgba(255,255,255,0.2);
+  background: linear-gradient(45deg, #1FAD4F, #25D366);
+}
+
+.whatsapp-btn:hover::before {
+  left: 100%;
 }
 .whatsapp-btn svg { width: 28px; height: 28px; }
 /* Responsive Design */
