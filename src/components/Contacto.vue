@@ -77,7 +77,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #2c2c54;
+  background-color: #4a47a3;
 }
 .contact-wrapper {
   display: flex;
