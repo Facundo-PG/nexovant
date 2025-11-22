@@ -10,29 +10,56 @@ const imageOpacity = ref(0); // Iniciar con opacidad 0
 // Control dinámico del scroll y efectos de animación
 onMounted(() => {
   // Ocultar scroll solo cuando este componente está activo
-  document.documentElement.style.overflow = 'hidden';
-  document.body.style.overflow = 'hidden';
+  try {
+    document.documentElement.style.overflow = 'hidden';
+    document.body.style.overflow = 'hidden';
+    
+    // Prevenir comportamientos de navegador móvil
+    document.addEventListener('touchmove', (e) => e.preventDefault(), { passive: false });
+  } catch (error) {
+    console.warn('Error setting overflow:', error);
+  }
   
-  // Fade-in: Encender la imagen gradualmente (0 a 1 en 1 segundo)
-  setTimeout(() => {
-    imageOpacity.value = 1;
-  }, 100); // Pequeño delay para que se vea el efecto
-  
-  // Fade-out: Apagar la imagen gradualmente después de 2.5 segundos
-  setTimeout(() => {
-    imageOpacity.value = 0;
-  }, 2500);
-  
-  // Redireccionar después de que termine el fade-out (3.5 segundos total)
-  setTimeout(() => {
-    router.push('/home');
-  }, 3500);
+  // Usar requestAnimationFrame para mejor compatibilidad móvil
+  requestAnimationFrame(() => {
+    // Fade-in: Encender la imagen gradualmente (0 a 1 en 1 segundo)
+    setTimeout(() => {
+      if (imageOpacity.value !== null) {
+        imageOpacity.value = 1;
+      }
+    }, 100);
+    
+    // Fade-out: Apagar la imagen gradualmente después de 2.5 segundos
+    setTimeout(() => {
+      if (imageOpacity.value !== null) {
+        imageOpacity.value = 0;
+      }
+    }, 2500);
+    
+    // Redireccionar después de que termine el fade-out (3.5 segundos total)
+    setTimeout(() => {
+      try {
+        router.push('/home');
+      } catch (error) {
+        console.warn('Error navigating:', error);
+        // Fallback: intentar navegar de nuevo
+        window.location.href = '/home';
+      }
+    }, 3500);
+  });
 });
 
 onUnmounted(() => {
   // Restaurar scroll cuando se sale de este componente
-  document.documentElement.style.overflow = '';
-  document.body.style.overflow = '';
+  try {
+    document.documentElement.style.overflow = '';
+    document.body.style.overflow = '';
+    
+    // Remover event listeners
+    document.removeEventListener('touchmove', (e) => e.preventDefault());
+  } catch (error) {
+    console.warn('Error restoring overflow:', error);
+  }
 });
 </script>
 
@@ -52,10 +79,13 @@ onUnmounted(() => {
 /* CONTENEDOR PRINCIPAL */
 .landing-container {
   position: relative;
+  height: 100vh; /* Fallback para navegadores que no soportan dvh */
   height: 100dvh;
   width: 100vw;
   margin: 0;
   overflow: hidden;
+  -webkit-overflow-scrolling: touch; /* Para iOS */
+  touch-action: none; /* Prevenir gestos táctiles */
 }
 
 /* BACKGROUND COMO DIV CON ANIMACIÓN */
@@ -64,6 +94,7 @@ onUnmounted(() => {
   top: 0;
   left: 0;
   width: 100%;
+  height: 100vh; /* Fallback */
   height: 100dvh;
   background-image: var(--cover-image);
   background-position: 48% center;
@@ -71,8 +102,11 @@ onUnmounted(() => {
   background-size: cover;
   background-color: #0b2545;
   z-index: -1;
+  -webkit-backface-visibility: hidden; /* Para iOS */
+  backface-visibility: hidden;
   
-  /* Animación suave de opacity */
+  /* Animación suave de opacity con prefijos */
+  -webkit-transition: opacity 1s ease-in-out;
   transition: opacity 1s ease-in-out;
   opacity: 0; /* Iniciar invisible, se controla desde Vue */
 }
@@ -86,13 +120,12 @@ onUnmounted(() => {
 }
 
 /* Splash screen con efectos de fade-in y fade-out automáticos */
-/* Timeline:
+/*Timeline:
    0s - 0.1s: Imagen invisible
    0.1s - 1.1s: Fade-in (encendido gradual)
    1.1s - 2.5s: Imagen visible completa
    2.5s - 3.5s: Fade-out (apagado gradual)
    3.5s: Redirección a Nuestra Empresa
 */
-
 </style>
 
