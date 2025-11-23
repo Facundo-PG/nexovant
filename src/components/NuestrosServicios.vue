@@ -338,7 +338,6 @@
   font-weight: 800;
   line-height: 1;
   color: #fff;
-  text-shadow: 0 5px 15px rgba(0,0,0,0.3);
   margin-bottom: 15px;
   z-index: 2;
   position: relative;
@@ -351,7 +350,6 @@
 
 .service-card:hover .stat-number {
   transform: scale(1.1);
-  text-shadow: 0 8px 25px rgba(255,255,255,0.3);
 }
 
 .stat-label {
