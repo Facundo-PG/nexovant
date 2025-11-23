@@ -337,11 +337,8 @@
   font-size: 3rem;
   font-weight: 800;
   line-height: 1;
-  background: linear-gradient(45deg, #fff, #bb86fc);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-shadow: 0 5px 15px rgba(255,255,255,0.2);
+  color: #fff;
+  text-shadow: 0 5px 15px rgba(0,0,0,0.3);
   margin-bottom: 15px;
   z-index: 2;
   position: relative;
