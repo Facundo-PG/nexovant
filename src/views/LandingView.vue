@@ -3,7 +3,7 @@ import { onMounted, onUnmounted, ref } from 'vue';
 import { useRouter } from 'vue-router';
 
 // Imagen desde public usando BASE_URL dinámico
-const coverImage = import.meta.env.BASE_URL + 'images/cover.png';
+const coverImage = import.meta.env.BASE_URL + 'images/cover.jpg';
 const router = useRouter();
 const imageOpacity = ref(0); // Iniciar con opacidad 0
 
