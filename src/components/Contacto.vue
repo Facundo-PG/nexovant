@@ -49,7 +49,7 @@ const sendEmail = async () => {
       from_email: formData.value.email,
       phone: formData.value.phone,
       message: formData.value.message,
-      to_email: 'ramirez.facundo1993@gmail.com'
+      to_email: 'ezequiel.a@pgtech.ar'
     };
     
     await emailjs.send(serviceID, templateID, templateParams, userID);
