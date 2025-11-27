@@ -7,7 +7,7 @@
     <h2 class="section-subtitle text-center">NUESTROS</h2>
     <h1 class="section-title text-center">SERVICIOS</h1>
     <p class="text-center section-description">
-      Nexovant Ingeniería y Tecnología srl. ofrece una cartera de servicios de manera integral y completa, desde la infraestructura física hasta la puesta en marcha y soporte.
+      Nexovant Ingeniería y Tecnología SRL. ofrece una cartera de servicios de manera integral y completa, desde la infraestructura física hasta la puesta en marcha y soporte.
     </p>
     <div class="servicios-grid">
       
