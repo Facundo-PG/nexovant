@@ -3,6 +3,18 @@ import { ref } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
 
 const logoImage = import.meta.env.BASE_URL + 'images/logo.png';
+import { onMounted, ref } from 'vue';
+
+const logoOpacity = ref(0);
+
+onMounted(() => {
+  // Fade-in: 0 a 1 en 1s
+  setTimeout(() => { logoOpacity.value = 1; }, 100);
+  // Fade-out: 1 a 0 después de 2.5s
+  setTimeout(() => { logoOpacity.value = 0; }, 2600);
+  // Restaurar opacidad tras 4s (opcional, para que vuelva a aparecer si navega)
+  setTimeout(() => { logoOpacity.value = 1; }, 4000);
+});
 const isMenuOpen = ref(false);
 const router = useRouter();
 const route = useRoute();
@@ -54,7 +66,7 @@ const scrollToSection = (sectionId) => {
     <div class="nav-content">
       <router-link to="/" class="logo-link">
         <!-- Imagen desde /public/images (funciona en GitHub Pages) -->
-        <img :src="logoImage" alt="Logo Nexovant" class="logo-image" />
+        <img :src="logoImage" alt="Logo Nexovant" class="logo-image" :style="{ opacity: logoOpacity, transition: 'opacity 1s ease-in-out' }" />
         <span>Nexovant I&T srl</span>
       </router-link>
 
@@ -107,6 +119,8 @@ const scrollToSection = (sectionId) => {
 .logo-image {
   height: 40px; width: 40px; border-radius: 50%;
   object-fit: cover; border: 2px solid #fff;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
 }
 .desktop-nav-links {
   list-style: none; display: flex;
