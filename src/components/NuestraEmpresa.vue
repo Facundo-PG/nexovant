@@ -21,11 +21,13 @@ const clientImages = [
   import.meta.env.BASE_URL + 'images/PLETTAC.png',
   import.meta.env.BASE_URL + 'images/xgear.jpeg',
   import.meta.env.BASE_URL + 'images/TPP.png',
+  import.meta.env.BASE_URL + 'images/mcsa.jpeg',
 ];
 const clientAltTexts = [
   'Cliente PLETTAC',
   'Cliente XGEAR',
   'Cliente TPP',
+  'Cliente MCSA',
 ];
 </script>
 
