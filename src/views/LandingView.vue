@@ -145,6 +145,8 @@ onUnmounted(() => {
   padding: 0;
   width: 100%;
   height: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 /* Splash screen con efectos de fade-in y fade-out automáticos */
