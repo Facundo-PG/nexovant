@@ -67,7 +67,7 @@
             </svg>
           </div>
           <h3>Profesionalismo</h3>
-          <p>Contamos con un equipo altamente calificado y tecnología adecuada que asegura una ejecución eficiente, segura y de calidad en todos nuestros proyectos.</p>
+          <p>Contamos con equipos de ingenieros matriculados y profesionales especializados, y con la infraestructura tecnológica necesaria para garantizar la correcta ejecución de los proyectos, cumpliendo con las normativas legales, técnicas y de seguridad exigidas por los organismos competentes.</p>
         </div>
 
         <!-- Fila 3 -->

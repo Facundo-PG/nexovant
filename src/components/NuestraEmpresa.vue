@@ -49,7 +49,7 @@ onUnmounted(() => { clearInterval(intervalId); });
         <h2 class="section-subtitle">NUESTRA</h2>
         <h1 class="section-title">EMPRESA</h1>
         <p class="intro-text">
-          Nexovant Ingeniería y Tecnología SRL se posiciona como un referente de solidez y confiabilidad en el sector de las telecomunicaciones. Aunque es una empresa joven, está respaldada por más de <strong>20 años</strong> de presencia activa en el rubro, aportando un profundo conocimiento técnico y una visión actualizada de las necesidades del mercado. Esta combinación de experiencia acumulada e innovación constante nos permite ofrecer soluciones eficientes, integrales y adaptadas a los desafíos de hoy.
+          Nexovant Ingeniería y Tecnología srl se posiciona como un referente de solidez y confiabilidad en el sector de las telecomunicaciones. Aunque es una empresa joven, está respaldada por más de <strong>20 años</strong> de presencia activa en el rubro, aportando un profundo conocimiento técnico y una visión actualizada de las necesidades del mercado. Esta combinación de experiencia acumulada e innovación constante nos permite ofrecer soluciones eficientes, integrales y adaptadas a los desafíos de hoy.
         </p>
         
         <div class="empresa-highlights">
@@ -57,7 +57,7 @@ onUnmounted(() => { clearInterval(intervalId); });
           <ul class="highlights-list">
             <li><strong>Tradición Familiar:</strong> Fundada bajo la alianza entre padre e hijos, combinando sabiduría acumulada con visión innovadora.</li>
             <li><strong>Enfoque Humano:</strong> Trato cercano, personalizado y empático en cada proyecto.</li>
-            <li><strong>Experiencia Comprobada:</strong> Más de dos décadas perfeccionando soluciones de telecomunicaciones.</li>
+            <li><strong>Experiencia Comprobada:</strong> Más de dos décadas perfeccionando soluciones en las telecomunicaciones.</li>
           </ul>
         </div>
 

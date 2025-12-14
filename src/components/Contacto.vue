@@ -117,7 +117,7 @@ const sendEmail = async () => {
                 type="tel" 
                 id="phone" 
                 v-model="formData.phone" 
-                placeholder="+54 9 11 1234-5678"
+                placeholder="+54 9 11 39164596"
               />
             </div>
             
@@ -163,7 +163,7 @@ const sendEmail = async () => {
           <h3>¿Tenés una consulta?</h3>
           <p>¡Envíanos un mensaje y te responderemos a la brevedad!</p>
           <a 
-            href="https://wa.me/5491128556046" 
+            href="https://wa.me/5491139164596" 
             class="whatsapp-btn"
             target="_blank" 
             rel="noopener noreferrer"

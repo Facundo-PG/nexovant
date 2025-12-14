@@ -2,8 +2,8 @@
 import { onMounted, onUnmounted, ref } from 'vue';
 import { useRouter } from 'vue-router';
 
-// Imagen desde public usando BASE_URL dinámico
-const coverImage = import.meta.env.BASE_URL + 'images/cover.jpg';
+// Video desde public usando BASE_URL dinámico
+const coverVideo = import.meta.env.BASE_URL + 'images/logo.mp4';
 const router = useRouter();
 const imageOpacity = ref(0); // Iniciar con opacidad 0
 
@@ -25,39 +25,35 @@ onMounted(() => {
   
   // Usar requestAnimationFrame para mejor compatibilidad móvil
   requestAnimationFrame(() => {
-    // Fade-in: Encender la imagen gradualmente (0 a 1 en 1 segundo)
+    // Fade-in: Encender el video gradualmente (0 a 1 en 1 segundo)
     setTimeout(() => {
       if (imageOpacity.value !== null) {
         imageOpacity.value = 1;
       }
     }, 100);
-    
-    // Fade-out: Apagar la imagen gradualmente después de 2.5 segundos
+
+    // Fade-out: Apagar el video gradualmente después de 4.5 segundos
     setTimeout(() => {
       if (imageOpacity.value !== null) {
         imageOpacity.value = 0;
       }
-    }, 2500);
-    
+    }, 4600);
+
     // Redireccionar y restaurar scroll antes de navegar
     setTimeout(() => {
       try {
-        // Restaurar scroll ANTES de navegar
         document.documentElement.style.overflow = '';
         document.body.style.overflow = '';
         document.removeEventListener('touchmove', preventTouchMove, { passive: false });
-        
         router.push('/home');
       } catch (error) {
         console.warn('Error navigating:', error);
-        // Restaurar scroll en caso de error también
         document.documentElement.style.overflow = '';
         document.body.style.overflow = '';
         document.removeEventListener('touchmove', preventTouchMove, { passive: false });
-        // Fallback: intentar navegar de nuevo
         window.location.href = '/home';
       }
-    }, 3500);
+    }, 6000);
   });
 });
 
@@ -76,11 +72,19 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="landing-container" :style="{ '--cover-image': `url(${coverImage})` }">
-    <div 
-      class="background-image" 
+  <div class="landing-container">
+    <video
+      class="background-video"
+      :src="coverVideo"
       :style="{ opacity: imageOpacity }"
-    ></div>
+      autoplay
+      muted
+      playsinline
+      preload="auto"
+      width="100%"
+      height="100%"
+      style="object-fit:cover;position:absolute;top:0;left:0;width:100vw;height:100vh;z-index:-1;"
+    ></video>
     <!-- Splash screen con efectos de fade-in y fade-out -->
   </div>
 </template>
@@ -100,24 +104,18 @@ onUnmounted(() => {
   touch-action: none; /* Prevenir gestos táctiles */
 }
 
-/* BACKGROUND COMO DIV CON ANIMACIÓN */
-.background-image {
+
+/* BACKGROUND VIDEO CON ANIMACIÓN */
+.background-video {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100vh; /* Fallback */
-  height: 100dvh;
-  background-image: var(--cover-image);
-  background-position: 48% center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-color: #0b2545;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
   z-index: -1;
-  -webkit-backface-visibility: hidden; /* Para iOS */
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  
-  /* Animación suave de opacity con prefijos */
   -webkit-transition: opacity 1s ease-in-out;
   transition: opacity 1s ease-in-out;
   opacity: 0; /* Iniciar invisible, se controla desde Vue */

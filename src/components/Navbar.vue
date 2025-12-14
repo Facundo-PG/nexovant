@@ -55,7 +55,7 @@ const scrollToSection = (sectionId) => {
       <router-link to="/" class="logo-link">
         <!-- Imagen desde /public/images (funciona en GitHub Pages) -->
         <img :src="logoImage" alt="Logo Nexovant" class="logo-image" />
-        <span>Nexovant</span>
+        <span>Nexovant I&T srl</span>
       </router-link>
 
       <ul class="desktop-nav-links">
