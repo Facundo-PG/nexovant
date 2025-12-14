@@ -10,7 +10,49 @@
       Nexovant Ingeniería y Tecnología srl. ofrece una cartera de servicios de manera integral y completa, desde la infraestructura física hasta la puesta en marcha y soporte.
     </p>
     <div class="servicios-grid">
-      
+      <!-- CARD DESCRIPTIVA GENERAL DE SERVICIOS -->
+      <div class="service-card service-card-descriptiva">
+        <div class="card-inner">
+          <div class="card-front card-front-descriptiva">
+            <div class="servicio-icon servicio-icon-descriptiva">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 48 48" stroke-width="1.5" stroke="currentColor" width="48" height="48"><circle cx="24" cy="24" r="22" stroke="#8A2BE2" stroke-width="3" fill="#f8fafc"/><path stroke="#8A2BE2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M16 24h16M24 16v16"/></svg>
+            </div>
+            <h3>Soluciones Integrales</h3>
+            <ul class="servicios-lista">
+              <li>Realizamos tendidos de redes aéreas y subterráneas, incluyendo obra civil asociada, canalizaciones, cámaras, cruces especiales y adecuaciones de infraestructura, garantizando soluciones eficientes y duraderas.</li>
+              <li>Desarrollamos e implementamos redes de fibra óptica, con especialización en:
+                <ul>
+                  <li>Instalaciones FTTH (Fiber To The Home)</li>
+                  <li>Armado y configuración de nodos de telecomunicaciones</li>
+                  <li>Montaje de equipos activos y pasivos</li>
+                  <li>Fusión, medición y certificación de enlaces</li>
+                </ul>
+              </li>
+              <li><b>🔹 Seguridad y Sistemas Especiales</b><br>
+                Ofrecemos soluciones de seguridad electrónica, que incluyen:
+                <ul>
+                  <li>Instalación y configuración de cámaras de seguridad (CCTV)</li>
+                  <li>Integración de sistemas de monitoreo</li>
+                  <li>Infraestructura de soporte y cableado asociado</li>
+                </ul>
+              </li>
+              <li><b>🔹 Cableado y Redes</b><br>
+                Diseñamos e implementamos cableado estructurado para entornos corporativos, industriales y comerciales, cumpliendo con estándares técnicos y normativas internacionales, asegurando rendimiento, escalabilidad y confiabilidad.
+              </li>
+              <li><b>🔹 Ingeniería y Documentación Técnica</b><br>
+                Brindamos servicios de ingeniería aplicada, que incluyen:
+                <ul>
+                  <li>Relevamientos técnicos en campo</li>
+                  <li>Diseño de soluciones a medida</li>
+                  <li>Armado de planos y documentación técnica realizados por profesionales matriculados</li>
+                  <li>Soporte técnico y asesoramiento especializado</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
       <!-- INICIO DE TARJETA 1: OBRA CIVIL -->
       <!-- MODIFICADO: Se cambió <a> por <div> para que no sea un enlace -->
       <div class="service-card">
@@ -531,6 +573,56 @@
   }
   .stat-label {
     font-size: 0.7rem;
+  }
+}
+
+/* CARD DESCRIPTIVA - ESTILOS ESPECÍFICOS */
+.service-card-descriptiva {
+  flex: 1 1 100%;
+  max-width: 100%;
+  min-width: 320px;
+  background: linear-gradient(120deg, #f8fafc 60%, #e0e7ff 100%);
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 32px rgba(44,44,84,0.10);
+  margin-bottom: 2.5rem;
+  padding: 1.5rem 2.2rem 1.5rem 2.2rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.card-front-descriptiva {
+  background: none;
+  box-shadow: none;
+  padding: 0;
+  align-items: flex-start;
+}
+.servicio-icon-descriptiva {
+  margin-bottom: 1.2rem;
+}
+.servicios-lista {
+  text-align: left;
+  margin: 0;
+  padding-left: 1.2rem;
+  font-size: 1.08rem;
+  color: #333;
+  line-height: 1.7;
+}
+.servicios-lista > li {
+  margin-bottom: 0.7rem;
+}
+.servicios-lista ul {
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
+  padding-left: 1.2rem;
+  font-size: 1rem;
+}
+@media (max-width: 700px) {
+  .service-card-descriptiva {
+    padding: 1.1rem 0.5rem 1.1rem 0.5rem;
+    border-radius: 1rem;
+  }
+  .servicios-lista {
+    font-size: 0.98rem;
   }
 }
 </style>
