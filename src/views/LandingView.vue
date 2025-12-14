@@ -2,8 +2,8 @@
 import { onMounted, onUnmounted, ref } from 'vue';
 import { useRouter } from 'vue-router';
 
-// Imagen portada desde public usando BASE_URL dinámico
-const coverImage = import.meta.env.BASE_URL + 'images/logo.png';
+// Video portada desde public usando BASE_URL dinámico
+const coverVideo = import.meta.env.BASE_URL + 'video/portada.mp4';
 const router = useRouter();
 const imageOpacity = ref(0); // Iniciar con opacidad 0
 
@@ -16,30 +16,21 @@ onMounted(() => {
   try {
     document.documentElement.style.overflow = 'hidden';
     document.body.style.overflow = 'hidden';
-    
-    // Prevenir comportamientos de navegador móvil
     document.addEventListener('touchmove', preventTouchMove, { passive: false });
   } catch (error) {
     console.warn('Error setting overflow:', error);
   }
-  
-  // Usar requestAnimationFrame para mejor compatibilidad móvil
   requestAnimationFrame(() => {
-    // Fade-in: Encender la imagen gradualmente (0 a 1 en 1 segundo)
     setTimeout(() => {
       if (imageOpacity.value !== null) {
         imageOpacity.value = 1;
       }
     }, 100);
-
-    // Fade-out: Apagar la imagen gradualmente después de 1.6 segundos
     setTimeout(() => {
       if (imageOpacity.value !== null) {
         imageOpacity.value = 0;
       }
     }, 1700);
-
-    // Redireccionar y restaurar scroll antes de navegar
     setTimeout(() => {
       try {
         document.documentElement.style.overflow = '';
@@ -62,8 +53,6 @@ onUnmounted(() => {
   try {
     document.documentElement.style.overflow = '';
     document.body.style.overflow = '';
-    
-    // Remover event listeners con la referencia correcta
     document.removeEventListener('touchmove', preventTouchMove, { passive: false });
   } catch (error) {
     console.warn('Error restoring overflow:', error);
@@ -73,20 +62,21 @@ onUnmounted(() => {
 
 <template>
   <div class="landing-container">
-    <img
-      class="background-image"
-      :src="coverImage"
+    <video
+      class="background-video"
+      :src="coverVideo"
       :style="{ opacity: imageOpacity }"
-      alt="Portada Nexovant"
-      width="100%"
-      height="100%"
-      style="object-fit:cover;position:absolute;top:0;left:0;width:100vw;height:100vh;z-index:-1;"
-    />
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="auto"
+      poster="/images/portada.png"
+    ></video>
     <!-- Splash screen con efectos de fade-in y fade-out -->
   </div>
 </template>
 
-<!-- Eliminamos el CSS global que bloqueaba el scroll en toda la app -->
 <style scoped>
 
 /* CONTENEDOR PRINCIPAL */
@@ -102,15 +92,18 @@ onUnmounted(() => {
 }
 
 
-/* BACKGROUND IMAGE CON ANIMACIÓN */
-.background-image {
+/* BACKGROUND VIDEO CON ANIMACIÓN */
+.background-video {
   position: absolute;
   top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
+  left: 50%;
+  width: 100vw;
   height: 100vh;
+  height: 100dvh;
+  min-height: 100dvh;
+  max-height: 100dvh;
   object-fit: cover;
+  transform: translateX(-50%);
   z-index: -1;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
@@ -123,19 +116,18 @@ onUnmounted(() => {
     height: 100dvh;
     min-height: 100dvh;
     max-height: 100dvh;
-    width: 100%;
+    width: 100vw;
     overflow: hidden;
   }
-  .background-image {
+  .background-video {
     position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    width: 100%;
+    left: 50%;
+    width: 100vw;
     height: 100dvh;
     min-height: 100dvh;
     max-height: 100dvh;
     object-fit: cover;
+    transform: translateX(-50%);
   }
 }
 
