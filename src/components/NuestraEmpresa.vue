@@ -107,10 +107,11 @@ const clientAltTexts = [
 
     <!-- Clientes destacados en grilla horizontal -->
     <div class="clientes-grid-wrapper">
-      <div class="clientes-header">
-        <h2 class="section-subtitle">NUESTROS</h2>
-        <h1 class="section-title">CLIENTES</h1>
-      </div>
+        <div class="text-content clientes-titulo">
+          <h2 class="section-subtitle">CONFIAN EN NOSOTROS</h2>
+          <h1 class="section-title">NUESTROS CLIENTES</h1>
+          <p class="intro-text">Empresas y organizaciones que eligieron nuestra experiencia y compromiso para potenciar sus proyectos.</p>
+        </div>
       <div class="clientes-grid">
         <div class="cliente-logo" v-for="(img, idx) in clientImages" :key="idx">
           <img :src="img" :alt="clientAltTexts[idx]" />
