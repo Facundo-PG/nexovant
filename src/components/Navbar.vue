@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
 
-const logoImage = import.meta.env.BASE_URL + 'images/logo.png';
+const logoImage = import.meta.env.BASE_URL + 'images/cover.jpeg';
 const isMenuOpen = ref(false);
 const router = useRouter();
 const route = useRoute();
@@ -104,21 +104,24 @@ const scrollToSection = (sectionId) => {
   text-decoration: none;
 }
 .logo-image {
-  height: 44px;
-  width: auto;
-  max-width: 220px;
-  object-fit: contain;
+  height: 54px;
+  width: 54px;
+  min-width: 54px;
+  min-height: 54px;
+  max-width: 54px;
+  max-height: 54px;
+  object-fit: cover;
+  border-radius: 50%;
   background: transparent;
-  border-radius: 0.5rem;
-  box-shadow: none;
+  box-shadow: 0 2px 12px #6366f122;
   padding: 0;
-  border: none;
-  transition: box-shadow 0.2s, border 0.2s;
+  border: 2.5px solid #fff;
   display: block;
+  transition: box-shadow 0.2s, border 0.2s;
 }
 .logo-link:hover .logo-image {
-  box-shadow: 0 2px 16px #6366f133;
-  border: none;
+  box-shadow: 0 4px 24px #6366f1cc;
+  border: 2.5px solid #6366f1;
 }
 .desktop-nav-links {
   list-style: none; display: flex;
