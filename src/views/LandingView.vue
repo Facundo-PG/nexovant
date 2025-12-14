@@ -106,11 +106,11 @@ onUnmounted(() => {
 .background-image {
   position: absolute;
   top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
+  left: 50%;
+  width: 100vw;
   height: 100vh;
   object-fit: cover;
+  transform: translateX(-50%);
   z-index: -1;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
@@ -123,19 +123,18 @@ onUnmounted(() => {
     height: 100dvh;
     min-height: 100dvh;
     max-height: 100dvh;
-    width: 100%;
+    width: 100vw;
     overflow: hidden;
   }
   .background-image {
     position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    width: 100%;
+    left: 50%;
+    width: 100vw;
     height: 100dvh;
     min-height: 100dvh;
     max-height: 100dvh;
     object-fit: cover;
+    transform: translateX(-50%);
   }
 }
 
