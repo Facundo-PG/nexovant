@@ -113,10 +113,7 @@ const clientAltTexts = [
       </div>
       <div class="clientes-grid">
         <div class="cliente-logo" v-for="(img, idx) in clientImages" :key="idx">
-          <div class="cliente-card">
-            <img class="cliente-main-image" :src="img" :alt="clientAltTexts[idx]" />
-            <img class="empresa-card-image" :src="carouselImages[0]" alt="Imagen de la empresa" />
-          </div>
+          <img :src="img" :alt="clientAltTexts[idx]" />
         </div>
       </div>
     </div>
@@ -417,42 +414,6 @@ const clientAltTexts = [
   flex: 1 1 220px;
   max-width: 260px;
   min-width: 160px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.cliente-card {
-  background: #fff;
-  border-radius: 18px;
-  box-shadow: 0 4px 24px rgba(44,44,84,0.10);
-  padding: 1.2rem 1rem 1.7rem 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  width: 100%;
-  min-height: 180px;
-}
-
-.cliente-main-image {
-  width: 90px;
-  height: 90px;
-  object-fit: contain;
-  margin-bottom: 0.7rem;
-}
-
-.empresa-card-image {
-  width: 38px;
-  height: 38px;
-  object-fit: cover;
-  border-radius: 50%;
-  position: absolute;
-  bottom: 12px;
-  right: 12px;
-  box-shadow: 0 2px 8px rgba(44,44,84,0.12);
-  border: 2px solid #fff;
-}
   display: flex;
   align-items: center;
   justify-content: center;
