@@ -400,11 +400,12 @@ const clientAltTexts = [
 }
 .clientes-grid {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
   gap: 2.5rem;
   width: 100%;
+  overflow-x: auto;
 }
 .cliente-logo {
   flex: 1 1 220px;
@@ -436,6 +437,9 @@ const clientAltTexts = [
 @media (max-width: 700px) {
   .clientes-grid {
     gap: 1.2rem;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
   }
   .cliente-logo {
     padding: 0.7rem 0.5rem;
