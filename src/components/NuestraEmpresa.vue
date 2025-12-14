@@ -1,7 +1,8 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue';
+import ClientCarousel from './ClientCarousel.vue';
 
-// Rutas dinámicas para las imágenes del carrusel
+// Rutas dinámicas para las imágenes del carrusel principal (banner superior)
 const carouselImages = ref([
   import.meta.env.BASE_URL + "images/carousel-1.jpg",
   import.meta.env.BASE_URL + "images/carousel-2.jpg",
@@ -88,6 +89,24 @@ onUnmounted(() => { clearInterval(intervalId); });
             </p>
           </div>
         </div>
+        <!-- Carousel de clientes -->
+        <div class="clientes-carousel-wrapper">
+          <h3 class="clientes-title">Nuestros Clientes</h3>
+          <ClientCarousel />
+        </div>
+      /* Carousel de clientes */
+      .clientes-carousel-wrapper {
+        margin: 2.5rem auto 0 auto;
+        text-align: center;
+        max-width: 400px;
+      }
+      .clientes-title {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: #2c2c54;
+        margin-bottom: 0.5rem;
+        letter-spacing: 0.5px;
+      }
       </div>
     </div>
   </section>
