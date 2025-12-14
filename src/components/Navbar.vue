@@ -55,7 +55,6 @@ const scrollToSection = (sectionId) => {
       <router-link to="/" class="logo-link">
         <!-- Imagen desde /public/images (funciona en GitHub Pages) -->
         <img :src="logoImage" alt="Logo Nexovant" class="logo-image" />
-        <span>Nexovant I&T srl</span>
       </router-link>
 
       <ul class="desktop-nav-links">
@@ -101,12 +100,22 @@ const scrollToSection = (sectionId) => {
   max-width: 1200px; margin: 0 auto; height: 70px;
 }
 .logo-link {
-  display: flex; align-items: center; gap: 12px;
-  font-size: 1.5rem; font-weight: bold; color: #fff; text-decoration: none;
+  display: flex; align-items: center; gap: 0px;
+  text-decoration: none;
 }
 .logo-image {
-  height: 40px; width: 40px; border-radius: 50%;
-  object-fit: cover; border: 2px solid #fff;
+  height: 48px; width: auto; max-width: 160px;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(44,44,84,0.10);
+  padding: 4px 10px;
+  border: 1.5px solid #e0e7ff;
+  transition: box-shadow 0.2s, border 0.2s;
+}
+.logo-link:hover .logo-image {
+  box-shadow: 0 4px 24px #6366f1cc;
+  border: 1.5px solid #6366f1;
 }
 .desktop-nav-links {
   list-style: none; display: flex;
