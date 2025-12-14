@@ -19,7 +19,7 @@ onUnmounted(() => { clearInterval(intervalId); });
 // Imágenes de clientes para la grilla
 const clientImages = [
   import.meta.env.BASE_URL + 'images/PLETTAC.png',
-  import.meta.env.BASE_URL + 'images/xgear.jpeg',
+  import.meta.env.BASE_URL + 'images/XGnetworks.jpeg',
   import.meta.env.BASE_URL + 'images/TPP.png',
   import.meta.env.BASE_URL + 'images/mcsa.jpeg',
 ];
