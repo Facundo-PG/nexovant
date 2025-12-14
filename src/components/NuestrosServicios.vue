@@ -89,34 +89,47 @@
     <!-- TEXTO DESCRIPTIVO DE SERVICIOS -->
     <div class="servicios-descripcion-texto">
       <ul>
-        <li><b>🔹Telecomunicaciones e Infraestructura</b></li>
-        <li>Realizamos tendidos de redes aéreas y subterráneas, incluyendo obra civil asociada, canalizaciones, cámaras, cruces especiales y adecuaciones de infraestructura, garantizando soluciones eficientes y duraderas.</li>
-        <li>Desarrollamos e implementamos redes de fibra óptica, con especialización en:
+        <li><b>Telecomunicaciones e Infraestructura</b>
           <ul>
-            <li>Instalaciones FTTH (Fiber To The Home)</li>
-            <li>Armado y configuración de nodos de telecomunicaciones</li>
-            <li>Montaje de equipos activos y pasivos</li>
-            <li>Fusión, medición y certificación de enlaces</li>
+            <li>Realizamos tendidos de redes aéreas y subterráneas, incluyendo obra civil asociada, canalizaciones, cámaras, cruces especiales y adecuaciones de infraestructura, garantizando soluciones eficientes y duraderas.</li>
+            <li>Desarrollamos e implementamos redes de fibra óptica, con especialización en:
+              <ul>
+                <li>Instalaciones FTTH (Fiber To The Home)</li>
+                <li>Armado y configuración de nodos de telecomunicaciones</li>
+                <li>Montaje de equipos activos y pasivos</li>
+                <li>Fusión, medición y certificación de enlaces</li>
+              </ul>
+            </li>
           </ul>
         </li>
-        <li><b>🔹 Seguridad y Sistemas Especiales</b><br>
-          Ofrecemos soluciones de seguridad electrónica, que incluyen:
+        <li><b>Seguridad y Sistemas Especiales</b>
           <ul>
-            <li>Instalación y configuración de cámaras de seguridad (CCTV)</li>
-            <li>Integración de sistemas de monitoreo</li>
-            <li>Infraestructura de soporte y cableado asociado</li>
+            <li>Ofrecemos soluciones de seguridad electrónica, que incluyen:</li>
+            <li>
+              <ul>
+                <li>Instalación y configuración de cámaras de seguridad (CCTV)</li>
+                <li>Integración de sistemas de monitoreo</li>
+                <li>Infraestructura de soporte y cableado asociado</li>
+              </ul>
+            </li>
           </ul>
         </li>
-        <li><b>🔹 Cableado y Redes</b><br>
-          Diseñamos e implementamos cableado estructurado para entornos corporativos, industriales y comerciales, cumpliendo con estándares técnicos y normativas internacionales, asegurando rendimiento, escalabilidad y confiabilidad.
-        </li>
-        <li><b>🔹 Ingeniería y Documentación Técnica</b><br>
-          Brindamos servicios de ingeniería aplicada, que incluyen:
+        <li><b>Cableado y Redes</b>
           <ul>
-            <li>Relevamientos técnicos en campo</li>
-            <li>Diseño de soluciones a medida</li>
-            <li>Armado de planos y documentación técnica realizados por profesionales matriculados</li>
-            <li>Soporte técnico y asesoramiento especializado</li>
+            <li>Diseñamos e implementamos cableado estructurado para entornos corporativos, industriales y comerciales, cumpliendo con estándares técnicos y normativas internacionales, asegurando rendimiento, escalabilidad y confiabilidad.</li>
+          </ul>
+        </li>
+        <li><b>Ingeniería y Documentación Técnica</b>
+          <ul>
+            <li>Brindamos servicios de ingeniería aplicada, que incluyen:</li>
+            <li>
+              <ul>
+                <li>Relevamientos técnicos en campo</li>
+                <li>Diseño de soluciones a medida</li>
+                <li>Armado de planos y documentación técnica realizados por profesionales matriculados</li>
+                <li>Soporte técnico y asesoramiento especializado</li>
+              </ul>
+            </li>
           </ul>
         </li>
       </ul>
