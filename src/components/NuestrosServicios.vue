@@ -4,11 +4,11 @@
 
 <template>
   <section id="servicios" class="section-container">
-    <div class="text-content servicios-titulo">
-      <h2 class="section-subtitle">ÁREAS DE ESPECIALIZACIÓN</h2>
-      <h1 class="section-title">NUESTROS SERVICIOS</h1>
-      <p class="intro-text">Soluciones integrales en telecomunicaciones, seguridad, cableado e ingeniería, adaptadas a cada proyecto.</p>
-    </div>
+    <h2 class="section-subtitle text-center">NUESTROS</h2>
+    <h1 class="section-title text-center">SERVICIOS</h1>
+    <p class="text-center section-description">
+      Nexovant Ingeniería y Tecnología srl. ofrece una cartera de servicios de manera integral y completa, desde la infraestructura física hasta la puesta en marcha y soporte.
+    </p>
     <div class="servicios-grid">
       
       <!-- INICIO DE TARJETA 1: OBRA CIVIL -->
@@ -86,77 +86,60 @@
       </div>
 
     </div>
+    <!-- TÍTULO ADICIONAL ANTES DE LA CARD BLANCA DE TEXTO -->
+    <div class="text-content animate-brillo servicios-titulo-extra">
+      <h2 class="section-subtitle">ÁREAS DE ESPECIALIZACIÓN</h2>
+      <h1 class="section-title">¿QUÉ HACEMOS?</h1>
+      <p class="intro-text">Conocé en detalle los servicios y soluciones que ofrecemos para potenciar tu proyecto.</p>
+    </div>
     <!-- TEXTO DESCRIPTIVO DE SERVICIOS -->
     <div class="servicios-descripcion-texto text-content animate-brillo">
-      <h2 class="section-subtitle">TELECOMUNICACIONES E INFRAESTRUCTURA</h2>
-      <p>
-        Realizamos tendidos de redes aéreas y subterráneas, incluyendo obra civil asociada, canalizaciones, cámaras, cruces especiales y adecuaciones de infraestructura, garantizando soluciones eficientes, seguras y duraderas.
-      </p>
-      <p>
-        Desarrollamos e implementamos redes de fibra óptica, con especialización en:
-      </p>
       <ul>
-        <li>Instalaciones FTTH (Fiber To The Home)</li>
-        <li>Armado y configuración de nodos de telecomunicaciones</li>
-        <li>Montaje de equipos activos y pasivos</li>
-        <li>Fusión, medición y certificación completa de redes, asegurando la calidad y confiabilidad de los enlaces</li>
-      </ul>
-      <h2 class="section-subtitle">SEGURIDAD Y SISTEMAS ESPECIALES</h2>
-      <p>
-        Ofrecemos soluciones integrales de seguridad electrónica, adaptadas a las necesidades de cada proyecto, que incluyen:
-      </p>
-      <ul>
-        <li>Instalación y configuración de cámaras de seguridad IP</li>
-        <li>Integración de sistemas de monitoreo y control</li>
-        <li>Infraestructura de soporte y cableado asociado</li>
-      </ul>
-      <h2 class="section-subtitle">CABLEADO Y REDES</h2>
-      <p>
-        Diseñamos e implementamos soluciones de cableado estructurado para entornos corporativos, industriales y comerciales, cumpliendo con estándares técnicos y normativas internacionales, garantizando rendimiento, escalabilidad y confiabilidad a largo plazo.
-      </p>
-      <h2 class="section-subtitle">INGENIERÍA Y DOCUMENTACIÓN TÉCNICA</h2>
-      <p>
-        Brindamos servicios de ingeniería aplicada, que incluyen:
-      </p>
-      <ul>
-        <li>Relevamientos técnicos en campo</li>
-        <li>Diseño de soluciones a medida</li>
-        <li>Armado de planos y documentación técnica realizados por profesionales matriculados</li>
-        <li>Soporte técnico y asesoramiento especializado</li>
+        <li><b>Telecomunicaciones e Infraestructura</b>
+          <ul>
+            <li>Realizamos tendidos de redes aéreas y subterráneas, incluyendo obra civil asociada, canalizaciones, cámaras, cruces especiales y adecuaciones de infraestructura, garantizando soluciones eficientes y duraderas.</li>
+            <li>Desarrollamos e implementamos redes de fibra óptica, con especialización en:
+              <ul>
+                <li>Instalaciones FTTH (Fiber To The Home)</li>
+                <li>Armado y configuración de nodos de telecomunicaciones</li>
+                <li>Montaje de equipos activos y pasivos</li>
+                <li>Fusión, medición y certificación de enlaces</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><b>Seguridad y Sistemas Especiales</b>
+          <ul>
+            <li>Ofrecemos soluciones de seguridad electrónica, que incluyen:</li>
+            <li>
+              <ul>
+                <li>Instalación y configuración de cámaras de seguridad (CCTV)</li>
+                <li>Integración de sistemas de monitoreo</li>
+                <li>Infraestructura de soporte y cableado asociado</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><b>Cableado y Redes</b>
+          <ul>
+            <li>Diseñamos e implementamos cableado estructurado para entornos corporativos, industriales y comerciales, cumpliendo con estándares técnicos y normativas internacionales, asegurando rendimiento, escalabilidad y confiabilidad.</li>
+          </ul>
+        </li>
+        <li><b>Ingeniería y Documentación Técnica</b>
+          <ul>
+            <li>Brindamos servicios de ingeniería aplicada, que incluyen:</li>
+            <li>
+              <ul>
+                <li>Relevamientos técnicos en campo</li>
+                <li>Diseño de soluciones a medida</li>
+                <li>Armado de planos y documentación técnica realizados por profesionales matriculados</li>
+                <li>Soporte técnico y asesoramiento especializado</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
       </ul>
     </div>
-  /* Animación de brillo diagonal para la card de texto descriptivo */
-  .text-content.animate-brillo {
-    position: relative;
-    background: rgba(255,255,255,0.08);
-    border-radius: 18px;
-    box-shadow: 0 4px 32px rgba(44,44,84,0.10);
-    padding: 2.2rem 1rem 2.7rem 1rem;
-    margin-top: 2.5rem;
-    margin-bottom: 2.5rem;
-    overflow: hidden;
-  }
-  .text-content.animate-brillo::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(45deg, transparent, rgba(138, 43, 226, 0.13), transparent);
-    transform: rotate(45deg);
-    transition: transform 0.6s ease;
-    z-index: 1;
-    opacity: 0;
-  }
-  .text-content.animate-brillo:hover::before {
-    transform: rotate(45deg) translate(50%, 50%);
-    opacity: 1;
-  }
-  .text-content.animate-brillo > * {
-    position: relative;
-    z-index: 2;
-  }
   </section>
 </template>
 
@@ -210,6 +193,38 @@
   
   perspective: 1000px;
 }
+  /* Animación de brillo diagonal para la card de texto descriptivo y el título extra */
+      .text-content.animate-brillo {
+        position: relative;
+        background: rgba(255,255,255,0.08);
+        border-radius: 18px;
+        box-shadow: 0 4px 32px rgba(44,44,84,0.10);
+        padding: 2.2rem 1rem 2.7rem 1rem;
+        margin-top: 2.5rem;
+        margin-bottom: 2.5rem;
+        overflow: hidden;
+      }
+      .text-content.animate-brillo::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(45deg, transparent, rgba(138, 43, 226, 0.13), transparent);
+        transform: rotate(45deg);
+        transition: transform 0.6s ease;
+        z-index: 1;
+        opacity: 0;
+      }
+      .text-content.animate-brillo:hover::before {
+        transform: rotate(45deg) translate(50%, 50%);
+        opacity: 1;
+      }
+      .text-content.animate-brillo > * {
+        position: relative;
+        z-index: 2;
+      }
 
 /* ESTILOS DE LAS TARJETAS (CARD) */
 .service-card {
