@@ -400,12 +400,12 @@ const clientAltTexts = [
 }
 .clientes-grid {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
   gap: 2.5rem;
   width: 100%;
-  overflow-x: unset;
+  overflow-x: hidden;
 }
 .cliente-logo {
   flex: 1 1 220px;
@@ -437,18 +437,21 @@ const clientAltTexts = [
 @media (max-width: 700px) {
   .clientes-grid {
     gap: 1.2rem;
-    flex-wrap: wrap;
-    overflow-x: unset;
+    flex-wrap: nowrap;
+    overflow-x: hidden;
     justify-content: center;
   }
   .cliente-logo {
     padding: 0.7rem 0.5rem;
-    min-width: 80px;
-    max-width: 100px;
+    min-width: 0;
+    max-width: 70px;
+    flex: 1 1 0;
   }
   .cliente-logo img {
-    max-width: 70px;
-    max-height: 50px;
+    max-width: 60px;
+    max-height: 40px;
+    width: 100%;
+    height: auto;
   }
 }
 @media (max-width: 900px) {

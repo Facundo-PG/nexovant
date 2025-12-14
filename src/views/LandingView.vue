@@ -71,7 +71,6 @@ onUnmounted(() => {
       loop
       playsinline
       preload="auto"
-      poster="/images/portada.png"
     ></video>
     <!-- Splash screen con efectos de fade-in y fade-out -->
   </div>
