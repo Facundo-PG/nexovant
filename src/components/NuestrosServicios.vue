@@ -87,13 +87,13 @@
 
     </div>
     <!-- TÍTULO ADICIONAL ANTES DE LA CARD BLANCA DE TEXTO -->
-    <div class="text-content animate-brillo servicios-titulo-extra">
+    <div class="servicios-titulo-extra">
       <h2 class="section-subtitle">ÁREAS DE ESPECIALIZACIÓN</h2>
       <h1 class="section-title">¿QUÉ HACEMOS?</h1>
       <p class="intro-text">Conocé en detalle los servicios y soluciones que ofrecemos para potenciar tu proyecto.</p>
     </div>
     <!-- TEXTO DESCRIPTIVO DE SERVICIOS -->
-    <div class="servicios-descripcion-texto text-content animate-brillo">
+    <div class="servicios-descripcion-texto text-content card-blanca">
       <ul>
         <li><b>Telecomunicaciones e Infraestructura</b>
           <ul>
@@ -193,38 +193,18 @@
   
   perspective: 1000px;
 }
-  /* Animación de brillo diagonal para la card de texto descriptivo y el título extra */
-      .text-content.animate-brillo {
-        position: relative;
-        background: rgba(255,255,255,0.08);
-        border-radius: 18px;
-        box-shadow: 0 4px 32px rgba(44,44,84,0.10);
-        padding: 2.2rem 1rem 2.7rem 1rem;
-        margin-top: 2.5rem;
-        margin-bottom: 2.5rem;
-        overflow: hidden;
-      }
-      .text-content.animate-brillo::before {
-        content: '';
-        position: absolute;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        background: linear-gradient(45deg, transparent, rgba(138, 43, 226, 0.13), transparent);
-        transform: rotate(45deg);
-        transition: transform 0.6s ease;
-        z-index: 1;
-        opacity: 0;
-      }
-      .text-content.animate-brillo:hover::before {
-        transform: rotate(45deg) translate(50%, 50%);
-        opacity: 1;
-      }
-      .text-content.animate-brillo > * {
-        position: relative;
-        z-index: 2;
-      }
+
+  /* Card blanca para la descripción de servicios */
+  .card-blanca {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 32px rgba(44,44,84,0.10);
+    padding: 2.2rem 1rem 2.7rem 1rem;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+    overflow: hidden;
+    color: #222;
+  }
 
 /* ESTILOS DE LAS TARJETAS (CARD) */
 .service-card {
