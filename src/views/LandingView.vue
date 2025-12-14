@@ -3,7 +3,7 @@ import { onMounted, onUnmounted, ref } from 'vue';
 import { useRouter } from 'vue-router';
 
 // Imagen portada desde public usando BASE_URL dinámico
-const coverImage = import.meta.env.BASE_URL + 'images/portada.png';
+const coverImage = import.meta.env.BASE_URL + 'images/logo.png';
 const router = useRouter();
 const imageOpacity = ref(0); // Iniciar con opacidad 0
 
@@ -106,11 +106,11 @@ onUnmounted(() => {
 .background-image {
   position: absolute;
   top: 0;
-  left: 50%;
-  width: 100vw;
+  left: 0;
+  right: 0;
+  width: 100%;
   height: 100vh;
   object-fit: cover;
-  transform: translateX(-50%);
   z-index: -1;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
@@ -123,18 +123,19 @@ onUnmounted(() => {
     height: 100dvh;
     min-height: 100dvh;
     max-height: 100dvh;
-    width: 100vw;
+    width: 100%;
     overflow: hidden;
   }
   .background-image {
     position: absolute;
-    left: 50%;
-    width: 100vw;
+    left: 0;
+    right: 0;
+    top: 0;
+    width: 100%;
     height: 100dvh;
     min-height: 100dvh;
     max-height: 100dvh;
     object-fit: cover;
-    transform: translateX(-50%);
   }
 }
 
