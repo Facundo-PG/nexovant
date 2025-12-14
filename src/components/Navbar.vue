@@ -104,18 +104,21 @@ const scrollToSection = (sectionId) => {
   text-decoration: none;
 }
 .logo-image {
-  height: 48px; width: auto; max-width: 160px;
+  height: 44px;
+  width: auto;
+  max-width: 220px;
   object-fit: contain;
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(44,44,84,0.10);
-  padding: 4px 10px;
-  border: 1.5px solid #e0e7ff;
+  background: transparent;
+  border-radius: 0.5rem;
+  box-shadow: none;
+  padding: 0;
+  border: none;
   transition: box-shadow 0.2s, border 0.2s;
+  display: block;
 }
 .logo-link:hover .logo-image {
-  box-shadow: 0 4px 24px #6366f1cc;
-  border: 1.5px solid #6366f1;
+  box-shadow: 0 2px 16px #6366f133;
+  border: none;
 }
 .desktop-nav-links {
   list-style: none; display: flex;
