@@ -10,45 +10,6 @@
       Nexovant Ingeniería y Tecnología srl. ofrece una cartera de servicios de manera integral y completa, desde la infraestructura física hasta la puesta en marcha y soporte.
     </p>
     <div class="servicios-grid">
-      <!-- CARD DESCRIPTIVA GENERAL DE SERVICIOS (tipo Nuestra Empresa) -->
-      <div class="service-card service-card-blanca">
-        <div class="card-inner card-inner-blanca">
-          <div class="card-front card-front-blanca">
-            <h3 class="servicios-blanca-title">Soluciones Integrales</h3>
-            <ul class="servicios-lista-blanca">
-              <li>Realizamos tendidos de redes aéreas y subterráneas, incluyendo obra civil asociada, canalizaciones, cámaras, cruces especiales y adecuaciones de infraestructura, garantizando soluciones eficientes y duraderas.</li>
-              <li>Desarrollamos e implementamos redes de fibra óptica, con especialización en:
-                <ul>
-                  <li>Instalaciones FTTH (Fiber To The Home)</li>
-                  <li>Armado y configuración de nodos de telecomunicaciones</li>
-                  <li>Montaje de equipos activos y pasivos</li>
-                  <li>Fusión, medición y certificación de enlaces</li>
-                </ul>
-              </li>
-              <li><b>🔹 Seguridad y Sistemas Especiales</b><br>
-                Ofrecemos soluciones de seguridad electrónica, que incluyen:
-                <ul>
-                  <li>Instalación y configuración de cámaras de seguridad (CCTV)</li>
-                  <li>Integración de sistemas de monitoreo</li>
-                  <li>Infraestructura de soporte y cableado asociado</li>
-                </ul>
-              </li>
-              <li><b>🔹 Cableado y Redes</b><br>
-                Diseñamos e implementamos cableado estructurado para entornos corporativos, industriales y comerciales, cumpliendo con estándares técnicos y normativas internacionales, asegurando rendimiento, escalabilidad y confiabilidad.
-              </li>
-              <li><b>🔹 Ingeniería y Documentación Técnica</b><br>
-                Brindamos servicios de ingeniería aplicada, que incluyen:
-                <ul>
-                  <li>Relevamientos técnicos en campo</li>
-                  <li>Diseño de soluciones a medida</li>
-                  <li>Armado de planos y documentación técnica realizados por profesionales matriculados</li>
-                  <li>Soporte técnico y asesoramiento especializado</li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
       
       <!-- INICIO DE TARJETA 1: OBRA CIVIL -->
       <!-- MODIFICADO: Se cambió <a> por <div> para que no sea un enlace -->
@@ -124,6 +85,40 @@
         </div>
       </div>
 
+    </div>
+    <!-- TEXTO DESCRIPTIVO DE SERVICIOS -->
+    <div class="servicios-descripcion-texto">
+      <ul>
+        <li>Realizamos tendidos de redes aéreas y subterráneas, incluyendo obra civil asociada, canalizaciones, cámaras, cruces especiales y adecuaciones de infraestructura, garantizando soluciones eficientes y duraderas.</li>
+        <li>Desarrollamos e implementamos redes de fibra óptica, con especialización en:
+          <ul>
+            <li>Instalaciones FTTH (Fiber To The Home)</li>
+            <li>Armado y configuración de nodos de telecomunicaciones</li>
+            <li>Montaje de equipos activos y pasivos</li>
+            <li>Fusión, medición y certificación de enlaces</li>
+          </ul>
+        </li>
+        <li><b>🔹 Seguridad y Sistemas Especiales</b><br>
+          Ofrecemos soluciones de seguridad electrónica, que incluyen:
+          <ul>
+            <li>Instalación y configuración de cámaras de seguridad (CCTV)</li>
+            <li>Integración de sistemas de monitoreo</li>
+            <li>Infraestructura de soporte y cableado asociado</li>
+          </ul>
+        </li>
+        <li><b>🔹 Cableado y Redes</b><br>
+          Diseñamos e implementamos cableado estructurado para entornos corporativos, industriales y comerciales, cumpliendo con estándares técnicos y normativas internacionales, asegurando rendimiento, escalabilidad y confiabilidad.
+        </li>
+        <li><b>🔹 Ingeniería y Documentación Técnica</b><br>
+          Brindamos servicios de ingeniería aplicada, que incluyen:
+          <ul>
+            <li>Relevamientos técnicos en campo</li>
+            <li>Diseño de soluciones a medida</li>
+            <li>Armado de planos y documentación técnica realizados por profesionales matriculados</li>
+            <li>Soporte técnico y asesoramiento especializado</li>
+          </ul>
+        </li>
+      </ul>
     </div>
   </section>
 </template>
@@ -572,76 +567,35 @@
     font-size: 0.7rem;
   }
 }
-
-/* NUEVOS ESTILOS PARA LA CARD BLANCA */
-.service-card-blanca {
+.servicios-descripcion-texto {
+  max-width: 900px;
+  margin: 40px auto 0 auto;
   background: rgba(255,255,255,0.98);
   color: #333;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.18);
   border-radius: 15px;
-  padding: 36px 32px 32px 32px;
-  min-height: 340px;
-  max-width: 100%;
-  width: 100%;
-  margin-bottom: 18px;
-  transition: all 0.4s cubic-bezier(.4,2,.6,1);
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-  border: 2px solid transparent;
-}
-.service-card-blanca:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 25px 60px rgba(138, 43, 226, 0.18);
-  border-color: rgba(138, 43, 226, 0.13);
-  background: #fff;
-}
-.card-inner-blanca {
-  background: none;
-  box-shadow: none;
-  padding: 0;
-  align-items: flex-start;
-  height: auto;
-  min-height: 0;
-}
-.card-front-blanca {
-  background: none;
-  box-shadow: none;
-  padding: 0;
-  align-items: flex-start;
-  height: auto;
-  min-height: 0;
-}
-.servicios-blanca-title {
-  font-size: 1.35rem;
-  font-weight: 700;
-  color: #2c2c54;
-  margin-bottom: 1.1rem;
-  letter-spacing: 0.5px;
-}
-.servicios-lista-blanca {
+  box-shadow: 0 8px 32px rgba(44,44,84,0.10);
+  padding: 2.2rem 2rem 2.2rem 2rem;
+  font-size: 1.08rem;
+  line-height: 1.7;
   text-align: left;
+}
+.servicios-descripcion-texto ul {
   margin: 0;
   padding-left: 1.2rem;
-  font-size: 1.08rem;
-  color: #333;
-  line-height: 1.7;
 }
-.servicios-lista-blanca > li {
-  margin-bottom: 0.7rem;
+.servicios-descripcion-texto > ul > li {
+  margin-bottom: 0.9rem;
 }
-.servicios-lista-blanca ul {
+.servicios-descripcion-texto ul ul {
   margin-top: 0.3rem;
   margin-bottom: 0.3rem;
   padding-left: 1.2rem;
   font-size: 1rem;
 }
 @media (max-width: 700px) {
-  .service-card-blanca {
+  .servicios-descripcion-texto {
     padding: 1.1rem 0.5rem 1.1rem 0.5rem;
     border-radius: 1rem;
-  }
-  .servicios-lista-blanca {
     font-size: 0.98rem;
   }
 }
