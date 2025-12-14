@@ -89,6 +89,7 @@
     <!-- TEXTO DESCRIPTIVO DE SERVICIOS -->
     <div class="servicios-descripcion-texto">
       <ul>
+        <li><b>🔹Telecomunicaciones e Infraestructura</b></li>
         <li>Realizamos tendidos de redes aéreas y subterráneas, incluyendo obra civil asociada, canalizaciones, cámaras, cruces especiales y adecuaciones de infraestructura, garantizando soluciones eficientes y duraderas.</li>
         <li>Desarrollamos e implementamos redes de fibra óptica, con especialización en:
           <ul>
