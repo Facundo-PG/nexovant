@@ -3,7 +3,7 @@ import { onMounted, onUnmounted, ref } from 'vue';
 import { useRouter } from 'vue-router';
 
 // Video portada desde public usando BASE_URL dinámico
-const coverVideo = import.meta.env.BASE_URL + 'video/portada.mp4';
+const coverVideo = import.meta.env.BASE_URL + 'images/portada.mp4';
 const router = useRouter();
 const imageOpacity = ref(0); // Iniciar con opacidad 0
 
