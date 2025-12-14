@@ -104,11 +104,13 @@ onUnmounted(() => {
 
 /* BACKGROUND IMAGE CON ANIMACIÓN */
 .background-image {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
+  right: 0;
+  bottom: 0;
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   object-fit: cover;
   z-index: -1;
   -webkit-backface-visibility: hidden;
@@ -126,13 +128,16 @@ onUnmounted(() => {
     overflow: hidden;
   }
   .background-image {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
     width: 100vw;
     height: 100dvh;
     min-height: 100dvh;
     max-height: 100dvh;
     object-fit: cover;
-    left: 0;
-    top: 0;
   }
 }
 
