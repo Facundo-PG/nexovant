@@ -105,13 +105,13 @@ const scrollToSection = (sectionId) => {
 }
 .logo-image {
   height: 54px;
-  width: 54px;
-  min-width: 54px;
+  width: 90px;
+  min-width: 90px;
   min-height: 54px;
-  max-width: 54px;
+  max-width: 90px;
   max-height: 54px;
   object-fit: cover;
-  border-radius: 50%;
+  border-radius: 50px / 54px;
   background: transparent;
   box-shadow: 0 2px 12px #6366f122;
   padding: 0;

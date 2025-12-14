@@ -117,6 +117,19 @@ onUnmounted(() => {
   transition: opacity 1s ease-in-out;
   opacity: 0; /* Iniciar invisible, se controla desde Vue */
 }
+@media (max-width: 700px) {
+  .background-image {
+    height: 38vh;
+    min-height: 120px;
+    max-height: 220px;
+    object-fit: contain;
+  }
+  .landing-container {
+    height: 38vh;
+    min-height: 120px;
+    max-height: 220px;
+  }
+}
 
 /* Asegúrate de que el body y html no tengan márgenes */
 :global(body, html) {
