@@ -16,7 +16,7 @@ const goToSlide = (index) => { currentIndex.value = index; };
 onMounted(() => { intervalId = setInterval(nextSlide, 5000); });
 onUnmounted(() => { clearInterval(intervalId); });
 
-// Carousel de clientes vistoso
+// Imágenes de clientes para la grilla
 const clientImages = [
   import.meta.env.BASE_URL + 'images/PLETTAC.png',
   import.meta.env.BASE_URL + 'images/xgear.jpeg',
@@ -27,25 +27,6 @@ const clientAltTexts = [
   'Cliente XGEAR',
   'Cliente TPP',
 ];
-const clientCurrent = ref(0);
-let clientIntervalId = null;
-
-function nextClientSlide() {
-  clientCurrent.value = (clientCurrent.value + 1) % clientImages.length;
-}
-function prevClientSlide() {
-  clientCurrent.value = (clientCurrent.value - 1 + clientImages.length) % clientImages.length;
-}
-function goToClientSlide(idx) {
-  clientCurrent.value = idx;
-}
-
-onMounted(() => {
-  clientIntervalId = setInterval(nextClientSlide, 3500);
-});
-onUnmounted(() => {
-  clearInterval(clientIntervalId);
-});
 </script>
 
 <template>
@@ -122,17 +103,12 @@ onUnmounted(() => {
       </div>
     </div>
 
-    <!-- Carousel de clientes -->
-    <div class="clientes-carousel-wrapper">
+    <!-- Clientes destacados en grilla horizontal -->
+    <div class="clientes-grid-wrapper">
       <h3 class="clientes-title">Nuestros Clientes</h3>
-      <div class="client-carousel-container">
-        <button class="carousel-arrow left" @click="prevClientSlide" aria-label="Anterior">&#10094;</button>
-        <div class="carousel-slide">
-          <img :src="clientImages[clientCurrent]" :alt="clientAltTexts[clientCurrent]" class="carousel-img" />
-        </div>
-        <button class="carousel-arrow right" @click="nextClientSlide" aria-label="Siguiente">&#10095;</button>
-        <div class="carousel-dots">
-          <span v-for="(img, idx) in clientImages" :key="idx" class="dot" :class="{ active: idx === clientCurrent }" @click="goToClientSlide(idx)"></span>
+      <div class="clientes-grid">
+        <div class="cliente-logo" v-for="(img, idx) in clientImages" :key="idx">
+          <img :src="img" :alt="clientAltTexts[idx]" />
         </div>
       </div>
     </div>
@@ -403,105 +379,72 @@ onUnmounted(() => {
   color: #222;
 }
 
-.clientes-carousel-wrapper {
+.clientes-grid-wrapper {
   margin: 3.5rem auto 0 auto;
   text-align: center;
-  max-width: 420px;
+  max-width: 900px;
   background: linear-gradient(120deg, #f8fafc 60%, #e0e7ff 100%);
   border-radius: 1.5rem;
   box-shadow: 0 4px 32px rgba(44,44,84,0.10);
-  padding: 1.5rem 1rem 2.2rem 1rem;
+  padding: 2.2rem 1rem 2.7rem 1rem;
 }
 .clientes-title {
   font-size: 1.35rem;
   font-weight: 700;
   color: #2c2c54;
-  margin-bottom: 1.1rem;
+  margin-bottom: 2.1rem;
   letter-spacing: 0.5px;
   text-shadow: 0 2px 8px #e0e7ff;
 }
-.client-carousel-container {
+.clientes-grid {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  width: 100%;
+}
+.cliente-logo {
+  flex: 1 1 220px;
+  max-width: 260px;
+  min-width: 160px;
+  display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  width: 320px;
-  margin: 0 auto;
   background: #fff;
-  border-radius: 1rem;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
-  padding: 1.2rem 1rem 2.1rem 1rem;
-}
-.carousel-slide {
-  width: 250px;
-  height: 120px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-.carousel-img {
-  max-width: 220px;
-  max-height: 100px;
-  object-fit: contain;
-  transition: opacity 0.5s, transform 0.4s cubic-bezier(.4,2,.6,1);
-  border-radius: 0.7rem;
+  border-radius: 1.2rem;
   box-shadow: 0 2px 12px rgba(44,44,84,0.10);
-  background: #f4f4fa;
-  padding: 0.5rem 1.2rem;
+  padding: 1.2rem 1.5rem;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
-.carousel-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: linear-gradient(120deg, #e0e7ff 60%, #f8fafc 100%);
-  border: none;
-  font-size: 2rem;
-  cursor: pointer;
-  z-index: 2;
-  padding: 0.2em 0.6em;
-  border-radius: 50%;
-  color: #2c2c54;
-  box-shadow: 0 2px 8px rgba(44,44,84,0.08);
-  transition: background 0.2s, color 0.2s;
+.cliente-logo:hover {
+  transform: scale(1.07) translateY(-6px);
+  box-shadow: 0 8px 32px #6366f1cc;
 }
-.carousel-arrow.left {
-  left: 10px;
+.cliente-logo img {
+  max-width: 170px;
+  max-height: 90px;
+  object-fit: contain;
+  filter: grayscale(0.2) contrast(1.1);
+  transition: filter 0.2s;
 }
-.carousel-arrow.right {
-  right: 10px;
+.cliente-logo:hover img {
+  filter: grayscale(0) contrast(1.2) drop-shadow(0 2px 8px #6366f1cc);
 }
-.carousel-arrow:hover {
-  background: #c7d2fe;
-  color: #fff;
+@media (max-width: 700px) {
+  .clientes-grid {
+    gap: 1.2rem;
+  }
+  .cliente-logo {
+    padding: 0.7rem 0.5rem;
+    min-width: 100px;
+    max-width: 140px;
+  }
+  .cliente-logo img {
+    max-width: 90px;
+    max-height: 60px;
+  }
 }
-.carousel-dots {
-  display: flex;
-  justify-content: center;
-  margin-top: 1.1rem;
-}
-.dot {
-  height: 13px;
-  width: 13px;
-  margin: 0 5px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.3s;
-  cursor: pointer;
-  border: 2px solid #e0e7ff;
-}
-.dot.active {
-  background-color: #2c2c54;
-  border-color: #6366f1;
-}
-
-.section-container::-webkit-scrollbar { width: 10px; }
-.section-container::-webkit-scrollbar-track { background: rgba(0, 0, 0, 0.1); }
-.section-container::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.5); border-radius: 10px; }
-.section-container::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.7); }
-
 @media (max-width: 900px) {
   .section-title { font-size: 2.8rem; }
 }
