@@ -259,7 +259,7 @@
 
 /* HOVER: CAMBIO DE COLOR */
 .card-blanca:hover .servicios-titulo-extra h1.section-title {
-  color: #2c2c54; /* COLOR EMPRESA AL PASAR EL MOUSE */
+  color: #6a1b9a; /* COLOR EMPRESA AL PASAR EL MOUSE */
 }
 
 .card-blanca .servicios-titulo-extra p.intro-text {
