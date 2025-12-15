@@ -244,7 +244,7 @@
     transition: color 0.3s;
   }
   .card-blanca .servicios-titulo-extra h1.section-title {
-    color: #2c2c54;
+    color: #2c2c54 !important;
     font-size: 2.8rem;
     font-weight: 700;
     margin-bottom: 1.2rem;
@@ -252,10 +252,14 @@
     text-shadow: 0 2px 8px #e0e7ff;
     transition: color 0.3s;
     cursor: pointer;
+    background: none !important;
+    -webkit-background-clip: initial !important;
+    -webkit-text-fill-color: initial !important;
+    background-clip: initial !important;
   }
   .card-blanca .servicios-titulo-extra h1.section-title:hover,
   .card-blanca .servicios-titulo-extra h2.section-subtitle:hover {
-    color: #bb86fc;
+    color: #bb86fc !important;
   }
   .card-blanca .servicios-titulo-extra p.intro-text {
     color: #222;
@@ -283,7 +287,7 @@
         background-clip: initial !important;
       }
       .section-title-servicios:hover {
-        color: #6A1B9A;
+        color: #bb86fc;
       }
 /* Animación de color para el título negro, igual que EMPRESA en NuestraEmpresa.vue */
       .anim-title-black {
@@ -303,7 +307,7 @@
         transition: opacity 0.4s;
       }
       .anim-title-black:hover {
-        color: #6A1B9A;
+        color: #bb86fc;
       }
       .anim-title-black:hover::after {
         opacity: 1;
