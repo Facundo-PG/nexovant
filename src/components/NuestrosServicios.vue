@@ -212,6 +212,29 @@
     border: 2px solid transparent;
   }
 
+  .card-blanca::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(138, 43, 226, 0.13), transparent);
+    transform: rotate(45deg);
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    z-index: 1;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .card-blanca:hover::before {
+    transform: rotate(45deg) translate(50%, 50%);
+    opacity: 1;
+  }
+  .card-blanca > * {
+    position: relative;
+    z-index: 2;
+  }
+
   .card-blanca:hover {
     transform: translateY(-8px) scale(1.02);
     box-shadow: 0 25px 60px rgba(138, 43, 226, 0.3);
