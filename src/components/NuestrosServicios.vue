@@ -12,7 +12,6 @@
     <div class="servicios-grid">
       
       <!-- INICIO DE TARJETA 1: OBRA CIVIL -->
-      <!-- MODIFICADO: Se cambió <a> por <div> para que no sea un enlace -->
       <div class="service-card">
         <div class="card-inner">
           <div class="card-front">
@@ -29,7 +28,6 @@
       </div>
 
       <!-- INICIO DE TARJETA 2: FIBRA ÓPTICA -->
-      <!-- MODIFICADO: Se cambió <a> por <div> para que no sea un enlace -->
       <div class="service-card">
         <div class="card-inner">
           <div class="card-front">
@@ -48,7 +46,6 @@
       </div>
       
       <!-- INICIO DE TARJETA 3: INSTALACIONES -->
-      <!-- MODIFICADO: Se cambió <a> por <div> para que no sea un enlace -->
       <div class="service-card">
         <div class="card-inner">
           <div class="card-front">
@@ -67,7 +64,6 @@
       </div>
 
       <!-- INICIO DE TARJETA 4: GESTIÓN Y SOPORTE -->
-      <!-- MODIFICADO: Se cambió <a> por <div> para que no sea un enlace -->
       <div class="service-card">
         <div class="card-inner">
           <div class="card-front">
@@ -86,8 +82,8 @@
       </div>
 
     </div>
-    <!-- TÍTULO ADICIONAL ANTES DE LA CARD BLANCA DE TEXTO -->
-    <!-- TEXTO DESCRIPTIVO DE SERVICIOS CON TÍTULO INCLUIDO -->
+    
+    <!-- CARD BLANCA DE TEXTO -->
     <div class="servicios-descripcion-texto text-content card-blanca">
       <div class="servicios-titulo-extra text-center" style="margin-bottom: 2.5rem;">
         <h2 class="section-subtitle">ÁREAS DE ESPECIALIZACIÓN</h2>
@@ -151,7 +147,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; /* Centra el contenido horizontalmente */
+  align-items: center;
   background-color: #2c2c54;
 }
 .text-center { text-align: center; }
@@ -183,114 +179,101 @@
 /* CONTENEDOR DE LA CUADRÍCULA (GRID) */
 .servicios-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr)); /* Forzar fracciones iguales */
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 30px;
-  
-  /* --- AJUSTES CLAVE --- */
-  width: 100%; /* 1. Asegura que el grid ocupe todo el ancho disponible */
-  max-width: 1200px; /* 2. Limita el ancho máximo en pantallas grandes */
-  margin: 0 auto; /* 3. Centra el grid */
-  
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
   perspective: 1000px;
 }
 
-  /* Card blanca para la descripción de servicios */
-  .card-blanca {
-    background: #fff;
-    border-radius: 15px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
-    padding: 40px;
-    margin-top: 2.5rem;
-    margin-bottom: 2.5rem;
-    overflow: hidden;
-    color: #222;
-    width: 100%;
-    margin: 0 auto;
-    position: relative;
-    transition: all 0.4s ease;
-    cursor: pointer;
-    border: 2px solid transparent;
-  }
+/* 
+   -----------------------------------------
+   ESTILOS DE LA CARD BLANCA (MODIFICADOS) 
+   -----------------------------------------
+*/
+.card-blanca {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+  padding: 40px;
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+  overflow: hidden;
+  color: #222;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
 
-  .card-blanca::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(45deg, transparent, rgba(138, 43, 226, 0.13), transparent);
-    transform: rotate(45deg);
-    transition: transform 0.6s ease, opacity 0.6s ease;
-    z-index: 1;
-    opacity: 0;
-    pointer-events: none;
-  }
-  .card-blanca:hover::before {
-    transform: rotate(45deg) translate(50%, 50%);
-    opacity: 1;
-  }
-  .card-blanca > * {
-    position: relative;
-    z-index: 2;
-  }
-  .card-blanca .servicios-titulo-extra h2.section-subtitle {
-    color: #2c2c54;
-    font-size: 1.35rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    letter-spacing: 0.5px;
-    text-shadow: 0 2px 8px #e0e7ff;
-    transition: color 0.3s;
-  }
- .card-blanca .servicios-titulo-extra h1.section-title {
-  color: #222; /* negro */
-  background: none;
-  -webkit-text-fill-color: initial;
+.card-blanca::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(138, 43, 226, 0.13), transparent);
+  transform: rotate(45deg);
+  transition: transform 0.6s ease, opacity 0.6s ease;
+  z-index: 1;
+  opacity: 0;
+  pointer-events: none;
+}
+.card-blanca:hover::before {
+  transform: rotate(45deg) translate(50%, 50%);
+  opacity: 1;
+}
+.card-blanca > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* TÍTULOS DENTRO DE CARD BLANCA */
+.card-blanca .servicios-titulo-extra h2.section-subtitle {
+  color: #2c2c54;
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 8px #e0e7ff;
+  transition: color 0.3s;
+}
+
+/* TÍTULO PRINCIPAL "QUÉ HACEMOS" - MODIFICADO */
+.card-blanca .servicios-titulo-extra h1.section-title {
+  color: #000000; /* NEGRO PURO POR DEFECTO */
+  background: none; /* Quitamos el gradiente global */
+  -webkit-text-fill-color: initial; /* Restauramos relleno sólido */
+  background-clip: initial;
   font-size: 2.8rem;
   font-weight: 700;
   margin-bottom: 1.2rem;
   letter-spacing: 0.5px;
-  transition: color 0.4s ease;
+  text-shadow: none; /* Quitamos sombra si hubiera */
+  transition: color 0.4s ease; /* Transición suave */
 }
-.card-blanca:hover .servicios-titulo-extra h1.section-title {
-  color: #bb86fc; /* color empresa */
-}
- 
-  .card-blanca .servicios-titulo-extra p.intro-text {
-    color: #222;
-    margin-bottom: 1.5rem;
-  }
 
-  .card-blanca:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 25px 60px rgba(138, 43, 226, 0.3);
-    border-color: rgba(138, 43, 226, 0.2);
-    background-color: #fff;
-  }
-/* Animación de color para el título negro, igual que EMPRESA en NuestraEmpresa.vue */
-      .anim-title-black {
-        color: #222;
-        background: none;
-        position: relative;
-        transition: color 0.4s;
-      }
-      .anim-title-black::after {
-        content: '';
-        position: absolute;
-        left: 0; right: 0; bottom: 0;
-        height: 4px;
-        background: linear-gradient(90deg, #bb86fc, #e1bee7, #bb86fc);
-        border-radius: 2px;
-        opacity: 0;
-        transition: opacity 0.4s;
-      }
-      .anim-title-black:hover {
-        color: #bb86fc;
-      }
-      .anim-title-black:hover::after {
-        opacity: 1;
-      }
+/* HOVER: CAMBIO DE COLOR */
+.card-blanca:hover .servicios-titulo-extra h1.section-title {
+  color: #2c2c54; /* COLOR EMPRESA AL PASAR EL MOUSE */
+}
+
+.card-blanca .servicios-titulo-extra p.intro-text {
+  color: #222;
+  margin-bottom: 1.5rem;
+}
+
+.card-blanca:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 25px 60px rgba(138, 43, 226, 0.3);
+  border-color: rgba(138, 43, 226, 0.2);
+  background-color: #fff;
+}
+
 /* ESTILOS DE LAS TARJETAS (CARD) */
 .service-card {
   background-color: transparent;
@@ -519,14 +502,10 @@
   transform: translateY(-3px);
 }
 
-/* ======================================= */
-/* ====== DISEÑO RESPONSIVO LIMPIO ======= */
-/* ======================================= */
-
-/* TABLETS Y DISPOSITIVOS MEDIANOS */
+/* MEDIAS QUERIES */
 @media (max-width: 1024px) {
   .servicios-grid {
-    grid-template-columns: repeat(2, 1fr); /* Cambiamos a 2 columnas */
+    grid-template-columns: repeat(2, 1fr);
   }
   .section-container {
     padding: 60px 30px;
@@ -536,7 +515,6 @@
   }
 }
 
-/* MÓVILES GRANDES Y TABLETS PEQUEÑAS */
 @media (max-width: 768px) {
   .section-container {
     padding: 50px 20px;
@@ -556,7 +534,6 @@
   }
 }
 
-/* MÓVILES */
 @media (max-width: 480px) {
   .section-container {
     padding: 40px 15px;
@@ -568,10 +545,10 @@
     gap: 15px;
   }
   .service-card {
-    height: 240px; /* Aumentar altura para más espacio de texto */
+    height: 240px; 
   }
   .card-front, .card-back {
-    padding: 12px; /* Reducir padding para más espacio */
+    padding: 12px; 
   }
   .card-front h3 {
     font-size: 0.9rem;
@@ -591,12 +568,12 @@
     font-size: 0.8rem;
     margin-bottom: 8px;
     line-height: 1.1;
-    letter-spacing: 0.5px; /* Reducir espaciado entre letras */
+    letter-spacing: 0.5px;
   }
   .card-back p { 
     font-size: 0.75rem;
     line-height: 1.3;
-    padding: 0 5px; /* Menos padding lateral */
+    padding: 0 5px;
   }
   .stat-number { 
     font-size: 1.8rem;
@@ -608,7 +585,6 @@
   }
 }
 
-/* MÓVILES MUY PEQUEÑOS */
 @media (max-width: 390px) {
   .service-card {
     height: 220px;
@@ -646,7 +622,6 @@
   }
 }
 
-/* MÓVILES EXTRA PEQUEÑOS */
 @media (max-width: 320px) {
   .service-card {
     height: 200px;
@@ -684,6 +659,7 @@
     font-size: 0.7rem;
   }
 }
+
 .servicios-descripcion-texto {
   max-width: 900px;
   margin: 40px auto 0 auto;
