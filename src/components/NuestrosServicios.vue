@@ -99,7 +99,7 @@
                 <li>Instalaciones FTTH (Fiber To The Home)</li>
                 <li>Armado y configuración de nodos de telecomunicaciones</li>
                 <li>Montaje de equipos activos y pasivos</li>
-                <li>Fusión, medición y certificación de enlaces</li>
+                <li>Fusión, medición y certificación completa de redes</li>
               </ul>
             </li>
           </ul>
@@ -109,7 +109,7 @@
             <li>Ofrecemos soluciones de seguridad electrónica, que incluyen:</li>
             <li>
               <ul>
-                <li>Instalación y configuración de cámaras de seguridad (CCTV)</li>
+                <li>Instalación y configuración de cámaras de seguridad (IP))</li>
                 <li>Integración de sistemas de monitoreo</li>
                 <li>Infraestructura de soporte y cableado asociado</li>
               </ul>
