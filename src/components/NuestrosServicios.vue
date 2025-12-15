@@ -91,7 +91,7 @@
     <div class="servicios-descripcion-texto text-content card-blanca">
       <div class="servicios-titulo-extra text-center" style="margin-bottom: 2.5rem;">
         <h2 class="section-subtitle">ÁREAS DE ESPECIALIZACIÓN</h2>
-        <h1 class="section-title anim-title-black">¿QUÉ HACEMOS?</h1>
+        <h1 class="section-title section-title-servicios">¿QUÉ HACEMOS?</h1>
         <p class="intro-text">Conocé en detalle los servicios y soluciones que ofrecemos para potenciar tu proyecto.</p>
       </div>
       <ul>
@@ -268,6 +268,23 @@
     border-color: rgba(138, 43, 226, 0.2);
     background-color: #fff;
   }
+   /* Título visible y con sombra igual a clientes en NuestraEmpresa.vue */
+      .section-title-servicios {
+        color: #2c2c54;
+        font-size: 2.8rem;
+        font-weight: 700;
+        margin-bottom: 1.2rem;
+        letter-spacing: 0.5px;
+        text-shadow: 0 2px 8px #e0e7ff;
+        transition: color 0.3s;
+        background: none !important;
+        -webkit-background-clip: initial !important;
+        -webkit-text-fill-color: initial !important;
+        background-clip: initial !important;
+      }
+      .section-title-servicios:hover {
+        color: #bb86fc;
+      }
 /* Animación de color para el título negro, igual que EMPRESA en NuestraEmpresa.vue */
       .anim-title-black {
         color: #222;
