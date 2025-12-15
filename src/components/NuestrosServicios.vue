@@ -234,6 +234,26 @@
     position: relative;
     z-index: 2;
   }
+  .card-blanca .servicios-titulo-extra h2.section-subtitle,
+  .card-blanca .servicios-titulo-extra h1.section-title,
+  .card-blanca .servicios-titulo-extra p.intro-text {
+    color: #222 !important;
+    background: none !important;
+    -webkit-background-clip: initial !important;
+    -webkit-text-fill-color: initial !important;
+    background-clip: initial !important;
+    text-shadow: none !important;
+    transition: color 0.4s;
+  }
+  .card-blanca .servicios-titulo-extra h1.section-title {
+    cursor: pointer;
+  }
+  .card-blanca .servicios-titulo-extra h1.section-title:hover {
+    color: #bb86fc !important;
+  }
+  .card-blanca .servicios-titulo-extra h2.section-subtitle:hover {
+    color: #bb86fc !important;
+  }
 
   .card-blanca:hover {
     transform: translateY(-8px) scale(1.02);
