@@ -15,7 +15,9 @@
       <div class="service-card" v-for="item in ['OBRA CIVIL','FIBRA ÓPTICA','INSTALACIONES','GESTIÓN Y SOPORTE']" :key="item">
         <div class="card-inner">
           <div class="card-front">
-            <div class="servicio-icon"></div>
+            <div class="servicio-icon">
+              <i class="icon-placeholder"></i>
+            </div>
             <h3>{{ item }}</h3>
           </div>
           <div class="card-back">
@@ -78,8 +80,18 @@
   background-color: #2c2c54;
 }
 .text-center { text-align: center; }
-.section-subtitle { font-size: 1.5rem; color: #f0f0f0; }
-.section-title { font-size: 3.5rem; font-weight: 700; color: #fff; }
+.section-subtitle {
+  font-size: 1.2rem;
+  color: #ffffff;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+}
+.section-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #c9a7ff; /* violeta como en la imagen */
+  margin-bottom: 20px;
+}
 .section-description { color: #eee; max-width: 800px; margin: 0 auto 50px; }
 
 .servicios-grid {
@@ -104,7 +116,12 @@
   border-radius: 20px;
   display: flex; align-items: center; justify-content: center;
 }
-.card-front { background: rgba(255,255,255,0.1); color: #fff; }
+.card-front {
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  flex-direction: column;
+  gap: 15px;
+}
 .card-back { background: linear-gradient(135deg,#8A2BE2,#bb86fc); transform: rotateY(180deg); color: #fff; }
 
 /* CARD BLANCA – MISMO ESTILO QUE EMPRESA */
@@ -144,4 +161,15 @@
 .text-content:hover .section-subtitle { color: #8A2BE2; }
 
 .card-blanca { max-width: 900px; margin: 60px auto 0; }
+
+.icon-placeholder {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg,#8A2BE2,#bb86fc);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
 </style>
