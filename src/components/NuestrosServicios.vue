@@ -87,13 +87,13 @@
 
     </div>
     <!-- TÍTULO ADICIONAL ANTES DE LA CARD BLANCA DE TEXTO -->
-    <div class="servicios-titulo-extra">
-      <h2 class="section-subtitle">ÁREAS DE ESPECIALIZACIÓN</h2>
-      <h1 class="section-title">¿QUÉ HACEMOS?</h1>
-      <p class="intro-text">Conocé en detalle los servicios y soluciones que ofrecemos para potenciar tu proyecto.</p>
-    </div>
-    <!-- TEXTO DESCRIPTIVO DE SERVICIOS -->
+    <!-- TEXTO DESCRIPTIVO DE SERVICIOS CON TÍTULO INCLUIDO -->
     <div class="servicios-descripcion-texto text-content card-blanca">
+      <div class="servicios-titulo-extra text-center" style="margin-bottom: 2.5rem;">
+        <h2 class="section-subtitle">ÁREAS DE ESPECIALIZACIÓN</h2>
+        <h1 class="section-title">¿QUÉ HACEMOS?</h1>
+        <p class="intro-text">Conocé en detalle los servicios y soluciones que ofrecemos para potenciar tu proyecto.</p>
+      </div>
       <ul>
         <li><b>Telecomunicaciones e Infraestructura</b>
           <ul>

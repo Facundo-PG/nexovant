@@ -3,7 +3,7 @@
     <div class="content-wrapper-valores">
       <div class="header-section">
         <h2 class="section-subtitle">NUESTROS</h2>
-        <h1 class="section-title">VALORES</h1>
+        <h1 class="section-title" style="background: linear-gradient(45deg, #fff, #bb86fc, #e1bee7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-shadow: 0 2px 10px rgba(255,255,255,0.1);">VALORES</h1>
         <p class="intro-text">En un mercado dinámico y competitivo, Nexovant se distingue por una propuesta de valor sólida y centrada en las necesidades de nuestros clientes. Estos son los pilares fundamentales que nos definen:</p>
       </div>
 
