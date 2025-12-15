@@ -244,7 +244,7 @@
     transition: color 0.3s;
   }
   .card-blanca .servicios-titulo-extra h1.section-title {
-    color: #2c2c54 !important;
+    color: #2c2c54;
     font-size: 2.8rem;
     font-weight: 700;
     margin-bottom: 1.2rem;
@@ -252,10 +252,11 @@
     text-shadow: 0 2px 8px #e0e7ff;
     transition: color 0.3s;
     cursor: pointer;
-    background: none !important;
-    -webkit-background-clip: initial !important;
-    -webkit-text-fill-color: initial !important;
-    background-clip: initial !important;
+    background: none;
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: unset;
+    background-clip: unset;
+    filter: none;
   }
   .card-blanca .servicios-titulo-extra h1.section-title:hover,
   .card-blanca .servicios-titulo-extra h2.section-subtitle:hover {
