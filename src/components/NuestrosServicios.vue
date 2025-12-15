@@ -283,7 +283,7 @@
         background-clip: initial !important;
       }
       .section-title-servicios:hover {
-        color: #bb86fc;
+        color: #6A1B9A;
       }
 /* Animación de color para el título negro, igual que EMPRESA en NuestraEmpresa.vue */
       .anim-title-black {
@@ -303,7 +303,7 @@
         transition: opacity 0.4s;
       }
       .anim-title-black:hover {
-        color: #bb86fc;
+        color: #6A1B9A;
       }
       .anim-title-black:hover::after {
         opacity: 1;
