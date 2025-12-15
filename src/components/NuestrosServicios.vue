@@ -91,7 +91,7 @@
     <div class="servicios-descripcion-texto text-content card-blanca">
       <div class="servicios-titulo-extra text-center" style="margin-bottom: 2.5rem;">
         <h2 class="section-subtitle">ÁREAS DE ESPECIALIZACIÓN</h2>
-        <h1 class="section-title">¿QUÉ HACEMOS?</h1>
+        <h1 class="section-title anim-title-black">¿QUÉ HACEMOS?</h1>
         <p class="intro-text">Conocé en detalle los servicios y soluciones que ofrecemos para potenciar tu proyecto.</p>
       </div>
       <ul>
@@ -197,15 +197,50 @@
   /* Card blanca para la descripción de servicios */
   .card-blanca {
     background: #fff;
-    border-radius: 18px;
-    box-shadow: 0 4px 32px rgba(44,44,84,0.10);
-    padding: 2.2rem 1rem 2.7rem 1rem;
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+    padding: 40px;
     margin-top: 2.5rem;
     margin-bottom: 2.5rem;
     overflow: hidden;
     color: #222;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    border: 2px solid transparent;
   }
 
+  .card-blanca:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 25px 60px rgba(138, 43, 226, 0.3);
+    border-color: rgba(138, 43, 226, 0.2);
+    background-color: #fff;
+  }
+/* Animación de color para el título negro, igual que EMPRESA en NuestraEmpresa.vue */
+      .anim-title-black {
+        color: #222;
+        background: none;
+        position: relative;
+        transition: color 0.4s;
+      }
+      .anim-title-black::after {
+        content: '';
+        position: absolute;
+        left: 0; right: 0; bottom: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #bb86fc, #e1bee7, #bb86fc);
+        border-radius: 2px;
+        opacity: 0;
+        transition: opacity 0.4s;
+      }
+      .anim-title-black:hover {
+        color: #bb86fc;
+      }
+      .anim-title-black:hover::after {
+        opacity: 1;
+      }
 /* ESTILOS DE LAS TARJETAS (CARD) */
 .service-card {
   background-color: transparent;
