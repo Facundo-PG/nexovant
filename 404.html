@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <title>Redireccionando...</title>
-  <meta http-equiv="refresh" content="0; url=/home" />
+  <meta http-equiv="refresh" content="0; url=/" />
   <script>
-    // Redirige a /home si se accede a cualquier ruta inexistente
+    // Redirige a la raíz si se accede a cualquier ruta inexistente (como /home)
+    window.location.replace('/');
     window.location.replace('/home');
   </script>
   <style>
@@ -14,6 +15,6 @@
   </style>
 </head>
 <body>
-  <h1>Redireccionando a la portada...</h1>
+  <h1>Redireccionando a la página principal...</h1>
 </body>
 </html>
