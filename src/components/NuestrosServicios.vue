@@ -243,20 +243,20 @@
     text-shadow: 0 2px 8px #e0e7ff;
     transition: color 0.3s;
   }
-  .card-blanca .servicios-titulo-extra h1.section-title {
-    color: #2c2c54;
-    font-size: 2.8rem;
-    font-weight: 700;
-    margin-bottom: 1.2rem;
-    letter-spacing: 0.5px;
-    text-shadow: 0 2px 8px #e0e7ff;
-    transition: color 0.3s;
-    cursor: pointer;
-  }
-  .card-blanca .servicios-titulo-extra h1.section-title:hover,
-  .card-blanca .servicios-titulo-extra h2.section-subtitle:hover {
-    color: #bb86fc;
-  }
+ .card-blanca .servicios-titulo-extra h1.section-title {
+  color: #222; /* negro */
+  background: none;
+  -webkit-text-fill-color: initial;
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.5px;
+  transition: color 0.4s ease;
+}
+.card-blanca:hover .servicios-titulo-extra h1.section-title {
+  color: #bb86fc; /* color empresa */
+}
+ 
   .card-blanca .servicios-titulo-extra p.intro-text {
     color: #222;
     margin-bottom: 1.5rem;
