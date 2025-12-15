@@ -114,7 +114,20 @@ const clientAltTexts = [
         </div>
       <div class="clientes-grid">
         <div class="cliente-logo" v-for="(img, idx) in clientImages" :key="idx">
-          <img :src="img" :alt="clientAltTexts[idx]" />
+          <img :src="img" :alt="clientAltTexts[idx]" class="cliente-img-uniforme" />
+        /* Asegura que todas las imágenes de clientes tengan el mismo tamaño y ajuste visual */
+        .cliente-img-uniforme {
+          width: 110px;
+          height: 70px;
+          object-fit: contain;
+          object-position: center;
+          display: block;
+          margin: 0 auto;
+          background: #fff;
+          border-radius: 10px;
+          box-shadow: 0 2px 8px rgba(44,44,84,0.06);
+          padding: 6px;
+        }
         </div>
       </div>
     </div>
