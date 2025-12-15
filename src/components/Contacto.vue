@@ -45,12 +45,12 @@ const sendEmail = async () => {
     const userID = 'hWiJRYnniEs_7R4_k'; // Ej: 'user_ABC123XYZ' (también llamado Public Key)
     
     const templateParams = {
-      from_name: formData.value.name,
-      from_email: formData.value.email,
-      phone: formData.value.phone,
-      message: formData.value.message,
-      to_email: 'administracion@nexovant.net'
-    };
+  name: formData.value.name,
+  email: formData.value.email,
+  phone: formData.value.phone,
+  message: formData.value.message
+};
+
     
     await emailjs.send(serviceID, templateID, templateParams, userID);
     
