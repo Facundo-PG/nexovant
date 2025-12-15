@@ -109,7 +109,7 @@
             <li>Ofrecemos soluciones de seguridad electrónica, que incluyen:</li>
             <li>
               <ul>
-                <li>Instalación y configuración de cámaras de seguridad (IP))</li>
+                <li>Instalación y configuración de cámaras de seguridad (IP)</li>
                 <li>Integración de sistemas de monitoreo</li>
                 <li>Infraestructura de soporte y cableado asociado</li>
               </ul>

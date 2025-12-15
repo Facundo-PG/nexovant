@@ -4,15 +4,11 @@ import LandingView from '@/views/LandingView.vue';
 import HomeView from '@/views/HomeView.vue'; // Ejemplo
 import QuienesSomosView from '@/views/QuienesSomosView.vue';
 
-// 🛑 CORRECCIÓN FINAL: Forzamos el uso de la ruta /nexovant/ en producción.
-// Si el entorno de producción está activo, usamos la ruta estricta.
-const VUE_ROUTER_BASE = import.meta.env.PROD 
-  ? '/nexovant/' // Usar la base explícita del repositorio en el build.
-  : import.meta.env.BASE_URL; // Usar la base de Vite en desarrollo.
+
 
 const router = createRouter({
   // Usamos la base condicional para el historial.
-  history: createWebHistory(VUE_ROUTER_BASE),
+  history: createWebHistory(import.meta.env.BASE_URL),
   
   routes: [
     {
