@@ -5,29 +5,29 @@
 <template>
   <section id="servicios" class="section-container">
     <h2 class="section-subtitle text-center">NUESTROS</h2>
-    <h1 class="section-title text-center">SERVICIOS</h1>
+    <h1 class="section-title text-center" style="background: linear-gradient(45deg, #18a7b8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-shadow: 0 2px 10px rgba(255,255,255,0.1);">SERVICIOS</h1>
     <p class="text-center section-description">
-      Nexovant Ingeniería y Tecnología srl. ofrece una cartera de servicios de manera integral y completa, desde la infraestructura física hasta la puesta en marcha y soporte.
+      Meltech OT ofrece una cartera de servicios integral, con foco en consultoría, sistemas IT y telecomunicaciones, desde el diagnóstico inicial hasta la puesta en marcha y soporte.
     </p>
     <div class="servicios-grid">
       
-      <!-- INICIO DE TARJETA 1: OBRA CIVIL -->
+      <!-- INICIO DE TARJETA 1: CONSULTORÍA -->
       <div class="service-card">
         <div class="card-inner">
           <div class="card-front">
             <div class="servicio-icon">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.17 48.17 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" /></svg>
             </div>
-            <h3>OBRA CIVIL</h3>
+            <h3>CONSULTORÍA</h3>
           </div>
           <div class="card-back">
-            <h3>NUESTRO COMPROMISO</h3>
-            <p>"Construimos las bases sólidas para la conectividad del futuro. Cada proyecto es un paso hacia adelante, garantizando infraestructura duradera y confiable."</p>
+            <h3>ARQUITECTURA TECNOLÓGICA</h3>
+            <p>"Analizamos necesidades, diseñamos hojas de ruta y definimos soluciones a medida para que cada inversión tecnológica tenga impacto real."</p>
           </div>
         </div>
       </div>
 
-      <!-- INICIO DE TARJETA 2: FIBRA ÓPTICA -->
+      <!-- INICIO DE TARJETA 2: SISTEMAS IT -->
       <div class="service-card">
         <div class="card-inner">
           <div class="card-front">
@@ -36,16 +36,16 @@
                 <path d="M2 4C2 2.9 2.9 2 4 2H20C21.1 2 22 2.9 22 4V16C22 17.1 21.1 18 20 18H13V20H17V22H7V20H11V18H4C2.9 18 2 17.1 2 16V4ZM4 16H20V4H4V16Z"/>
               </svg>
             </div>
-            <h3>FIBRA ÓPTICA</h3>
+            <h3>SISTEMAS IT</h3>
           </div>
           <div class="card-back">
-            <div class="stat-number">+250,000</div>
-            <div class="stat-label">Metros de fibra tendidos</div>
+            <div class="stat-number">24/7</div>
+            <div class="stat-label">Monitoreo, soporte y continuidad operativa</div>
           </div>
         </div>
       </div>
       
-      <!-- INICIO DE TARJETA 3: INSTALACIONES -->
+      <!-- INICIO DE TARJETA 3: TELECOMUNICACIONES -->
       <div class="service-card">
         <div class="card-inner">
           <div class="card-front">
@@ -54,11 +54,11 @@
                 <path d="M22.7 19L13.6 9.9C14.5 7.6 14 4.9 12.1 3C10.1 1 7.1 0.6 4.7 1.7L9 6L6 9L1.6 4.7C0.4 7.1 0.9 10.1 2.9 12.1C4.8 14 7.5 14.5 9.8 13.6L18.9 22.7C19.3 23.1 19.9 23.1 20.3 22.7L22.6 20.4C23.1 20 23.1 19.3 22.7 19Z"/>
               </svg>
             </div>
-            <h3>INSTALACIONES</h3>
+            <h3>TELECOMUNICACIONES</h3>
           </div>
           <div class="card-back">
-            <div class="stat-number">98.7%</div>
-            <div class="stat-label">De satisfacción en instalaciones</div>
+            <div class="stat-number">99%</div>
+            <div class="stat-label">Enfoque en disponibilidad, cobertura y rendimiento</div>
           </div>
         </div>
       </div>
@@ -87,10 +87,22 @@
     <div class="servicios-descripcion-texto text-content card-blanca">
       <div class="servicios-titulo-extra text-center" style="margin-bottom: 2.5rem;">
         <h2 class="section-subtitle">ÁREAS DE ESPECIALIZACIÓN</h2>
-        <h1 class="section-title section-title-servicios">¿QUÉ HACEMOS?</h1>
-        <p class="intro-text">Conocé en detalle los servicios y soluciones que ofrecemos para potenciar tu proyecto.</p>
+        <h1 class="section-title section-title-servicios" style="background: linear-gradient(45deg, #18a7b8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-shadow: 0 2px 10px rgba(255,255,255,0.1);">¿QUÉ HACEMOS?</h1>
+        <p class="intro-text">Conocé en detalle las soluciones de consultoría, sistemas IT y telecomunicaciones que ofrecemos para potenciar tu proyecto.</p>
       </div>
       <ul>
+        <li><b>Consultoría Tecnológica</b>
+          <ul>
+            <li>Acompañamos a cada cliente en el diagnóstico, diseño y priorización de iniciativas para alinear la tecnología con los objetivos del negocio.</li>
+            <li>Definimos arquitecturas, planes de implementación y criterios de crecimiento para que cada proyecto arranque con una base sólida.</li>
+          </ul>
+        </li>
+        <li><b>Sistemas IT y Soporte</b>
+          <ul>
+            <li>Implementamos y administramos entornos de sistemas, redes y servicios esenciales para asegurar continuidad, orden y escalabilidad.</li>
+            <li>Brindamos soporte técnico, monitoreo y acompañamiento operativo para reducir fricciones y mejorar la productividad diaria.</li>
+          </ul>
+        </li>
         <li><b>Telecomunicaciones e Infraestructura</b>
           <ul>
             <li>Realizamos tendidos de redes aéreas y subterráneas, incluyendo obra civil asociada, canalizaciones, cámaras, cruces especiales y adecuaciones de infraestructura, garantizando soluciones eficientes y duraderas.</li>
@@ -148,13 +160,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #2c2c54;
+  background: linear-gradient(180deg, #f6f2ea 0%, #eef2f5 100%);
 }
 .text-center { text-align: center; }
 .section-subtitle { 
   font-size: 1.5rem; 
   font-weight: 300; 
-  color: #f0f0f0;
+  color: #0f3d5e;
   margin-bottom: 10px;
 }
 
@@ -162,25 +174,21 @@
   font-size: 3.5rem; 
   font-weight: 700; 
   margin-bottom: 20px;
-  background: linear-gradient(45deg, #fff, #bb86fc, #e1bee7);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-shadow: 0 2px 10px rgba(255,255,255,0.1);
+  
 }
 .section-description {
   max-width: 800px;
   margin: 0 auto 50px auto;
   font-size: 1.2rem;
   line-height: 1.7;
-  color: #f0f0f0;
+  color: #334155;
 }
 
 /* CONTENEDOR DE LA CUADRÍCULA (GRID) */
 .servicios-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 30px;
+  gap: 29px;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
@@ -216,7 +224,7 @@
   left: -50%;
   width: 200%;
   height: 200%;
-  background: linear-gradient(45deg, transparent, rgba(138, 43, 226, 0.13), transparent);
+  background: linear-gradient(45deg, transparent, rgba(95, 225, 217, 0.13), transparent);
   transform: rotate(45deg);
   transition: transform 0.6s ease, opacity 0.6s ease;
   z-index: 1;
@@ -234,7 +242,7 @@
 
 /* TÍTULOS DENTRO DE CARD BLANCA */
 .card-blanca .servicios-titulo-extra h2.section-subtitle {
-  color: #2c2c54;
+  color: #0f3d5e;
   font-size: 1.35rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
@@ -259,7 +267,7 @@
 
 /* HOVER: CAMBIO DE COLOR */
 .card-blanca:hover .servicios-titulo-extra h1.section-title {
-  color: #6a1b9a; /* COLOR EMPRESA AL PASAR EL MOUSE */
+  color: #18a7b8; /* COLOR EMPRESA AL PASAR EL MOUSE */
 }
 
 .card-blanca .servicios-titulo-extra p.intro-text {
@@ -269,8 +277,8 @@
 
 .card-blanca:hover {
   transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 25px 60px rgba(138, 43, 226, 0.3);
-  border-color: rgba(138, 43, 226, 0.2);
+  box-shadow: 0 25px 60px rgba(24, 167, 184, 0.3);
+  border-color: rgba(95, 225, 217, 0.2);
   background-color: #fff;
 }
 
@@ -304,7 +312,7 @@
 
 .service-card:hover .card-inner {
   transform: rotateY(180deg);
-  box-shadow: 0 25px 50px rgba(138, 43, 226, 0.3);
+  box-shadow: 0 25px 50px rgba(24, 167, 184, 0.3);
 }
 .card-front, .card-back {
   position: absolute;
@@ -325,7 +333,7 @@
 .card-front {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(15px);
-  color: #fff;
+  color: #18a7b8;
   border: 1px solid rgba(255, 255, 255, 0.3);
   z-index: 2;
 }
@@ -346,8 +354,8 @@
 }
 
 .card-back {
-  background: linear-gradient(135deg, #8A2BE2, #6a1b9a, #bb86fc);
-  color: white;
+  background: linear-gradient(135deg, #07131f, #0f3d5e, #18a7b8);
+  color: #18a7b8;
   transform: rotateY(180deg);
   position: relative;
 }
@@ -370,7 +378,7 @@
 
 /* CONTENIDO INTERNO DE LAS TARJETAS */
 .servicio-icon {
-  background: linear-gradient(45deg, #bb86fc, #8A2BE2, #6a1b9a);
+  background: linear-gradient(45deg, #5fe1d9, #18a7b8, #0f3d5e);
   width: 100px;
   height: 100px;
   border-radius: 50%;
@@ -380,13 +388,13 @@
   align-items: center;
   transition: all 0.4s ease;
   position: relative;
-  box-shadow: 0 10px 30px rgba(138, 43, 226, 0.3);
+  box-shadow: 0 10px 30px rgba(24, 167, 184, 0.3);
   z-index: 2;
 }
 
 .service-card:hover .servicio-icon {
   transform: scale(1.1) rotate(10deg);
-  box-shadow: 0 15px 40px rgba(138, 43, 226, 0.5);
+  box-shadow: 0 15px 40px rgba(24, 167, 184, 0.5);
 }
 
 .servicio-icon::before {
@@ -396,7 +404,7 @@
   left: -2px;
   right: -2px;
   bottom: -2px;
-  background: linear-gradient(45deg, #fff, #bb86fc, #8A2BE2);
+  background: linear-gradient(45deg, #f7fbfc, #5fe1d9, #18a7b8);
   border-radius: 50%;
   z-index: -1;
   opacity: 0;
@@ -421,10 +429,7 @@
   color: #fff;
 }
 .card-front h3 {
-  background: linear-gradient(45deg, #fff, #bb86fc, #e1bee7);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #18a7b8;
   font-size: 1.5rem;
   font-weight: 600;
   text-align: center;
@@ -438,10 +443,7 @@
 }
 
 .service-card:hover .card-front h3 {
-  background: linear-gradient(45deg, #bb86fc, #fff, #e1bee7);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #18a7b8;
   transform: translateY(-5px);
 }
 
@@ -452,7 +454,7 @@
   margin-bottom: 20px;
   text-align: center;
   letter-spacing: 1px;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  color: #18a7b8;
   z-index: 2;
   position: relative;
 }
@@ -463,7 +465,7 @@
   padding: 0 15px;
   text-align: center;
   font-style: italic;
-  text-shadow: 0 1px 5px rgba(0,0,0,0.2);
+  color: #18a7b8;
   z-index: 2;
   position: relative;
 }
@@ -471,7 +473,7 @@
   font-size: 3rem;
   font-weight: 800;
   line-height: 1;
-  color: #fff;
+  color: #18a7b8;
   margin-bottom: 15px;
   z-index: 2;
   position: relative;
@@ -488,17 +490,16 @@
 
 .stat-label {
   font-size: 1.1rem;
-  color: rgba(255, 255, 255, 0.9);
+  color: #18a7b8;
   text-align: center;
   font-weight: 500;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
   z-index: 2;
   position: relative;
   transition: all 0.3s ease;
 }
 
 .service-card:hover .stat-label {
-  color: #fff;
+  color: #18a7b8;
   transform: translateY(-3px);
 }
 

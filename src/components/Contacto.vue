@@ -82,7 +82,7 @@ const sendEmail = async () => {
       <div class="info-side">
         <h2 class="info-title">Información de <br>Contacto</h2>
         <p class="info-text">
-          Estamos a su disposición para conversar sobre sus proyectos y ofrecerle soluciones a medida.
+          Estamos a su disposición para conversar sobre consultoría, sistemas IT y telecomunicaciones, y ofrecerle soluciones a medida.
         </p>
         
         <!-- ========= INICIO DE LA MODIFICACIÓN ========= -->
@@ -186,17 +186,17 @@ const sendEmail = async () => {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #2c2c54
+  background: linear-gradient(180deg, #f6f2ea 0%, #eef2f5 100%);
 }
 .contact-wrapper {
   display: flex;
   max-width: 1000px;
   width: 100%;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(15, 61, 94, 0.12);
   border-radius: 20px;
-  box-shadow: 0 25px 60px rgba(0,0,0,0.3), 0 0 0 1px rgba(255,255,255,0.1);
+  box-shadow: 0 25px 60px rgba(15,37,55,0.12), 0 0 0 1px rgba(255,255,255,0.4);
   overflow: hidden;
   transition: all 0.3s ease;
 }
@@ -206,17 +206,17 @@ const sendEmail = async () => {
 }
 
 .info-side {
-  color: #fff;
+  color: #0f2537;
   padding: 40px;
   width: 50%;
-  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-right: 1px solid rgba(15, 61, 94, 0.12);
   position: relative;
 }
 .info-title { 
   font-size: 2.5rem; 
   line-height: 1.2; 
   margin-bottom: 20px; 
-  background: linear-gradient(45deg, #fff, #e1bee7, #bb86fc);
+  background: #18a7b8;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -225,13 +225,13 @@ const sendEmail = async () => {
 }
 
 .info-title:hover {
-  background: linear-gradient(45deg, #bb86fc, #e1bee7, #fff);
+  background: #18a7b8;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  transform: translateY(-2px);
+  
 }
-.info-text { font-size: 1.1rem; color: #f0f0f0; opacity: 0.9; margin-bottom: 30px; }
+.info-text { font-size: 1.1rem; color: #334155; opacity: 1; margin-bottom: 30px; }
 .contact-details { margin-bottom: 40px; }
 
 /* === INICIO DE ESTILOS DEL FORMULARIO === */
@@ -248,7 +248,7 @@ const sendEmail = async () => {
 }
 
 .form-group label {
-  color: #fff;
+  color: #0f2537;
   font-size: 0.95rem;
   font-weight: 500;
 }
@@ -257,9 +257,9 @@ const sendEmail = async () => {
 .form-group textarea {
   padding: 12px 15px;
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  background: rgba(255, 255, 255, 0.05);
-  color: #fff;
+  border: 1px solid rgba(15, 61, 94, 0.14);
+  background: rgba(255, 255, 255, 0.98);
+  color: #0f2537;
   font-size: 1rem;
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
@@ -267,15 +267,15 @@ const sendEmail = async () => {
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(15, 37, 55, 0.45);
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #bb86fc;
-  background: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 0 0 3px rgba(187, 134, 252, 0.2);
+  border-color: #18a7b8;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 0 0 3px rgba(24, 167, 184, 0.18);
 }
 
 .form-group textarea {
@@ -290,7 +290,7 @@ const sendEmail = async () => {
   justify-content: center;
   gap: 10px;
   padding: 14px 28px;
-  background: linear-gradient(45deg, #bb86fc, #8e24aa);
+  background: linear-gradient(45deg, #18a7b8, #0f3d5e);
   color: #fff;
   border: none;
   border-radius: 50px;
@@ -298,7 +298,7 @@ const sendEmail = async () => {
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 8px 25px rgba(187, 134, 252, 0.4);
+  box-shadow: 0 8px 25px rgba(24, 167, 184, 0.4);
   position: relative;
   overflow: hidden;
 }
@@ -316,8 +316,8 @@ const sendEmail = async () => {
 
 .submit-btn:hover:not(:disabled) {
   transform: translateY(-3px);
-  box-shadow: 0 12px 35px rgba(187, 134, 252, 0.6);
-  background: linear-gradient(45deg, #8e24aa, #bb86fc);
+  box-shadow: 0 12px 35px rgba(24, 167, 184, 0.6);
+  background: linear-gradient(45deg, #0f3d5e, #18a7b8);
 }
 
 .submit-btn:hover::before {
@@ -377,19 +377,19 @@ const sendEmail = async () => {
 
 .contact-person:hover {
   background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(138, 43, 226, 0.3);
+  border-color: rgba(95, 225, 217, 0.3);
   transform: translateY(-2px);
 }
 
 .contact-person h4 { 
   margin: 0; 
-  color: #bb86fc;
+  color: #18a7b8;
   font-weight: 600;
 }
 
 .contact-person span { 
   opacity: 0.9;
-  color: #e1bee7;
+  color: #f2b15c;
 }
 .action-side {
   padding: 40px;
@@ -407,7 +407,7 @@ const sendEmail = async () => {
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at center, rgba(138, 43, 226, 0.1) 0%, transparent 70%);
+  background: radial-gradient(circle at center, rgba(24, 167, 184, 0.08) 0%, transparent 70%);
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -419,7 +419,7 @@ const sendEmail = async () => {
 .whatsapp-box h3 {
   font-size: 1.8rem;
   margin-bottom: 15px;
-  background: linear-gradient(45deg, #fff, #bb86fc);
+  background: linear-gradient(45deg, #0f2537, #18a7b8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -427,7 +427,7 @@ const sendEmail = async () => {
 }
 
 .whatsapp-box:hover h3 {
-  background: linear-gradient(45deg, #bb86fc, #fff, #e1bee7);
+  background: linear-gradient(45deg, #18a7b8, #0f2537, #f2b15c);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -435,19 +435,19 @@ const sendEmail = async () => {
 }
 .whatsapp-box p {
   font-size: 1.1rem;
-  color: #f0f0f0;
+  color: #334155;
   margin-bottom: 30px;
 }
 .whatsapp-btn {
   display: inline-flex; align-items: center; gap: 15px;
   padding: 18px 35px;
-  background: linear-gradient(45deg, #25D366, #40E67B);
+  background: linear-gradient(45deg, #0f3d5e, #18a7b8);
   color: #fff;
   border-radius: 50px;
   font-size: 1.2rem; font-weight: bold;
   text-decoration: none;
   transition: all 0.4s ease;
-  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4), 0 0 0 1px rgba(255,255,255,0.1);
+  box-shadow: 0 8px 25px rgba(24, 167, 184, 0.34), 0 0 0 1px rgba(255,255,255,0.2);
   position: relative;
   overflow: hidden;
 }
@@ -465,8 +465,8 @@ const sendEmail = async () => {
 
 .whatsapp-btn:hover {
   transform: translateY(-5px) scale(1.05);
-  box-shadow: 0 15px 40px rgba(37, 211, 102, 0.6), 0 0 0 1px rgba(255,255,255,0.2);
-  background: linear-gradient(45deg, #1FAD4F, #25D366);
+  box-shadow: 0 15px 40px rgba(24, 167, 184, 0.48), 0 0 0 1px rgba(255,255,255,0.2);
+  background: linear-gradient(45deg, #18a7b8, #5fe1d9);
 }
 
 .whatsapp-btn:hover::before {
@@ -489,7 +489,7 @@ const sendEmail = async () => {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #2c2c54;
+  background-color: #f6f2ea;
 }
 
 @media (max-width: 900px) {

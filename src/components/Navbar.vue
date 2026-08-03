@@ -2,13 +2,26 @@
 import { ref } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
 
-const logoImage = import.meta.env.BASE_URL + 'images/cover.jpeg';
+const logoImage = import.meta.env.BASE_URL + 'images/logoDef.jpeg';
 const isMenuOpen = ref(false);
 const router = useRouter();
 const route = useRoute();
 
 const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value;
+};
+
+const goHome = () => {
+  isMenuOpen.value = false;
+
+  if (route.path === '/home') {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    return;
+  }
+
+  router.push('/home').then(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
 };
 
 const scrollToSection = (sectionId) => {
@@ -52,9 +65,13 @@ const scrollToSection = (sectionId) => {
 <template>
   <nav class="main-nav">
     <div class="nav-content">
-      <router-link to="/" class="logo-link">
+      <router-link to="/home" class="logo-link" @click.prevent="goHome">
         <!-- Imagen desde /public/images (funciona en GitHub Pages) -->
-        <img :src="logoImage" alt="Logo Nexovant" class="logo-image" />
+        <img :src="logoImage" alt="Logo MELTECH OT" class="logo-image" />
+        <div class="logo-copy">
+          <span class="logo-name">MELTECH OT</span>
+          <span class="logo-tag">Consultoría · IT · Telecom</span>
+        </div>
       </router-link>
 
       <ul class="desktop-nav-links">
@@ -90,52 +107,83 @@ const scrollToSection = (sectionId) => {
 <style scoped>
 .main-nav {
   position: fixed; top: 0; left: 0; width: 100%;
-  background-color: rgba(26, 26, 46, 0.9);
+  background-color: rgba(255, 255, 255, 0.82);
   backdrop-filter: blur(10px);
   z-index: 1000; padding: 0 40px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 10px rgba(15, 37, 55, 0.08);
 }
 .nav-content {
   display: flex; justify-content: space-between; align-items: center;
   max-width: 1200px; margin: 0 auto; height: 70px;
 }
 .logo-link {
-  display: flex; align-items: center; gap: 0px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
   text-decoration: none;
+  padding: 6px 14px 6px 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(15, 61, 94, 0.08);
+  box-shadow: 0 3px 12px rgba(15, 37, 55, 0.06);
+  transition: all 0.25s ease;
 }
 .logo-image {
-  height: 54px;
-  width: 90px;
-  min-width: 90px;
-  min-height: 54px;
-  max-width: 90px;
-  max-height: 54px;
-  object-fit: cover;
-  border-radius: 50px / 54px;
+  height: 40px;
+  width: auto;
+  max-width: 92px;
+  object-fit: contain;
+  border-radius: 12px;
   background: transparent;
-  box-shadow: 0 2px 12px #6366f122;
+  box-shadow: none;
   padding: 0;
-  border: 2.5px solid #fff;
+  border: 0;
   display: block;
-  transition: box-shadow 0.2s, border 0.2s;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+.logo-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  line-height: 1;
+  white-space: nowrap;
+}
+.logo-name {
+  color: #0f2537;
+  font-size: 0.98rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+.logo-tag {
+  color: #18a7b8;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 .logo-link:hover .logo-image {
-  box-shadow: 0 4px 24px #6366f1cc;
-  border: 2.5px solid #6366f1;
+  transform: translateY(-1px);
+  filter: drop-shadow(0 4px 10px rgba(24, 167, 184, 0.18));
+}
+.logo-link:hover {
+  background: rgba(255, 255, 255, 0.92);
+  border-color: rgba(24, 167, 184, 0.18);
+  box-shadow: 0 6px 18px rgba(15, 37, 55, 0.08);
 }
 .desktop-nav-links {
   list-style: none; display: flex;
   margin: 0; padding: 0; gap: 30px;
 }
 .desktop-nav-links a {
-  color: #f0f0f0; text-decoration: none; font-size: 1rem;
+  color: #0f2537; text-decoration: none; font-size: 1rem;
   padding: 5px 0; position: relative; transition: color 0.3s; cursor: pointer;
 }
-.desktop-nav-links a:hover { color: #fff; }
+.desktop-nav-links a:hover { color: #18a7b8; }
 .desktop-nav-links a::after {
   content: ''; position: absolute; width: 0; height: 2px; bottom: 0;
   left: 50%; transform: translateX(-50%);
-  background-color: #8A2BE2; transition: width 0.3s ease-in-out;
+  background-color: #5fe1d9; transition: width 0.3s ease-in-out;
 }
 .desktop-nav-links a:hover::after { width: 100%; }
 .hamburger-menu, .mobile-nav-links-container {
@@ -143,13 +191,14 @@ const scrollToSection = (sectionId) => {
 }
 @media (max-width: 768px) {
   .desktop-nav-links { display: none; }
+  .logo-copy { display: none; }
   .hamburger-menu {
     display: block; background: transparent; border: none; cursor: pointer;
     padding: 10px; z-index: 1010;
   }
   .hamburger-menu span {
     display: block; width: 25px; height: 3px;
-    background-color: #fff; margin: 5px 0;
+    background-color: #0f2537; margin: 5px 0;
     transition: all 0.3s ease-in-out;
   }
   .hamburger-menu.is-active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
@@ -158,10 +207,10 @@ const scrollToSection = (sectionId) => {
   .mobile-nav-links-container {
     display: flex; flex-direction: column;
     position: fixed; top: 70px; left: 0;
-    width: 100%; background-color: #1a1a2e;
+    width: 100%; background-color: rgba(255, 255, 255, 0.96);
     padding-bottom: 10px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 16px rgba(15,37,55,0.12);
+    border-bottom: 1px solid rgba(15, 61, 94, 0.12);
     transform: translateY(-120%); opacity: 0;
     transition: transform 0.4s ease-out, opacity 0.4s ease-out;
     pointer-events: none;
@@ -170,13 +219,13 @@ const scrollToSection = (sectionId) => {
     transform: translateY(0); opacity: 1; pointer-events: auto;
   }
   .mobile-nav-links-container a {
-    color: #f0f0f0; text-decoration: none; font-size: 1.1rem;
+    color: #0f2537; text-decoration: none; font-size: 1.1rem;
     width: 100%; text-align: left;
     padding: 18px 40px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(15, 61, 94, 0.08);
     transition: background-color 0.2s ease;
   }
   .mobile-nav-links-container a:last-child { border-bottom: none; }
-  .mobile-nav-links-container a:hover { background-color: rgba(255, 255, 255, 0.05); }
+  .mobile-nav-links-container a:hover { background-color: rgba(24, 167, 184, 0.08); }
 }
 </style>

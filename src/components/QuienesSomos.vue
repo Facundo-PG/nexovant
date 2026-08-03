@@ -64,7 +64,7 @@ onUnmounted(() => {
       <div class="header-section">
         <h2 class="section-title">¿Quiénes Somos?</h2>
         <p class="section-description">
-          Conocé más sobre nuestro equipo, nuestra historia y los proyectos que nos definen como líderes en telecomunicaciones.
+          Conocé más sobre nuestro equipo, nuestra historia y los proyectos que nos definen como un socio confiable en consultoría, sistemas IT y telecomunicaciones.
         </p>
       </div>
 
@@ -81,7 +81,7 @@ onUnmounted(() => {
               </div>
               <div class="info-content">
                 <h3>Nuestra Historia</h3>
-                <p>Fundada como empresa familiar, combinamos más de 20 años de experiencia en el rubro con la innovación constante para ofrecer soluciones de vanguardia.</p>
+                <p>Fundada como empresa familiar, combinamos más de 20 años de experiencia en el rubro con la innovación constante para ofrecer soluciones de vanguardia en consultoría, sistemas IT y telecomunicaciones.</p>
               </div>
             </div>
 
@@ -93,7 +93,7 @@ onUnmounted(() => {
               </div>
               <div class="info-content">
                 <h3>Nuestro Equipo</h3>
-                <p>Un equipo multidisciplinario de profesionales especializados en telecomunicaciones, comprometidos con la excelencia en cada proyecto.</p>
+                <p>Un equipo multidisciplinario de profesionales especializados en consultoría tecnológica, sistemas IT y telecomunicaciones, comprometidos con la excelencia en cada proyecto.</p>
               </div>
             </div>
 
@@ -172,7 +172,7 @@ onUnmounted(() => {
 .section-container {
   padding: 80px 40px;
   min-height: 100vh;
-  background-color: #2c2c54;
+  background: linear-gradient(180deg, #f6f2ea 0%, #eef2f5 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -192,9 +192,9 @@ onUnmounted(() => {
 .section-title {
   font-size: 3.5rem;
   font-weight: 700;
-  color: #2c3e50;
+  color: #0f2537;
   margin-bottom: 20px;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  background: linear-gradient(135deg, #f7fbfc 0%, #5fe1d9 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -202,7 +202,7 @@ onUnmounted(() => {
 
 .section-description {
   font-size: 1.3rem;
-  color:  #f8f9fa;
+  color:  #334155;
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.6;
@@ -226,14 +226,14 @@ onUnmounted(() => {
   border-radius: 20px;
   padding: 40px;
   box-shadow: 0 20px 60px rgba(0,0,0,0.1);
-  border: 1px solid rgba(138, 43, 226, 0.1);
+  border: 1px solid rgba(95, 225, 217, 0.1);
   transition: all 0.4s ease;
 }
 
 .info-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 30px 80px rgba(138, 43, 226, 0.15);
-  border-color: rgba(138, 43, 226, 0.3);
+  box-shadow: 0 30px 80px rgba(24, 167, 184, 0.15);
+  border-color: rgba(95, 225, 217, 0.35);
 }
 
 .info-item {
@@ -255,7 +255,7 @@ onUnmounted(() => {
   flex-shrink: 0;
   width: 60px;
   height: 60px;
-  background: linear-gradient(45deg, #6a1b9a, #8e24aa);
+  background: linear-gradient(45deg, #0f3d5e, #18a7b8);
   border-radius: 15px;
   display: flex;
   align-items: center;
@@ -265,24 +265,24 @@ onUnmounted(() => {
 
 .info-item:hover .info-icon {
   transform: scale(1.1) rotate(5deg);
-  box-shadow: 0 10px 25px rgba(138, 43, 226, 0.3);
+  box-shadow: 0 10px 25px rgba(24, 167, 184, 0.3);
 }
 
 .info-icon svg {
   width: 28px;
   height: 28px;
-  color: #fff;
+  color: #0f2537;
 }
 
 .info-content h3 {
   font-size: 1.4rem;
-  color: #2c3e50;
+  color: #18a7b8;
   margin-bottom: 10px;
   font-weight: 600;
 }
 
 .info-content p {
-  color: #666;
+  color: #475569;
   line-height: 1.6;
   font-size: 1rem;
 }
@@ -299,13 +299,13 @@ onUnmounted(() => {
 
 .gallery-header h3 {
   font-size: 2rem;
-  color: #fff;
+  color: #18a7b8;
   margin-bottom: 10px;
   font-weight: 600;
 }
 
 .gallery-header p {
-  color: #fff;
+  color: #000000;
   font-size: 1rem;
 }
 
@@ -314,13 +314,13 @@ onUnmounted(() => {
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 20px 60px rgba(0,0,0,0.1);
-  border: 1px solid rgba(138, 43, 226, 0.1);
+  border: 1px solid rgba(95, 225, 217, 0.1);
   transition: all 0.4s ease;
 }
 
 .gallery-container:hover {
   transform: translateY(-5px);
-  box-shadow: 0 30px 80px rgba(138, 43, 226, 0.15);
+  box-shadow: 0 30px 80px rgba(24, 167, 184, 0.15);
 }
 
 .image-slider {
@@ -418,7 +418,7 @@ onUnmounted(() => {
 .slider-control svg {
   width: 24px;
   height: 24px;
-  color: #6a1b9a;
+  color: #18a7b8;
 }
 
 /* Slider Dots */
@@ -427,7 +427,7 @@ onUnmounted(() => {
   justify-content: center;
   gap: 10px;
   padding: 20px;
-  background: #f8f9fa;
+  background: #eef4f4;
 }
 
 .dot {
@@ -446,7 +446,7 @@ onUnmounted(() => {
 }
 
 .dot.active {
-  background: #6a1b9a;
+  background: #0f3d5e;
   transform: scale(1.3);
 }
 

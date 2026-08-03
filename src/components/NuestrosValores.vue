@@ -3,8 +3,8 @@
     <div class="content-wrapper-valores">
       <div class="header-section">
         <h2 class="section-subtitle">NUESTROS</h2>
-        <h1 class="section-title" style="background: linear-gradient(45deg, #fff, #bb86fc, #e1bee7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-shadow: 0 2px 10px rgba(255,255,255,0.1);">VALORES</h1>
-        <p class="intro-text">En un mercado dinámico y competitivo, Nexovant se distingue por una propuesta de valor sólida y centrada en las necesidades de nuestros clientes. Estos son los pilares fundamentales que nos definen:</p>
+        <h1 class="section-title" style="background: linear-gradient(45deg, #18a7b8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-shadow: 0 2px 10px rgba(255,255,255,0.1);">VALORES</h1>
+        <p class="intro-text">En un mercado dinámico y competitivo, Meltech OT se distingue por una propuesta de valor sólida y centrada en las necesidades de nuestros clientes. Estos son los pilares fundamentales que nos definen:</p>
       </div>
 
       <div class="valores-grid">
@@ -113,7 +113,7 @@
 }
 
 .valores-bg {
-  background-color: #2c2c54;
+  background: linear-gradient(180deg, #f6f2ea 0%, #eef2f5 100%);
 }
 
 .content-wrapper-valores {
@@ -130,7 +130,7 @@
 .section-subtitle {
   font-size: 1.5rem;
   font-weight: 300;
-  color: #f0f0f0;
+  color: #0f3d5e;
   margin-bottom: 10px;
 }
 
@@ -138,8 +138,8 @@
   font-size: 3.5rem;
   font-weight: 700;
   margin-bottom: 30px;
-  color: #fff;
-  background: linear-gradient(45deg, #fff, #e1bee7);
+  color: #0f2537;
+  background: linear-gradient(45deg, #f7fbfc, #5fe1d9);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -147,15 +147,11 @@
 
 .intro-text {
   font-size: 1.2rem;
-  color: #f0f0f0;
+  color: #334155;
   line-height: 1.6;
   max-width: 800px;
   margin: 0 auto;
   transition: color 0.3s ease;
-}
-
-.intro-text:hover {
-  color: #fff;
 }
 
 /* Valores Grid */
@@ -168,9 +164,9 @@
 
 /* Valor Cards */
 .valor-card {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(10px);
-  border: 2px solid rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(15, 61, 94, 0.08);
   border-radius: 20px;
   padding: 30px;
   text-align: center;
@@ -182,16 +178,16 @@
 
 .valor-card:hover {
   transform: translateY(-10px) scale(1.02);
-  background: rgba(255, 255, 255, 0.15);
-  border-color: rgba(138, 43, 226, 0.5);
-  box-shadow: 0 20px 40px rgba(138, 43, 226, 0.3);
+  background: rgba(255, 255, 255, 1);
+  border-color: rgba(24, 167, 184, 0.38);
+  box-shadow: 0 20px 40px rgba(24, 167, 184, 0.28);
 }
 
 /* Valor Icon */
 .valor-icon {
   width: 80px;
   height: 80px;
-  background: linear-gradient(45deg, #6a1b9a, #8e24aa);
+  background: linear-gradient(45deg, #0f3d5e, #18a7b8);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -204,7 +200,7 @@
 
 .valor-card:hover .valor-icon {
   transform: rotate(10deg) scale(1.1);
-  box-shadow: 0 10px 30px rgba(138, 43, 226, 0.4);
+  box-shadow: 0 10px 30px rgba(24, 167, 184, 0.4);
 }
 
 .valor-icon svg {
@@ -222,7 +218,7 @@
 .valor-card h3 {
   font-size: 1.4rem;
   font-weight: 600;
-  color: #fff;
+  color: #0f2537;
   margin-bottom: 15px;
   transition: all 0.3s ease;
   position: relative;
@@ -230,13 +226,13 @@
 }
 
 .valor-card:hover h3 {
-  color: #e1bee7;
+  color: #18a7b8;
   transform: translateY(-2px);
 }
 
 .valor-card p {
   font-size: 1rem;
-  color: #f0f0f0;
+  color: #475569;
   line-height: 1.6;
   transition: all 0.3s ease;
   position: relative;
@@ -244,7 +240,7 @@
 }
 
 .valor-card:hover p {
-  color: #fff;
+  color: #0f2537;
 }
 
 /* Efecto de brillo diagonal */
@@ -255,7 +251,7 @@
   left: -50%;
   width: 200%;
   height: 200%;
-  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  background: linear-gradient(45deg, transparent, rgba(95, 225, 217, 0.12), transparent);
   transform: rotate(45deg);
   transition: transform 0.6s ease;
   z-index: 1;

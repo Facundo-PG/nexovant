@@ -2,10 +2,10 @@
   <footer class="footer">
     <div class="footer-content">
       <div class="footer-section">
-        <h3>Nexovant</h3>
-        <p>Ingeniería y Tecnología srl</p>
+        <h3>MELTECH OT</h3>
+        <p>Consultoría, sistemas IT y telecomunicaciones</p>
         <p class="footer-description">
-          Más de 20 años de experiencia en el rubro de las telecomunicaciones.
+          Más de 5 años de experiencia acompañando proyectos de consultoría tecnológica, sistemas IT y telecomunicaciones.
         </p>
       </div>
 
@@ -17,7 +17,7 @@
               <path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z"/>
               <path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z"/>
             </svg>
-            <span>administracion@nexovant.net</span>
+            <span>administracion@meltechot.net</span>
           </li>
           <li>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
@@ -56,7 +56,7 @@
     </div>
 
     <div class="footer-bottom">
-      <p>&copy; {{ currentYear }} Nexovant Ingeniería y Tecnología srl. Todos los derechos reservados.</p>
+      <p>&copy; {{ currentYear }} MELTECH OT. Todos los derechos reservados.</p>
     </div>
   </footer>
 </template>
@@ -83,7 +83,7 @@ const scrollToSection = (sectionId) => {
 
 <style scoped>
 .footer {
-  background: linear-gradient(135deg, #1a1a2e 0%, #2c2c54 100%);
+  background: linear-gradient(135deg, #07131f 0%, #0f3d5e 55%, #18a7b8 140%);
   color: #f0f0f0;
   padding: 60px 40px 20px;
   margin-top: auto;
@@ -102,7 +102,7 @@ const scrollToSection = (sectionId) => {
   font-size: 1.8rem;
   color: #fff;
   margin-bottom: 15px;
-  background: linear-gradient(45deg, #fff, #bb86fc);
+  background: linear-gradient(45deg, #f7fbfc, #5fe1d9);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -110,7 +110,7 @@ const scrollToSection = (sectionId) => {
 
 .footer-section h4 {
   font-size: 1.2rem;
-  color: #bb86fc;
+  color: #5fe1d9;
   margin-bottom: 20px;
   font-weight: 600;
 }
@@ -150,7 +150,7 @@ const scrollToSection = (sectionId) => {
 .footer-links li:hover,
 .footer-links a:hover {
   opacity: 1;
-  color: #bb86fc;
+  color: #5fe1d9;
   transform: translateX(5px);
   cursor: pointer;
 }

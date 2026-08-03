@@ -63,7 +63,7 @@ const clientAltTexts = [
         <h2 class="section-subtitle">NUESTRA</h2>
         <h1 class="section-title">EMPRESA</h1>
         <p class="intro-text">
-          Nexovant Ingeniería y Tecnología srl se posiciona como un referente de solidez y confiabilidad en el sector de las telecomunicaciones. Aunque es una empresa joven, está respaldada por más de <strong>20 años</strong> de presencia activa en el rubro, aportando un profundo conocimiento técnico y una visión actualizada de las necesidades del mercado. Esta combinación de experiencia acumulada e innovación constante nos permite ofrecer soluciones eficientes, integrales y adaptadas a los desafíos de hoy.
+          Meltech OT se posiciona como un socio estratégico en consultoría, sistemas IT y telecomunicaciones. Aunque es una marca joven, está respaldada por más de <strong>5 años</strong> de experiencia en el rubro, aportando conocimiento técnico, visión actualizada y una lectura precisa de las necesidades del mercado. Esa combinación de trayectoria e innovación nos permite ofrecer soluciones eficientes, integrales y adaptadas a los desafíos de hoy.
         </p>
         
         <div class="empresa-highlights">
@@ -71,7 +71,7 @@ const clientAltTexts = [
           <ul class="highlights-list">
             <li><strong>Tradición Familiar:</strong> Fundada bajo la alianza entre padre e hijos, combinando sabiduría acumulada con visión innovadora.</li>
             <li><strong>Enfoque Humano:</strong> Trato cercano, personalizado y empático en cada proyecto.</li>
-            <li><strong>Experiencia Comprobada:</strong> Más de dos décadas perfeccionando soluciones en las telecomunicaciones.</li>
+            <li><strong>Experiencia Comprobada:</strong> 5 años perfeccionando soluciones en consultoría tecnológica, sistemas IT y telecomunicaciones.</li>
           </ul>
         </div>
 
@@ -79,26 +79,26 @@ const clientAltTexts = [
           <h4>Nuestro Compromiso</h4>
           <ul class="highlights-list">
             <li><strong>Soluciones Confiables:</strong> Desplegamos tecnología robusta y durable para optimizar su negocio.</li>
-            <li><strong>Excelencia en Servicio:</strong> Superamos expectativas desde la consultoría hasta el soporte continuo.</li>
+            <li><strong>Excelencia en Servicio:</strong> Superamos expectativas desde la consultoría inicial hasta la operación y el soporte continuo.</li>
             <li><strong>Agilidad Operativa:</strong> Respuesta rápida a las necesidades cambiantes del mercado.</li>
             <li><strong>Soporte Integral:</strong> Acompañamiento completo en todo el ciclo de vida del proyecto.</li>
           </ul>
         </div>
 
         <p class="closing-statement">
-          <em>"Nexovant es su socio estratégico, combinando la solidez del conocimiento familiar con la agilidad de la innovación. <strong>Nuestra experiencia es su mayor garantía.</strong>"</em>
+          <em>"Meltech OT es su socio estratégico, combinando la solidez del conocimiento técnico con la agilidad de la innovación. <strong>Nuestra experiencia es su mayor garantía.</strong>"</em>
         </p>
         <div class="mision-vision-container">
           <div class="mision-vision-item">
             <h3>Misión</h3>
             <p>
-              Ser el socio tecnológico de confianza para empresas del sector público y privado, entregando soluciones integrales de ingeniería y telecomunicaciones. Garantizamos un acompañamiento cercano y personalizado en cada proyecto, con un compromiso inquebrantable con la confiabilidad y la excelencia.
+              Ser el socio tecnológico de confianza para empresas del sector público y privado, entregando soluciones integrales de consultoría, sistemas IT y telecomunicaciones. Garantizamos un acompañamiento cercano y personalizado en cada proyecto, con un compromiso inquebrantable con la confiabilidad y la excelencia.
             </p>
           </div>
           <div class="mision-vision-item">
             <h3>Visión</h3>
             <p>
-              Ser la empresa referente en el sector, reconocida por fusionar innovación y agilidad con la confianza y solidez de nuestra experiencia. Aspiramos a ser el socio estratégico preferido por clientes que valoran la excelencia y las soluciones tecnológicas que impulsan su crecimiento.
+              Ser la marca referente en el sector, reconocida por fusionar innovación y agilidad con la confianza y solidez de nuestra experiencia. Aspiramos a ser el socio estratégico preferido por clientes que valoran la consultoría experta, los sistemas IT robustos y las soluciones de telecomunicaciones que impulsan su crecimiento.
             </p>
           </div>
         </div>
@@ -133,12 +133,12 @@ const clientAltTexts = [
   transition: filter 0.2s;
 }
 .cliente-logo:hover .cliente-img-uniforme {
-  filter: grayscale(0) contrast(1.2) drop-shadow(0 2px 8px #6366f1cc);
+  filter: grayscale(0) contrast(1.2) drop-shadow(0 2px 8px rgba(24, 167, 184, 0.8));
 }
 /* MODIFICADO: La sección ya no tiene padding horizontal para permitir el carrusel full-width */
 .section-container {
   position: relative;
-  background-color: #2c2c54;
+  background: linear-gradient(180deg, #f6f2ea 0%, #eef2f5 55%, #e8f6f5 100%);
   min-height: 100vh; /* Cambiar a min-height para permitir contenido más largo */
   padding-bottom: 40px; /* Agregar padding inferior para evitar corte de contenido */
   box-sizing: border-box;
@@ -153,7 +153,7 @@ const clientAltTexts = [
   cursor: pointer;
 }
 
-.carousel-slides { width: 100%; height: 100%; position: relative; background-color: #1a1a2e; }
+.carousel-slides { width: 100%; height: 100%; position: relative; background-color: #d9eef1; }
 .carousel-image { 
   width: 100%; 
   height: 100%; 
@@ -221,7 +221,7 @@ const clientAltTexts = [
   left: -50%;
   width: 200%;
   height: 200%;
-  background: linear-gradient(45deg, transparent, rgba(138, 43, 226, 0.1), transparent);
+  background: linear-gradient(45deg, transparent, rgba(95, 225, 217, 0.12), transparent);
   transform: rotate(45deg);
   transition: transform 0.6s ease;
   z-index: 1;
@@ -255,11 +255,11 @@ const clientAltTexts = [
 
 /* Efecto hover en títulos */
 .text-content:hover .section-subtitle {
-  color: #8A2BE2;
+  color: #5fe1d9;
 }
 
 .text-content:hover .section-title {
-  color: #6A1B9A;
+  color: #18a7b8;
 }
 
 .intro-text { 
@@ -272,7 +272,7 @@ const clientAltTexts = [
 }
 
 .text-content:hover .intro-text {
-  border-bottom-color: rgba(138, 43, 226, 0.3);
+  border-bottom-color: rgba(95, 225, 217, 0.3);
   color: #222;
 }
 
@@ -292,8 +292,8 @@ const clientAltTexts = [
 }
 
 .text-content:hover .empresa-highlights h4 {
-  color: #8A2BE2;
-  border-left-color: #8A2BE2;
+  color: #5fe1d9;
+  border-left-color: #5fe1d9;
 }
 
 .highlights-list {
@@ -324,7 +324,7 @@ const clientAltTexts = [
 }
 
 .text-content:hover .highlights-list li::before {
-  color: #8A2BE2;
+  color: #5fe1d9;
   transform: translateX(3px);
 }
 
@@ -340,14 +340,14 @@ const clientAltTexts = [
 }
 
 .text-content:hover .highlights-list li strong {
-  color: #6A1B9A;
+  color: #18a7b8;
 }
 
 .closing-statement {
   font-size: 1rem;
   color: #2c3e50;
   text-align: center;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  background: linear-gradient(135deg, #f7fbfc 0%, #d9f4f5 100%);
   padding: 20px;
   border-radius: 10px;
   border-left: 4px solid #3498db;
@@ -356,9 +356,9 @@ const clientAltTexts = [
 }
 
 .text-content:hover .closing-statement {
-  background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
-  border-left-color: #8A2BE2;
-  color: #4A148C;
+  background: linear-gradient(135deg, #e8fbfc 0%, #d9f4f5 100%);
+  border-left-color: #18a7b8;
+  color: #0f3d5e;
 }
 
 .mision-vision-container { 
@@ -377,14 +377,14 @@ const clientAltTexts = [
 
 .mision-vision-item h3 { 
   font-size: 1.6rem; 
-  color: #8A2BE2; 
+  color: #18a7b8; 
   margin-bottom: 10px;
   transition: all 0.3s ease;
 }
 
 .mision-vision-item:hover h3 {
-  color: #6A1B9A;
-  text-shadow: 0 2px 4px rgba(138, 43, 226, 0.2);
+  color: #f2b15c;
+  text-shadow: 0 2px 4px rgba(24, 167, 184, 0.2);
 }
 
 .mision-vision-item p { 
@@ -402,7 +402,7 @@ const clientAltTexts = [
   margin: 3.5rem auto 0 auto;
   text-align: center;
   max-width: 900px;
-  background: linear-gradient(120deg, #f8fafc 60%, #e0e7ff 100%);
+  background: linear-gradient(120deg, #f7fbfc 60%, #d9f4f5 100%);
   border-radius: 1.5rem;
   box-shadow: 0 4px 32px rgba(44,44,84,0.10);
   padding: 2.2rem 1rem 2.7rem 1rem;
@@ -410,7 +410,7 @@ const clientAltTexts = [
 .clientes-title {
   font-size: 1.35rem;
   font-weight: 700;
-  color: #2c2c54;
+  color: #0f3d5e;
   margin-bottom: 2.1rem;
   letter-spacing: 0.5px;
   text-shadow: 0 2px 8px #e0e7ff;
@@ -439,7 +439,7 @@ const clientAltTexts = [
 }
 .cliente-logo:hover {
   transform: scale(1.07) translateY(-6px);
-  box-shadow: 0 8px 32px #6366f1cc;
+  box-shadow: 0 8px 32px rgba(24, 167, 184, 0.8);
 }
 .cliente-logo img {
   max-width: 170px;
@@ -449,7 +449,7 @@ const clientAltTexts = [
   transition: filter 0.2s;
 }
 .cliente-logo:hover img {
-  filter: grayscale(0) contrast(1.2) drop-shadow(0 2px 8px #6366f1cc);
+  filter: grayscale(0) contrast(1.2) drop-shadow(0 2px 8px rgba(24, 167, 184, 0.8));
 }
 @media (max-width: 700px) {
   .clientes-grid {
