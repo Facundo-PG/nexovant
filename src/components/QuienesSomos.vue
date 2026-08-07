@@ -81,7 +81,7 @@ onUnmounted(() => {
               </div>
               <div class="info-content">
                 <h3>Nuestra Historia</h3>
-                <p>Fundada como empresa familiar, combinamos más de 20 años de experiencia en el rubro con la innovación constante para ofrecer soluciones de vanguardia en consultoría, sistemas IT y telecomunicaciones.</p>
+                <p>Fundada como empresa familiar, combinamos más de 5 años de experiencia en el rubro con la innovación constante para ofrecer soluciones de vanguardia en consultoría, sistemas IT y telecomunicaciones.</p>
               </div>
             </div>
 
