@@ -242,15 +242,15 @@ const clientAltTexts = [
 .section-subtitle { 
   font-size: 1.5rem; 
   font-weight: 300; 
-  color: #555; 
-  transition: color 0.3s ease;
+  color: #18a7b8; 
+  
 }
 
 .section-title { 
   font-size: 3.5rem; 
   font-weight: 700; 
   margin-bottom: 20px;
-  transition: color 0.3s ease;
+  color: #18a7b8
 }
 
 /* Efecto hover en títulos */
