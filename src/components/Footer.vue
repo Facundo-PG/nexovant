@@ -37,9 +37,9 @@
       <div class="footer-section">
         <h4>Servicios</h4>
         <ul class="footer-links">
-          <li><a href="#servicios" @click.prevent="scrollToSection('servicios')">Obra Civil</a></li>
-          <li><a href="#servicios" @click.prevent="scrollToSection('servicios')">Fibra Óptica</a></li>
-          <li><a href="#servicios" @click.prevent="scrollToSection('servicios')">Instalaciones</a></li>
+          <li><a href="#servicios" @click.prevent="scrollToSection('servicios')">Consultoría</a></li>
+          <li><a href="#servicios" @click.prevent="scrollToSection('servicios')">Sistemas IT</a></li>
+          <li><a href="#servicios" @click.prevent="scrollToSection('servicios')">Telecomunicaciones</a></li>
           <li><a href="#servicios" @click.prevent="scrollToSection('servicios')">Gestión y Soporte</a></li>
         </ul>
       </div>
