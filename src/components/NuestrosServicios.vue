@@ -190,7 +190,7 @@
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 29px;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 0 auto;
   perspective: 1000px;
 }
@@ -350,7 +350,7 @@
 }
 
 .service-card:hover .card-front::before {
-  left: 100%;
+  left: 110%;
 }
 
 .card-back {
