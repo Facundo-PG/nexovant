@@ -81,7 +81,7 @@ onUnmounted(() => {
               </div>
               <div class="info-content">
                 <h3>Nuestra Historia</h3>
-                <p>Fundada como empresa familiar, combinamos más de 5 años de experiencia en el rubro con la innovación constante para ofrecer soluciones de vanguardia en consultoría, sistemas IT y telecomunicaciones.</p>
+                <p>Combinamos más de 5 años de experiencia en el rubro, con la innovación constante para ofrecer soluciones de vanguardia en consultoría, sistemas IT y telecomunicaciones.</p>
               </div>
             </div>
 
@@ -93,7 +93,7 @@ onUnmounted(() => {
               </div>
               <div class="info-content">
                 <h3>Nuestro Equipo</h3>
-                <p>Un equipo multidisciplinario de profesionales especializados en consultoría tecnológica, sistemas IT y telecomunicaciones, comprometidos con la excelencia en cada proyecto.</p>
+                <p>Un equipo multidisciplinario de profesionales con sus 20 años de experiencia, especializados en consultoría tecnológica, sistemas IT y telecomunicaciones, comprometidos con la excelencia en cada proyecto.</p>
               </div>
             </div>
 

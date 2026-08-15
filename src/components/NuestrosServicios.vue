@@ -45,20 +45,20 @@
         </div>
       </div>
       
-      <!-- INICIO DE TARJETA 3: TELECOMUNICACIONES -->
+      <!-- INICIO DE TARJETA 4: FIBRA ÓPTICA -->
       <div class="service-card">
         <div class="card-inner">
           <div class="card-front">
             <div class="servicio-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M22.7 19L13.6 9.9C14.5 7.6 14 4.9 12.1 3C10.1 1 7.1 0.6 4.7 1.7L9 6L6 9L1.6 4.7C0.4 7.1 0.9 10.1 2.9 12.1C4.8 14 7.5 14.5 9.8 13.6L18.9 22.7C19.3 23.1 19.9 23.1 20.3 22.7L22.6 20.4C23.1 20 23.1 19.3 22.7 19Z"/>
+                <path d="M12 2a1 1 0 0 1 1 1v3.08l3.59-3.59a1 1 0 1 1 1.41 1.42L14.41 7.5H18a1 1 0 1 1 0 2h-3.59l3.59 3.59a1 1 0 1 1-1.41 1.42L13 10.91V14a1 1 0 1 1-2 0v-3.09L7.41 14.5a1 1 0 1 1-1.41-1.42L9.59 9.5H6a1 1 0 1 1 0-2h3.59L5.99 4.49A1 1 0 1 1 7.4 3.07L11 6.66V3a1 1 0 0 1 1-1Z"/>
               </svg>
             </div>
-            <h3>TELECOMUNICACIONES</h3>
+            <h3>FIBRA ÓPTICA</h3>
           </div>
           <div class="card-back">
-            <div class="stat-number">99%</div>
-            <div class="stat-label">Enfoque en disponibilidad, cobertura y rendimiento</div>
+            <h3>REDES GPON</h3>
+            <p>"Redes de tipo GPON para conectividad de alta capacidad, escalable y preparada para entornos exigentes."</p>
           </div>
         </div>
       </div>

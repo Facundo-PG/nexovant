@@ -22,12 +22,16 @@ const clientImages = [
   import.meta.env.BASE_URL + 'images/XGnetworks.jpeg',
   import.meta.env.BASE_URL + 'images/TPP.png',
   import.meta.env.BASE_URL + 'images/mcsa.jpeg',
+  import.meta.env.BASE_URL + 'images/CEAMSE.png',
+  import.meta.env.BASE_URL + 'images/Caminodelbuenayre.jpeg',
 ];
 const clientAltTexts = [
   'Cliente PLETTAC',
   'Cliente XGEAR',
   'Cliente TPP',
   'Cliente MCSA',
+  'Cliente CEAMSE',
+  'Cliente Camino del Buen Ayre',
 ];
 </script>
 
@@ -63,15 +67,16 @@ const clientAltTexts = [
         <h2 class="section-subtitle">NUESTRA</h2>
         <h1 class="section-title">EMPRESA</h1>
         <p class="intro-text">
-          Meltech OT se posiciona como un socio estratégico en consultoría, sistemas IT y telecomunicaciones. Aunque es una marca joven, está respaldada por más de <strong>5 años</strong> de experiencia en el rubro, aportando conocimiento técnico, visión actualizada y una lectura precisa de las necesidades del mercado. Esa combinación de trayectoria e innovación nos permite ofrecer soluciones eficientes, integrales y adaptadas a los desafíos de hoy.
+          Meltech OT se posiciona como un socio estratégico en consultoría, sistemas IT y telecomunicaciones. Aunque es una marca joven, está respaldada por profesionales con más de 20 años de experiencia en el rubro, aportando conocimiento técnico, visión actualizada y una lectura precisa de las necesidades del mercado, contamos con obras en provincias como Mendoza, Neuquén, San Juan, Córdoba, Rosario, Catamarca, Bahía Blanca y más. Esa combinación de trayectoria e innovación nos permite ofrecer soluciones eficientes, integrales y adaptadas a los desafíos de hoy.
         </p>
         
         <div class="empresa-highlights">
           <h4>Nuestra Esencia</h4>
           <ul class="highlights-list">
-            <li><strong>Tradición Familiar:</strong> Fundada bajo la alianza entre padre e hijos, combinando sabiduría acumulada con visión innovadora.</li>
             <li><strong>Enfoque Humano:</strong> Trato cercano, personalizado y empático en cada proyecto.</li>
             <li><strong>Experiencia Comprobada:</strong> 5 años perfeccionando soluciones en consultoría tecnológica, sistemas IT y telecomunicaciones.</li>
+            <li><strong>Innovación Continua:</strong> Incorporamos nuevas herramientas y metodologías para responder con soluciones actuales y eficientes.</li>
+            <li><strong>Compromiso con la Calidad:</strong> Cuidamos cada detalle para asegurar resultados confiables, sostenibles y profesionales.</li>
           </ul>
         </div>
 
@@ -417,16 +422,15 @@ const clientAltTexts = [
 }
 .clientes-grid {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 2.5rem;
   width: 100%;
-  overflow-x: hidden;
 }
 .cliente-logo {
-  flex: 1 1 220px;
-  max-width: 260px;
+  flex: 1 1 180px;
+  max-width: 240px;
   min-width: 160px;
   display: flex;
   align-items: center;
@@ -454,8 +458,7 @@ const clientAltTexts = [
 @media (max-width: 700px) {
   .clientes-grid {
     gap: 1.2rem;
-    flex-wrap: nowrap;
-    overflow-x: hidden;
+    flex-wrap: wrap;
     justify-content: center;
   }
   .cliente-logo {
