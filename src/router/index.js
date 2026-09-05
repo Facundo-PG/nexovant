@@ -7,15 +7,12 @@ import QuienesSomosView from '@/views/QuienesSomosView.vue';
 
 
 const router = createRouter({
-  // Usamos la base condicional para el historial.
   history: createWebHistory(import.meta.env.BASE_URL),
   
   routes: [
     {
-      // La ruta principal, que resuelve a /nexovant/
       path: '/', 
-      name: 'Landing',
-      component: LandingView 
+      redirect: '/home' // <--- Cambiamos 'component' por 'redirect'
     },
     {
       path: '/home',
@@ -27,7 +24,6 @@ const router = createRouter({
       name: 'QuienesSomos',
       component: QuienesSomosView
     }
-    // Añade el resto de tus rutas aquí
   ]
 });
 
