@@ -40,9 +40,9 @@ const sendEmail = async () => {
     // 4. Copia tu Service ID, Template ID y User ID (Public Key)
     // 5. Reemplaza los valores a continuación:
     
-    const serviceID = 'service_f2o5cxk'; // Ej: 'service_abc1234'
-    const templateID = 'template_87yyiah'; // Ej: 'template_xyz5678'
-    const userID = 'me9yHmC12iQjONrjG'; // Ej: 'user_ABC123XYZ' (también llamado Public Key)
+    const serviceID = 'service_up1u0e8'; // Ej: 'service_abc1234'
+    const templateID = 'template_6fp0xxt'; // Ej: 'template_xyz5678'
+    const userID = '29GQbKzJxh6-Iz2jt'; // Ej: 'user_ABC123XYZ' (también llamado Public Key)
     
     const templateParams = {
   name: formData.value.name,
