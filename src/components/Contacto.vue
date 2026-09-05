@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue';
-import emailjs from 'emailjs-com';
+import emailjs from '@emailjs/browser';
 
 // Estado del formulario
 const formData = ref({
@@ -17,16 +17,38 @@ const submitStatus = ref(''); // 'success', 'error', o ''
 const sendEmail = async () => {
   if (isSubmitting.value) return;
   
-  // Validación básica
-  if (!formData.value.name || !formData.value.email || !formData.value.message) {
-    submitStatus.value = 'error';
-    setTimeout(() => submitStatus.value = '', 3000);
-    return;
-  }
-  
+  // IDs SACADOS DE TUS CAPTURAS (Están perfectos)
+  const serviceID = 'service_up1u0e8'; 
+  const templateID = 'template_9lyiw9w'; 
+  const publicKey = '29GQbKzJxh6-Iz2jt'; // Tu Public Key sin el "user_"
+
+  // Sincronizamos con las variables de tu captura de EmailJS
+  const templateParams = {
+    name: formData.value.name,    // Coincide con {{name}} en tu captura
+    email: formData.value.email,  // Coincide con {{email}} en tu captura
+    phone: formData.value.phone,
+    message: formData.value.message,
+    title: 'Nuevo contacto Meltech SRL' // Coincide con {{title}} en tu captura
+  };
+
   isSubmitting.value = true;
   
   try {
+    // MÉTODO MODERNO (fijate que el orden de los IDs es igual)
+    await emailjs.send(serviceID, templateID, templateParams, publicKey);
+    
+    submitStatus.value = 'success';
+    formData.value = { name: '', email: '', phone: '', message: '' };
+    setTimeout(() => submitStatus.value = '', 5000);
+  } catch (error) {
+    console.error('Error real de EmailJS:', error);
+    submitStatus.value = 'error';
+  } finally {
+    isSubmitting.value = false;
+  }
+};
+  
+ /* try {
     // Configuración de EmailJS
     // IMPORTANTE: Sigue estos pasos para configurar EmailJS:
     // 1. Ve a https://www.emailjs.com/ y crea una cuenta gratuita
@@ -43,7 +65,7 @@ const sendEmail = async () => {
     const serviceID = 'service_up1u0e8'; // Ej: 'service_abc1234'
     const templateID = 'template_9lyiw9w'; // Ej: 'template_xyz5678'
     const userID = '29GQbKzJxh6-Iz2jt'; // Ej: 'user_ABC123XYZ' (también llamado Public Key)
-    
+    */
  const templateParams = {
   name: formData.value.name,    // Coincide con {{name}}
   email: formData.value.email,  // Coincide con {{email}}
