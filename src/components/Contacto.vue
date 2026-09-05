@@ -114,7 +114,7 @@ const sendEmail = async () => {
         <div class="whatsapp-box">
           <h3>¿Tenés una consulta?</h3>
           <p>¡Envíanos un mensaje por WhatsApp!</p>
-          <a href="https://wa.me/5491139164596" class="whatsapp-btn" target="_blank">
+          <a href="https://wa.me/5491140440552" class="whatsapp-btn" target="_blank">
             <span>Chatear por WhatsApp</span>
           </a>
         </div>
