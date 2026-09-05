@@ -42,7 +42,7 @@ const sendEmail = async () => {
     
     const serviceID = 'service_up1u0e8'; // Ej: 'service_abc1234'
     const templateID = 'template_9lyiw9w'; // Ej: 'template_xyz5678'
-    const userID = '29GQbKzJxh6-Iz2jt'; // Ej: 'user_ABC123XYZ' (también llamado Public Key)
+    const userID = 'user_29GQbKzJxh6-Iz2jt'; // Ej: 'user_ABC123XYZ' (también llamado Public Key)
     
     const templateParams = {
   name: formData.value.name,
