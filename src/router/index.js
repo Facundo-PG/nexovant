@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router';
+import { createRouter, createWebHistory, createWebHashHistory } from 'vue-router';
 // Asumiendo que tus vistas están en @/views/
 import LandingView from '@/views/LandingView.vue'; 
 import HomeView from '@/views/HomeView.vue'; // Ejemplo
@@ -7,8 +7,8 @@ import QuienesSomosView from '@/views/QuienesSomosView.vue';
 
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
-  
+  // history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHashHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/', 
